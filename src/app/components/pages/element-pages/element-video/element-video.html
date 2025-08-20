@@ -1,0 +1,13 @@
+<app-header [headerClass]="'light_header'" />
+
+@if(cabModern && cab){
+  <app-cab-modern-ticket-section [id]="cabModern.ticketSection" [cab]="cab" />
+}
+
+<app-hotel-classic-video />
+
+<app-tour-modern-video />
+
+<app-footer [places]="true" />
+
+<app-layout />

@@ -1,0 +1,24 @@
+<app-header [headerClass]="'light_header'" />
+
+<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [subParent]="subParent" [child]="child" [tourBreadcrumb]="true" />
+
+<section class="section-b-space bg-inner animated-section">
+  <app-animations [type]="'dots'" />
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="summery-box">
+          <h2>payment option</h2>
+          <app-booking />
+        </div>
+      </div>
+      <div class="col-lg-5 booking-order">
+        <app-tour-booking-details />
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true" />
+
+<app-layout [loaderType]="'basic'" />

@@ -1,0 +1,49 @@
+<app-header [headerClass]="'inner-page'" />
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" [paddingClass]="false" />
+
+<section class="small-section dashboard-section bg-inner" data-sticky_parent>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="pro_sticky_info dashboard-stick-section" [class.is_stuck]="isStuck" [class.is_not_stuck]="isNotStuck" data-sticky_column>
+          @if(userDashboardDetails){
+            <app-user-dashboard-tab [tabs]="userDashboardDetails.tabs" (tabValue)="getTabValue($event)" />
+          }
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="product_img_scroll" data-sticky_column>
+          <div class="faq-content tab-content" id="top-tabContent">
+            <div class="tab-pane fade show active" id="dashboard">
+              @if(userDashboardDetails){
+                @if(activeTab == 'dashboard'){
+                  <app-user-dashboard-details [dashboardDetails]="userDashboardDetails.dashboardDetails" />
+                }
+                @if(activeTab == 'profile'){
+                  <app-user-dashboard-profile [userProfile]="userDashboardDetails.userProfile" />
+                }
+                @if(activeTab == 'bookings'){
+                  <app-user-dashboard-booking [booking]="userDashboardDetails.booking" />
+                }
+                @if(activeTab == 'added-card'){
+                  <app-user-dashboard-cards [card]="userDashboardDetails.cards" />
+                }
+                @if(activeTab == 'bookmark'){
+                  <app-user-dashboard-bookmark [bookmark]="userDashboardDetails.bookmark" />
+                }
+                @if(activeTab == 'security'){
+                  <app-user-dashboard-security />
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true" />
+
+<app-layout />

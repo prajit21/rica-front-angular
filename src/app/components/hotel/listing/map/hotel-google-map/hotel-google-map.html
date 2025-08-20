@@ -1,0 +1,33 @@
+<app-header [headerClass]="'inner-page'" />
+
+<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+
+<section class="bg-white pt-0 search-panel" id="searchBar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-search-box [type]="'basic'" [shadow]="false" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="xs-section bg-inner">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <app-grid-panel [type]="'hotel'" (selectedTabValue)="getTabValue($event)" [gridOptions]="false" [mapFilter]="true" />
+      </div>
+      <div class="col-lg-6 ratio3_2">
+        <app-details [type]="'hotel'" [selectedTabValue]="selectedTabValue" [gridType]="'2-grid'" [responsiveLatestFilter]="false" />
+      </div>
+      <div class="col-lg-6  map-section">
+        <app-details [type]="'googleMap'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true" />
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'hotel'" [mapFilter]="true" [gridType]="'2-grid'" [filter]="false" [mapSide]="'right'" />

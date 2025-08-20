@@ -1,0 +1,35 @@
+  @if(type() == 'hotel'){
+    <app-hotel-breadcrumb [bg_image]="bg_image()" [title]="title()" [parent]="parent()" [subParent]="subParent()!" [child]="child()" [tourBreadcrumb]="tourBreadcrumb()" />
+  }
+
+@if(type() == 'hotel-title'){
+  <app-hotel-breadcrumb-title />
+}
+
+@if(type() == 'tour'){
+  <app-tour-breadcrumb [bg_image]="bg_image()" [title]="title()" [parent]="parent()"  [child]="child()" />
+}
+
+@if(type() == 'tour-single-page'){
+  <app-tour-breadcrumb-single-page [bg_image]="bg_image()" [title]="title()" [days]="days()" [date]="date()" [slider]="slider()" [birdAnimation]="birdAnimation()" [tourVideo]="tourVideo()" />
+}
+
+@if(type() == 'flight'){
+  <app-flight-breadcrumb [FlightDetails]="FlightDetails()" [bg_image]="bg_image()" [title]="title()" [parent]="parent()"  [child]="child()" />
+}
+
+@if(type() == 'cab'){
+  <app-cab-breadcrumb [bg_image]="bg_image()" [title]="title()" [parent]="parent()"  [child]="child()" />
+}
+
+@if(type() == 'restaurant'){
+  <app-restaurant-breadcrumb [sectionClass]="sectionClass()" />
+}
+
+@if(type() == 'restaurant-single-page'){
+  <app-restaurant-single-page-breadcrumb />
+}
+
+@if(type() == 'pages'){
+  <app-pages-breadcrumb [bg_image]="bg_image()" [title]="title()" [parent]="parent()"  [child]="child()" [paddingClass]="paddingClass()" />
+}

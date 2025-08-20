@@ -1,0 +1,11 @@
+@if(type() == 'basic'){
+  <app-service-one [service]="service()" />
+}
+
+@if(type() == 'simple'){
+  <app-service-two [service]="service()" />
+}
+
+@if(type() == 'classic'){
+  <app-service-three [service]="service()!" />
+}
