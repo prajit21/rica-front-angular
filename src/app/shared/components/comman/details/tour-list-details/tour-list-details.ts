@@ -2,7 +2,7 @@ import { Component, inject, Input, input } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { TourListImages } from './tour-list-images/tour-list-images';
@@ -67,7 +67,7 @@ export class TourListDetails {
     },
   };
 
-  @Select(TourState.tour) tour$: Observable<tours[]>;
+  tour$: Observable<tours[]> = inject(Store).select(TourState.tour);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
-import { Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
@@ -63,7 +63,7 @@ export class TourClassic {
   public maxPrice: number;
   public tags: string[];
 
-  @Select(TourState.tour) tour$: Observable<tours[]>;
+  tour$: Observable<tours[]> = inject(Store).select(TourState.tour);
 
   constructor() {
     this.tourService.isOpenFindTours = false;

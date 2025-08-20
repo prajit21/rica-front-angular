@@ -1,8 +1,8 @@
 import { Component, inject, Input, input } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
-import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { Select } from '@ngxs/store';
+import { NgbRating, NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { HotelListImages } from './hotel-list-images/hotel-list-images';
@@ -53,7 +53,7 @@ export class HotelListDetails {
   public title: string = 'hotel';
   public descriptionData: string = 'no hotels were found. modify your search and try again';
 
-  @Select(HotelState.hotel) hotel$: Observable<hotels[]>;
+  hotel$: Observable<hotels[]> = inject(Store).select(HotelState.hotel);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

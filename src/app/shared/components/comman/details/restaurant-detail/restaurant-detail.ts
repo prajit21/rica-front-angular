@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
-import { Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
 
@@ -74,7 +74,7 @@ export class RestaurantDetail {
     },
   };
 
-  @Select(RestaurantState.restaurant) restaurant$: Observable<restaurantDetail[]>;
+  restaurant$: Observable<restaurantDetail[]> = inject(Store).select(RestaurantState.restaurant);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

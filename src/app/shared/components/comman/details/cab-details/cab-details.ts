@@ -2,8 +2,8 @@ import { SlicePipe } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 
-import { Select, Store } from '@ngxs/store';
-import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
+import { Store } from '@ngxs/store';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
 
 import { cab, pagination } from '../../../../../shared/interface/cab';
@@ -79,7 +79,7 @@ export class CabDetails {
     },
   };
 
-  @Select(CabState.cab) cab$: Observable<cab[]>;
+  cab$: Observable<cab[]> = inject(Store).select(CabState.cab);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

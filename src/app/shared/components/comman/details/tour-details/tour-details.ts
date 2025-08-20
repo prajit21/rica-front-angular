@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
 
@@ -78,7 +78,7 @@ export class TourDetails {
     navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
   };
 
-  @Select(TourState.tour) tour$: Observable<tours[]>;
+  tour$: Observable<tours[]> = inject(Store).select(TourState.tour);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

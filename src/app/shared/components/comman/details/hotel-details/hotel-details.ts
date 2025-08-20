@@ -1,8 +1,8 @@
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 
-import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { NgbRating, NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngxs/store';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
 
@@ -79,7 +79,7 @@ export class HotelDetails {
     },
   };
 
-  @Select(HotelState.hotel) hotel$: Observable<hotels[]>;
+  hotel$: Observable<hotels[]> = inject(Store).select(HotelState.hotel);
 
   constructor() {
     this.route.queryParams.subscribe(params => {

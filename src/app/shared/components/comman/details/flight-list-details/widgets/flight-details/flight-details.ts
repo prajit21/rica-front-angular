@@ -1,7 +1,7 @@
 import { Component, inject, Input, input, output } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
-import { Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { pagination } from '../../../../../../../shared/interface/cab';
@@ -49,7 +49,7 @@ export class FlightDetails {
   public description: string =
     'no flights were found for this route and date combination. modify your search and try again';
 
-  @Select(FlightState.flight) flight$: Observable<flight[]>;
+  flight$: Observable<flight[]> = inject(Store).select(FlightState.flight);
 
   constructor() {
     this.route.queryParams.subscribe(params => {
