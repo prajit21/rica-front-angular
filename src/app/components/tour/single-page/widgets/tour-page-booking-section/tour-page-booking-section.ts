@@ -1,34 +1,34 @@
 import { Component } from '@angular/core';
+
 import { ClickOutsideDirective } from '../../../../../shared/directives/outside.directive';
 
 @Component({
-    selector: 'app-tour-page-booking-section',
-    templateUrl: './tour-page-booking-section.html',
-    styleUrl: './tour-page-booking-section.scss',
-    imports: [ClickOutsideDirective]
+  selector: 'app-tour-page-booking-section',
+  templateUrl: './tour-page-booking-section.html',
+  styleUrl: './tour-page-booking-section.scss',
+  imports: [ClickOutsideDirective],
 })
 export class TourPageBookingSection {
-
   public adults = 1;
   public child = 1;
 
   public isShow: boolean = false;
 
-  open(){
-    this.isShow =! this.isShow;
+  open() {
+    this.isShow = !this.isShow;
   }
 
-  changeValue(value: string, number:number){
-    if(number == -1){
-      if(value == 'adult' && this.adults > 1){
+  changeValue(value: string, number: number) {
+    if (number == -1) {
+      if (value == 'adult' && this.adults > 1) {
         this.adults -= 1;
-      }else if(value == 'children' && this.child > 1){
+      } else if (value == 'children' && this.child > 1) {
         this.child -= 1;
       }
-    }else if(number == 1){
-      if(value == 'adult'){
+    } else if (number == 1) {
+      if (value == 'adult') {
         this.adults += 1;
-      }else if(value == 'children'){
+      } else if (value == 'children') {
         this.child += 1;
       }
     }

@@ -1,4 +1,4 @@
-export interface cabModern{
+export interface cabModern {
   category: number[];
   ticketSection: number[];
   service: number[];
@@ -8,12 +8,11 @@ export interface cabModern{
   brand: brand[];
 }
 
-
-export interface cabDetailsModern{
+export interface cabDetailsModern {
   cab: cabDetails[];
 }
 
-export interface cabDetails{
+export interface cabDetails {
   id: number;
   title: string;
   description?: string;
@@ -23,14 +22,14 @@ export interface cabDetails{
   type?: string;
 }
 
-export interface animatedImage{
+export interface animatedImage {
   id: number;
   url: string;
   title: string;
   subTitle?: string;
 }
 
-export interface brand{
+export interface brand {
   id: number;
   logo: string;
 }

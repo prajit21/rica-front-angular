@@ -5,7 +5,7 @@
         <div class="menu">
           <div class="brand-logo">
             <a href="javascript:void(0)">
-              <img [src]="logo" alt="logo" class="img-fluid blur-up lazyload">
+              <img [src]="logo" alt="logo" class="img-fluid blur-up lazyload" />
             </a>
           </div>
           <nav>
@@ -15,8 +15,7 @@
           <div class="coupon-box">
             <h6>Coupen Code :- DX4512</h6>
           </div>
-          }
-          @if(setting()){
+          } @if(setting()){
           <ul class="header-right">
             <li class="front-setting">
               <app-currency />
@@ -47,6 +46,6 @@
     </div>
   </div>
   @if(searchTab()){
-    <app-search-tab (searchBox)="getValue($event)" />
+  <app-search-tab (searchBox)="getValue($event)" />
   }
 </header>

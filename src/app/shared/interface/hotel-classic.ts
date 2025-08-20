@@ -1,10 +1,10 @@
-import { animatedImage } from "./cab-modern";
-import { blogs, hotels } from "./hotel-minimal";
+import { animatedImage } from './cab-modern';
+import { blogs, hotels } from './hotel-minimal';
 
-export interface homeSectionModel{
+export interface homeSectionModel {
   homeSection: homeSection[];
   hotelImages: animatedImage[];
-  ticketSection: number[]
+  ticketSection: number[];
   gallery: gallery[];
   specialRooms: number[];
   service: number[];
@@ -12,26 +12,26 @@ export interface homeSectionModel{
   socialGallery: socialGallery[];
 }
 
-export interface homeSection{
-  id: number,
-  title: string,
+export interface homeSection {
+  id: number;
+  title: string;
   subTitle: string;
   url: string;
 }
 
-export interface gallery{
+export interface gallery {
   id: number;
   title: string;
   url: string;
 }
 
-export interface hotelRooms{
+export interface hotelRooms {
   hotelRooms: specialRoom[];
   hotel: hotels[];
   blog: blogs[];
 }
 
-export interface specialRoom{
+export interface specialRoom {
   id: number;
   title: string;
   description: string;
@@ -45,11 +45,11 @@ export interface specialRoom{
   barcode: string;
 }
 
-export interface services{
-  services: service[]
+export interface services {
+  services: service[];
 }
 
-export interface service{
+export interface service {
   id: number;
   title: string;
   description: string;
@@ -59,19 +59,18 @@ export interface service{
   additionalData?: string;
 }
 
-export interface testimonials{
-  testimonial: testimonial[]
+export interface testimonials {
+  testimonial: testimonial[];
 }
 
-export interface testimonial{
+export interface testimonial {
   id: number;
   name: string;
   description: string;
   profileURL: string;
 }
 
-export interface socialGallery{
+export interface socialGallery {
   id: number;
   url: string;
 }
-

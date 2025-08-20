@@ -1,29 +1,35 @@
 <app-header [headerClass]="'overlay-black'" />
 
 @if(homeSectionData){
-  <app-hotel-classic-home-section [homeSection]="homeSectionData.homeSection" />
+<app-hotel-classic-home-section [homeSection]="homeSectionData.homeSection" />
 
-  <app-hotel-classic-about-hotel [hotelImages]="homeSectionData.hotelImages" />
+<app-hotel-classic-about-hotel [hotelImages]="homeSectionData.hotelImages" />
 
-  @if(specialRooms){
-    <app-hotel-classic-ticket-section [id]="homeSectionData.ticketSection" [ticketSection]="specialRooms" />
-  }
+@if(specialRooms){
+<app-hotel-classic-ticket-section
+  [id]="homeSectionData.ticketSection"
+  [ticketSection]="specialRooms"
+/>
+}
 
-  <app-hotel-classic-gallery [gallery]="homeSectionData.gallery" />
+<app-hotel-classic-gallery [gallery]="homeSectionData.gallery" />
 
-  @if(specialRooms){
-    <app-hotel-classic-special-rooms [id]="homeSectionData.specialRooms" [specialRooms]="specialRooms" />
-  }
+@if(specialRooms){
+<app-hotel-classic-special-rooms
+  [id]="homeSectionData.specialRooms"
+  [specialRooms]="specialRooms"
+/>
+}
 
-  <app-hotel-classic-video />
+<app-hotel-classic-video />
 
-  <app-hotel-classic-service [id]="homeSectionData.service" />
+<app-hotel-classic-service [id]="homeSectionData.service" />
 
-  <app-hotel-classic-subscribe />
+<app-hotel-classic-subscribe />
 
-  <app-hotel-classic-testimonial [id]="homeSectionData.testimonial" />
+<app-hotel-classic-testimonial [id]="homeSectionData.testimonial" />
 
-  <app-hotel-classic-social-gallery [socialGallery]="homeSectionData.socialGallery" />
+<app-hotel-classic-social-gallery [socialGallery]="homeSectionData.socialGallery" />
 }
 
 <app-footer [location]="true" />

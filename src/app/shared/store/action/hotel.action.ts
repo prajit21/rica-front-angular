@@ -1,7 +1,10 @@
-import { priceFilter } from "../../interface/hotel";
+import { priceFilter } from '../../interface/hotel';
 
 // Hotel Filter
-export class getHotels {
+export class GetHotels {
   static readonly type = '[hotel] Get';
-  constructor(public filter: string[], public price: priceFilter) {}
+  constructor(
+    public filter: string[],
+    public price: priceFilter,
+  ) {}
 }

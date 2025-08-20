@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { hotelGallery } from '../../../../../shared/interface/hotel';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { hotelGallery } from '../../../../../shared/interface/hotel';
+
 @Component({
-    selector: 'app-hotel-image-slider',
-    templateUrl: './hotel-image-slider.html',
-    styleUrls: ['./hotel-image-slider.scss'],
-    imports: [CarouselModule]
+  selector: 'app-hotel-image-slider',
+  templateUrl: './hotel-image-slider.html',
+  styleUrls: ['./hotel-image-slider.scss'],
+  imports: [CarouselModule],
 })
 export class HotelImageSlider {
-
   @Input() hotelGallery: hotelGallery[];
 
   public options = {
@@ -21,11 +22,11 @@ export class HotelImageSlider {
         items: 1,
       },
       924: {
-        items: 1.5
+        items: 1.5,
       },
       1367: {
-        items: 2.5
-      }
+        items: 2.5,
+      },
     },
-  }
+  };
 }

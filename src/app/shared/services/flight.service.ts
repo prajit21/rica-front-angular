@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+
 import { Observable, map } from 'rxjs';
+
 import { flight, flights } from '../interface/flight';
 import { flightLeftSidebar } from '../interface/flight-left-sidebar';
 import { flightMinimal } from '../interface/flight-minimal';
 import { flightModern } from '../interface/flight-modern';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FlightService {
-
   public isOpenResponsiveFilter: boolean = false;
 
   private http = inject(HttpClient);
@@ -38,25 +39,25 @@ export class FlightService {
   // Flight Filter
   public flights: string | undefined;
   getFlightDetails(filter: string[]): Observable<flight[]> {
-    return this.flight().pipe(map((flight) =>
-      flight.flight.filter((item) => {
-        if (!filter.length) {
-          return true
-        }
-        this.flights = filter.find((data: string) => {
-          if (item.tags) {
-            if (item.tags.includes(data))
-              return data
+    return this.flight().pipe(
+      map(flight =>
+        flight.flight.filter(item => {
+          if (!filter.length) {
+            return true;
           }
-        })
-        return this.flights;
-      })
-    ));
+          this.flights = filter.find((data: string) => {
+            if (item.tags) {
+              if (item.tags.includes(data)) return data;
+            }
+          });
+          return this.flights;
+        }),
+      ),
+    );
   }
 
   // Get Max Price
   getMaxPrice(): Observable<number> {
-    return this.flight().pipe(map((flight) => Math.max(...flight.flight.map((price) => price.price))));
+    return this.flight().pipe(map(flight => Math.max(...flight.flight.map(price => price.price))));
   }
 }
-

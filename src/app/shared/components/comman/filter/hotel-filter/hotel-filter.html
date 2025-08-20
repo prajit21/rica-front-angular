@@ -1,50 +1,55 @@
-<div class="left-sidebar" [class.sidebar-popup]="mapFilter()" [class.open]="hotelService.isOpenMapFilter" [ngStyle]="{ 'left' : hotelService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+<div
+  class="left-sidebar"
+  [class.sidebar-popup]="mapFilter()"
+  [class.open]="hotelService.isOpenMapFilter"
+  [ngStyle]="{ 'left' : hotelService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+>
   @if(!mapFilter()){
-    <div class="back-btn" (click)="closeResponsiveFilter()">
-      back
-    </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search here..">
-      <i class="fas fa-search"></i>
-    </div>
+  <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search here.." />
+    <i class="fas fa-search"></i>
+  </div>
   }
   <div class="middle-part collection-collapse-block" [class.open]="isOpenFilter">
     @if(!mapFilter()){
-      <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openFilter()">
-        <h5>latest filter</h5>
-        <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
-      </a>
+    <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openFilter()">
+      <h5>latest filter</h5>
+      <img
+        src="assets/images/icon/adjust.png"
+        class="img-fluid blur-up lazyload"
+        alt="filter-icon"
+      />
+    </a>
     }
-    <div class="collection-collapse-block-content " [ngStyle]="{ 'display' : isOpenFilter == true ? 'block' : 'none'}">
-      @if(district() == true){
-        <div class="filter-block">
-          <app-hotel-district />
-        </div>
-      }
-      @if(facility() == true){
-        <div class="filter-block">
-          <app-hotel-facility />
-        </div>
-      }
-      @if(rating() == true){
-        <div class="filter-block">
-          <app-hotel-rating />
-        </div>
-      }
-      @if(price() == true){
-        <div class="filter-block">
-          <app-hotel-price />
-        </div>
-      }
-      @if(language() == true){
-        <div class="filter-block">
-          <app-hotel-language />
-        </div>
-      }
-      @if(hotels() == true){
-        <div class="filter-block">
-          <app-hotels />
-        </div>
+    <div
+      class="collection-collapse-block-content"
+      [ngStyle]="{ 'display' : isOpenFilter === true ? 'block' : 'none'}"
+    >
+      @if(district() === true){
+      <div class="filter-block">
+        <app-hotel-district />
+      </div>
+      } @if(facility() === true){
+      <div class="filter-block">
+        <app-hotel-facility />
+      </div>
+      } @if(rating() === true){
+      <div class="filter-block">
+        <app-hotel-rating />
+      </div>
+      } @if(price() === true){
+      <div class="filter-block">
+        <app-hotel-price />
+      </div>
+      } @if(language() === true){
+      <div class="filter-block">
+        <app-hotel-language />
+      </div>
+      } @if(hotels() === true){
+      <div class="filter-block">
+        <app-hotels />
+      </div>
       }
     </div>
   </div>

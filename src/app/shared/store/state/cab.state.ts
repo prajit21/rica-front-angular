@@ -1,17 +1,19 @@
-import { inject, Injectable } from "@angular/core";
-import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { cab } from "../../interface/cab";
-import { CabService } from "../../services/cab.service";
-import { getCab } from "../action/cab.action";
+import { inject, Injectable } from '@angular/core';
 
-export class cabModal {
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+
+import { cab } from '../../interface/cab';
+import { CabService } from '../../services/cab.service';
+import { GetCab } from '../action/cab.action';
+
+export class CabModal {
   data: {
     cab: cab[];
   };
 }
 
-@State<cabModal>({
+@State<CabModal>({
   name: 'cab',
   defaults: {
     data: {
@@ -19,30 +21,28 @@ export class cabModal {
     },
   },
 })
-
 @Injectable()
-export class cabState{
-
+export class CabState {
   private cabService = inject(CabService);
 
   public cabs: cab[];
 
   @Selector()
-  static cab(state: cabModal) {
+  static cab(state: CabModal) {
     return state.data.cab;
   }
 
-  @Action(getCab)
-  getData( ctx: StateContext<cabModal>, action: getCab ){
-    return this.cabService.getCabDetails(action.filter).pipe(
-      tap((res) => {
-        if (action.price.minPrice != 0  || action.price.maxPrice != 0 ) {
+  @Action(GetCab)
+  getData(ctx: StateContext<CabModal>, action: GetCab) {
+    return this.cabService.GetCabDetails(action.filter).pipe(
+      tap(res => {
+        if (action.price.minPrice != 0 || action.price.maxPrice != 0) {
           this.cabs = res.filter(
             (item: { price: number }) =>
-              item.price >= action.price.minPrice && item.price <= action.price.maxPrice
+              item.price >= action.price.minPrice && item.price <= action.price.maxPrice,
           );
-        }else {
-          this.cabs = res
+        } else {
+          this.cabs = res;
         }
 
         ctx.setState({
@@ -50,8 +50,7 @@ export class cabState{
             cab: this.cabs,
           },
         });
-
-      })
-    )
+      }),
+    );
   }
 }

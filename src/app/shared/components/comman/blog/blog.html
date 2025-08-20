@@ -1,8 +1,10 @@
-
-@if(type() == 'basic'){
-  <app-blog-one [blogs]="blogs()!" [border]="border()" [colorClass]="colorClass()" />
-}
-
-@if(type() == 'simple'){
-  <app-blog-two [blogs]="blogs()!" [postedBy]="postedBy()" [postedDate]="postedDate()" [buttonClass]="buttonClass()" />
+@if(type() === 'basic'){
+<app-blog-one [blogs]="blogs()!" [border]="border()" [colorClass]="colorClass()" />
+} @if(type() === 'simple'){
+<app-blog-two
+  [blogs]="blogs()!"
+  [postedBy]="postedBy()"
+  [postedDate]="postedDate()"
+  [buttonClass]="buttonClass()"
+/>
 }

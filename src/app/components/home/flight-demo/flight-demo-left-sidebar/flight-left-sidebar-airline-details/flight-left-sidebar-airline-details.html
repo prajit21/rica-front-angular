@@ -6,22 +6,27 @@
       </div>
       <div class="slider-4">
         @if(airlines){
-          <owl-carousel-o [options]="options">
-            @for(details of airlines; track details){
-              <ng-template carouselSlide>
-                <div>
-                  <div class="detail-box">
-                    <div class="upper-part">
-                      <h6>{{ details.airlineName }}</h6>
-                      <h2>{{ details.title }}</h2>
-                      <h5>{{ details.subTitle }}</h5>
-                    </div>
-                    <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/page/other-pages/contact-us-1']">read more</a>
-                  </div>
+        <owl-carousel-o [options]="options">
+          @for(details of airlines; track details){
+          <ng-template carouselSlide>
+            <div>
+              <div class="detail-box">
+                <div class="upper-part">
+                  <h6>{{ details.airlineName }}</h6>
+                  <h2>{{ details.title }}</h2>
+                  <h5>{{ details.subTitle }}</h5>
                 </div>
-              </ng-template>
-            }
-          </owl-carousel-o>
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-rounded btn-sm color1"
+                  [routerLink]="['/page/other-pages/contact-us-1']"
+                  >read more</a
+                >
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
         }
       </div>
     </div>

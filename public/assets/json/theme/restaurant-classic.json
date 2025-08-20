@@ -1,5 +1,5 @@
 {
-  "category": [24,25,26,27,28],
+  "category": [24, 25, 26, 27, 28],
   "breakfast": [
     {
       "id": 1,
@@ -8,35 +8,35 @@
       "rating": 4,
       "type": "maxican"
     },
-     {
+    {
       "id": 2,
       "title": "franky",
       "image": "assets/images/restaurant/filter/2.jpg",
       "rating": 5,
       "type": "indian"
     },
-     {
+    {
       "id": 3,
       "title": "crispy pizza",
       "image": "assets/images/restaurant/filter/3.jpg",
       "rating": 3,
       "type": "maxican"
     },
-     {
+    {
       "id": 4,
       "title": "pasta",
       "image": "assets/images/restaurant/filter/4.jpg",
       "rating": 4,
       "type": "maxican"
     },
-     {
+    {
       "id": 5,
       "title": "panner",
       "image": "assets/images/restaurant/filter/5.jpg",
       "rating": 4,
       "type": "indian"
     },
-     {
+    {
       "id": 6,
       "title": "dhosa",
       "image": "assets/images/restaurant/filter/6.jpg",
@@ -44,10 +44,10 @@
       "type": "indian"
     }
   ],
-  "service": [1,2,3,4,5,6],
-  "dishes": [29,30,31,32],
-  "meal": [7,8,9],
-  "testimonial": [1,2,3],
+  "service": [1, 2, 3, 4, 5, 6],
+  "dishes": [29, 30, 31, 32],
+  "meal": [7, 8, 9],
+  "testimonial": [1, 2, 3],
   "socialGallery": [
     {
       "id": 1,

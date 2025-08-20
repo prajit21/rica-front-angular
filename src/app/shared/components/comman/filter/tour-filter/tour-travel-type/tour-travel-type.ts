@@ -1,53 +1,55 @@
-import { Component, inject } from '@angular/core';
-import { tourTravelType } from '../../../../../../shared/components/data/data/filter/tour';
-import { ActivatedRoute, Router } from '@angular/router';
 import { NgStyle } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { tourTravelType } from '../../../../../../shared/components/data/data/filter/tour';
 
 @Component({
-    selector: 'app-tour-travel-type',
-    templateUrl: './tour-travel-type.html',
-    styleUrls: ['./tour-travel-type.scss'],
-    imports: [NgStyle]
+  selector: 'app-tour-travel-type',
+  templateUrl: './tour-travel-type.html',
+  styleUrls: ['./tour-travel-type.scss'],
+  imports: [NgStyle],
 })
 export class TourTravelType {
-
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
   public tourTravelType = tourTravelType;
   public isOpenTravelType: boolean = true;
-  public selectedTravelType: string[] = []
+  public selectedTravelType: string[] = [];
 
-  constructor(){
-      this.route.queryParams.subscribe((params) => {
-        this.selectedTravelType = params['travel_type'] ? params['travel_type'].split(",") : []
-      })
-    }
+  constructor() {
+    this.route.queryParams.subscribe(params => {
+      this.selectedTravelType = params['travel_type'] ? params['travel_type'].split(',') : [];
+    });
+  }
 
-  openTravelType(){
+  openTravelType() {
     this.isOpenTravelType = !this.isOpenTravelType;
   }
 
-  applyFilter(event: Event){
-    const index = this.selectedTravelType.indexOf((event.target as HTMLInputElement).value);  // checked and unchecked value
+  applyFilter(event: Event) {
+    const index = this.selectedTravelType.indexOf((event.target as HTMLInputElement).value); // checked and unchecked value
 
-    if((event.target as HTMLInputElement).checked){
-      this.selectedTravelType.push((event.target as HTMLInputElement).value)
-    }else{
-      this.selectedTravelType.splice(index,1)
+    if ((event.target as HTMLInputElement).checked) {
+      this.selectedTravelType.push((event.target as HTMLInputElement).value);
+    } else {
+      this.selectedTravelType.splice(index, 1);
     }
 
-      this.router.navigate([], {
+    void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { travel_type: this.selectedTravelType.length ? this.selectedTravelType.join(",") : null },
+      queryParams: {
+        travel_type: this.selectedTravelType.length ? this.selectedTravelType.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
-      skipLocationChange: false  // do trigger navigation
+      skipLocationChange: false, // do trigger navigation
     });
   }
 
   // check if the item are selected
-  checked(item: string){
-    if(this.selectedTravelType?.includes(item)){
+  checked(item: string) {
+    if (this.selectedTravelType?.includes(item)) {
       return true;
     }
     return false;

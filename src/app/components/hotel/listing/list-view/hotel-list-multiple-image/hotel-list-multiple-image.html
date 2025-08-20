@@ -1,6 +1,12 @@
 <app-header [headerClass]="'inner-page'" />
 
-<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'hotel'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="bg-white pt-0 search-panel" id="searchBar">
   <div class="container">
@@ -19,7 +25,12 @@
         <app-filter [type]="'hotel'" />
       </div>
       <div class="col-lg-9 ratio3_2">
-        <app-details [type]="'hotel-list'" [responsiveLatestFilter]="true" [thumbnailImages]="true" [description]="true" />
+        <app-details
+          [type]="'hotel-list'"
+          [responsiveLatestFilter]="true"
+          [thumbnailImages]="true"
+          [description]="true"
+        />
       </div>
     </div>
   </div>
@@ -27,4 +38,11 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'hotel'" [filterType]="'left'" [filter]="true" [list]="true" [grid]="false" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'hotel'"
+  [filterType]="'left'"
+  [filter]="true"
+  [list]="true"
+  [grid]="false"
+/>

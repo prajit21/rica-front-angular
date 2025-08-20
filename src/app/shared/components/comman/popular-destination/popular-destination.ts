@@ -1,24 +1,25 @@
 import { Component, inject, Input, input } from '@angular/core';
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 import { popularDestination } from '../../../../shared/interface/hotel-vector';
 import { exploreTheme } from '../../../../shared/interface/tour-vector';
 import { HotelService } from '../../../../shared/services/hotel.service';
 import { CurrencySymbolPipe } from '../../../pipe/currency.pipe';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @Component({
-    selector: 'app-popular-destination',
-    templateUrl: './popular-destination.html',
-    styleUrls: ['./popular-destination.scss'],
-    imports: [CarouselModule, CurrencySymbolPipe]
+  selector: 'app-popular-destination',
+  templateUrl: './popular-destination.html',
+  styleUrls: ['./popular-destination.scss'],
+  imports: [CarouselModule, CurrencySymbolPipe],
 })
 export class PopularDestination {
-
   public hotelService = inject(HotelService);
 
   readonly popularDestination = input<popularDestination[]>();
   @Input() themes: exploreTheme[];
 
-   public options = {
+  public options = {
     loop: true,
     nav: false,
     dots: false,
@@ -44,8 +45,7 @@ export class PopularDestination {
       1200: {
         items: 6,
         touchDrag: false,
-      }
-    }
-  }
-
+      },
+    },
+  };
 }

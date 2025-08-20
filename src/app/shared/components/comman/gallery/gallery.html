@@ -1,7 +1,5 @@
-@if(type() == 'basic'){
-  <app-gallery-one [gallery]="gallery()!" />
-}
-
-@if(type() == 'simple'){
-  <app-gallery-two [images]="images()" />
+@if(type() === 'basic'){
+<app-gallery-one [gallery]="gallery()!" />
+} @if(type() === 'simple'){
+<app-gallery-two [images]="images()" />
 }

@@ -24,7 +24,7 @@
       "carOption": "automatic",
       "rating": 4,
       "category": "popular",
-      "tags": ["sadan","four","1_5","automatic"]
+      "tags": ["sadan", "four", "1_5", "automatic"]
     },
     {
       "id": 2,
@@ -50,7 +50,7 @@
       "carOption": "manual",
       "rating": 2,
       "category": "latest",
-      "tags": ["medium","two","1_5","manual"]
+      "tags": ["medium", "two", "1_5", "manual"]
     },
     {
       "id": 3,
@@ -76,7 +76,7 @@
       "carOption": "air conditioning",
       "rating": 4,
       "category": "popular",
-      "tags": ["mini","four","1_5","air_conditioning"]
+      "tags": ["mini", "four", "1_5", "air_conditioning"]
     },
     {
       "id": 4,
@@ -102,7 +102,7 @@
       "carOption": "automatic",
       "rating": 5,
       "category": "latest",
-      "tags": ["standard","five","6_10","automatic"]
+      "tags": ["standard", "five", "6_10", "automatic"]
     },
     {
       "id": 5,
@@ -128,7 +128,7 @@
       "carOption": "manual",
       "rating": 5,
       "category": "popular",
-      "tags": ["tempo","five","6_10","manual"]
+      "tags": ["tempo", "five", "6_10", "manual"]
     },
     {
       "id": 6,
@@ -154,7 +154,7 @@
       "carOption": "automatic",
       "rating": 4,
       "category": "trend",
-      "tags": ["suv","four","10_more","automatic"]
+      "tags": ["suv", "four", "10_more", "automatic"]
     },
     {
       "id": 7,
@@ -180,7 +180,7 @@
       "carOption": "air conditioning",
       "rating": 3,
       "category": "trend",
-      "tags": ["luxury","three","1_5","air_conditioning"]
+      "tags": ["luxury", "three", "1_5", "air_conditioning"]
     },
     {
       "id": 8,
@@ -206,7 +206,7 @@
       "carOption": "manual",
       "rating": 2,
       "category": "latest",
-      "tags": ["medium","two","10_more","manual"]
+      "tags": ["medium", "two", "10_more", "manual"]
     }
   ]
 }

@@ -1,6 +1,12 @@
 <app-header [headerClass]="'inner-page'" />
 
-<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'hotel'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="bg-white pt-0 search-panel" id="searchBar">
   <div class="container">
@@ -16,10 +22,19 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <app-grid-panel [type]="'hotel'" (selectedTabValue)="getTabValue($event)" [horizontalFilter]="true" />
+        <app-grid-panel
+          [type]="'hotel'"
+          (selectedTabValue)="getTabValue($event)"
+          [horizontalFilter]="true"
+        />
       </div>
       <div class="col-lg-12 ratio3_2">
-        <app-details [type]="'hotel'" [selectedTabValue]="selectedTabValue" [gridType]="'3-grid'" [responsiveLatestFilter]="false" />
+        <app-details
+          [type]="'hotel'"
+          [selectedTabValue]="selectedTabValue"
+          [gridType]="'3-grid'"
+          [responsiveLatestFilter]="false"
+        />
       </div>
     </div>
   </div>
@@ -27,4 +42,9 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'hotel'" [gridType]="'3-grid'" [filter]="false" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'hotel'"
+  [gridType]="'3-grid'"
+  [filter]="false"
+/>

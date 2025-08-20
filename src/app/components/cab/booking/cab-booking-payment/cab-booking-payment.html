@@ -1,6 +1,12 @@
 <app-header [headerClass]="'light_header'" />
 
-<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'cab'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="small-section">
   <div class="container">
@@ -25,7 +31,9 @@
 </section>
 
 <div class="book-panel">
-  <h6 class="mb-0 text">grand total : <span>{{ 1250 | currencyPipe: hotelService.currency }}</span></h6>
+  <h6 class="mb-0 text">
+    grand total : <span>{{ 1250 | currencyPipe: hotelService.currency }}</span>
+  </h6>
   <button type="button" class="btn bottom-btn theme-color">continue</button>
 </div>
 

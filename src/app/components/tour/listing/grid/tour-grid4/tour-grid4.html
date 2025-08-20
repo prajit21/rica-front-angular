@@ -1,12 +1,23 @@
 <app-header [headerClass]="'inner-page overlay-black'" />
 
-<app-breadcrumbs [type]="'tour'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"  />
+<app-breadcrumbs
+  [type]="'tour'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="small-section bg-inner">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <app-grid-panel [type]="'tour'" [tourHorizontalFilter]="true" (selectedTabValue)="getTabValue($event)" [filterClass]="false" />
+        <app-grid-panel
+          [type]="'tour'"
+          [tourHorizontalFilter]="true"
+          (selectedTabValue)="getTabValue($event)"
+          [filterClass]="false"
+        />
       </div>
       <div class="col-xl-12 onclick-map" [class.show]="tourService.isOpenFindTours">
         <div class="book-table single-table bg-inner">
@@ -16,7 +27,12 @@
         </div>
       </div>
       <div class="col-lg-12 ratio3_2">
-        <app-details [type]="'tour'" [selectedTabValue]="selectedTabValue" [gridType]="'4-grid'" [responsiveLatestFilter]="false" />
+        <app-details
+          [type]="'tour'"
+          [selectedTabValue]="selectedTabValue"
+          [gridType]="'4-grid'"
+          [responsiveLatestFilter]="false"
+        />
       </div>
     </div>
   </div>
@@ -24,4 +40,9 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'tour'" [gridType]="'4-grid'" [filter]="false" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'tour'"
+  [gridType]="'4-grid'"
+  [filter]="false"
+/>

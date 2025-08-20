@@ -3,25 +3,26 @@
 <app-flight-modern-home-section />
 
 @if(flightModern){
-  <app-flight-modern-destination [destination]="flightModern.destination" />
+<app-flight-modern-destination [destination]="flightModern.destination" />
 
-  <app-flight-modern-airlines-detail [airlines]="flightModern.airlines" />
+<app-flight-modern-airlines-detail [airlines]="flightModern.airlines" />
 
-  @if(category){
-    <app-flight-modern-category [id]="flightModern.category" [category]="category.category" />
-  }
-}
+@if(category){
+<app-flight-modern-category [id]="flightModern.category" [category]="category.category" />
+} }
 
 <app-flight-modern-banner />
 
-@if(flightModern){
-  @if(category){
-    <app-flight-modern-airline-ticket [id]="flightModern.flightDetails" [flightDetails]="category.category" />
-  }
+@if(flightModern){ @if(category){
+<app-flight-modern-airline-ticket
+  [id]="flightModern.flightDetails"
+  [flightDetails]="category.category"
+/>
+}
 
-  <app-flight-modern-top-destination [topDestination]="flightModern.topDestination" />
+<app-flight-modern-top-destination [topDestination]="flightModern.topDestination" />
 
-  <app-flight-modern-blog [blogs]="flightModern.blog" />
+<app-flight-modern-blog [blogs]="flightModern.blog" />
 }
 
 <app-flight-modern-subscribe />

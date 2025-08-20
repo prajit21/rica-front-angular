@@ -1,11 +1,18 @@
-<header [class.inner-page]="skeletonType() == 'hotel' || skeletonType() == 'tour'" [class.light_header]="skeletonType() == 'single-page' || skeletonType() =='cab-list' || skeletonType() == 'cab' || skeletonType() == 'restaurant' || skeletonType() == 'blog-skeleton' || skeletonType() == 'blog-detail-skeleton' || skeletonType() == 'restaurant-single-page'">
+<header
+  [class.inner-page]="skeletonType() === 'hotel' || skeletonType() === 'tour'"
+  [class.light_header]="skeletonType() === 'single-page' || skeletonType() ==='cab-list' || skeletonType() === 'cab' || skeletonType() === 'restaurant' || skeletonType() === 'blog-skeleton' || skeletonType() === 'blog-detail-skeleton' || skeletonType() === 'restaurant-single-page'"
+>
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="menu">
           <div class="brand-logo">
             <a href="javascript:void(0)">
-              <img src="assets/images/icon/footer-logo.png" alt="logo" class="img-fluid blur-up lazyload">
+              <img
+                src="assets/images/icon/footer-logo.png"
+                alt="logo"
+                class="img-fluid blur-up lazyload"
+              />
             </a>
           </div>
           <nav>
@@ -32,8 +39,8 @@
                   <li class="dropdown">
                     <a href="javascript:void(0)" class="nav-link menu-title">restaurant</a>
                   </li>
-                  <li class="mega-menu"><a href="javascript:void(0)" class="nav-link menu-title">
-                      pages</a>
+                  <li class="mega-menu">
+                    <a href="javascript:void(0)" class="nav-link menu-title"> pages</a>
                   </li>
                 </ul>
               </div>

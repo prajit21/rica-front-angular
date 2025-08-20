@@ -61,7 +61,7 @@
           "includes": true
         }
       ],
-      "tags": ["four","with_flights","beach","11_15_nights"]
+      "tags": ["four", "with_flights", "beach", "11_15_nights"]
     },
     {
       "id": 2,
@@ -117,7 +117,7 @@
           "includes": false
         }
       ],
-      "tags": ["two","without_flights","family","21_nights"]
+      "tags": ["two", "without_flights", "family", "21_nights"]
     },
     {
       "id": 3,
@@ -173,7 +173,7 @@
           "includes": true
         }
       ],
-      "tags": ["five","with_flights","adventure","4_7_nights"]
+      "tags": ["five", "with_flights", "adventure", "4_7_nights"]
     },
     {
       "id": 4,
@@ -229,7 +229,7 @@
           "includes": true
         }
       ],
-      "tags": ["four","without_flights","cruise","15_21_nights"]
+      "tags": ["four", "without_flights", "cruise", "15_21_nights"]
     },
     {
       "id": 5,
@@ -286,7 +286,7 @@
           "includes": false
         }
       ],
-      "tags": ["four","with_flights","shopping","3_nights"]
+      "tags": ["four", "with_flights", "shopping", "3_nights"]
     },
     {
       "id": 6,
@@ -342,7 +342,7 @@
           "includes": true
         }
       ],
-      "tags": ["five","without_flights","honeymoon","7_11_nights"]
+      "tags": ["five", "without_flights", "honeymoon", "7_11_nights"]
     }
   ]
 }

@@ -1,8 +1,8 @@
-export interface flights{
-  flight: flight[]
+export interface flights {
+  flight: flight[];
 }
 
-export interface flight{
+export interface flight {
   id: number;
   airline: string;
   img: string;
@@ -19,8 +19,7 @@ export interface flight{
   tags: string[];
 }
 
-
-export interface flightMeal{
+export interface flightMeal {
   id: number;
   title: string;
   description: string;
@@ -30,7 +29,7 @@ export interface flightMeal{
   value: number;
 }
 
-export interface additionalLuggage{
+export interface additionalLuggage {
   id: number;
   title: string;
   price: number;

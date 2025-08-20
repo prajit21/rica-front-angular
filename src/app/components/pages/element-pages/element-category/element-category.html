@@ -1,22 +1,38 @@
 <app-header [headerClass]="'inner-page'" />
 
-<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'pages'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 @if(category){
-    <app-restaurant-classic-special-dishes [id]="restaurantClassic.dishes" [dishes]="category" [rounded]="false" />
+<app-restaurant-classic-special-dishes
+  [id]="restaurantClassic.dishes"
+  [dishes]="category"
+  [rounded]="false"
+/>
+} @if(tourModern){
+<div class="pages-category">
+  <app-tour-modern-category [id]="tourModern.category" [category]="category" />
+</div>
+<div class="pages-category-slider">
+  <app-tour-modern-awesome-package [id]="tourModern.package" [package]="category" />
+</div>
 }
 
-@if(tourModern){
-  <div class="pages-category">
-    <app-tour-modern-category [id]="tourModern.category" [category]="category" />
-  </div>
-  <div class="pages-category-slider">
-    <app-tour-modern-awesome-package [id]="tourModern.package" [package]="category" />
-  </div>
-}
-
-<section class="section-b-space dark-cls category-bg bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
-  <img src="assets/images/cab/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+<section
+  class="section-b-space dark-cls category-bg bg-size"
+  [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'"
+>
+  <img
+    src="assets/images/cab/grey-bg.jpg"
+    alt="background-image"
+    class="img-fluid blur-up lazyload bg-img"
+    style="display: none"
+  />
   <div class="container">
     <app-title [type]="'simple'" [title]="'new'" [subTitle]="'our vehicle'" />
     <div class="row">
@@ -29,19 +45,18 @@
   </div>
 </section>
 
-@if(mixClassic){
-  @if(category){
-    <div class="element-top-category">
-      <app-mix-classic-category [id]="mixClassic.category" [category]="mixClassicCategory" />
-    </div>
-  }
-}
-
-@if(flightModern){
-  <app-flight-modern-category [id]="flightModern.category" [category]="flightCategory" />
-  <div class="element-airline-ticket">
-    <app-flight-modern-airline-ticket [id]="flightModern.flightDetails" [flightDetails]="flightCategory" />
-  </div>
+@if(mixClassic){ @if(category){
+<div class="element-top-category">
+  <app-mix-classic-category [id]="mixClassic.category" [category]="mixClassicCategory" />
+</div>
+} } @if(flightModern){
+<app-flight-modern-category [id]="flightModern.category" [category]="flightCategory" />
+<div class="element-airline-ticket">
+  <app-flight-modern-airline-ticket
+    [id]="flightModern.flightDetails"
+    [flightDetails]="flightCategory"
+  />
+</div>
 }
 
 <app-footer [location]="true" />

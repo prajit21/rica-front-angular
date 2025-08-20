@@ -1,19 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+
 import { Observable, map } from 'rxjs';
+
 import { cab, cabDetails, cabs } from '../interface/cab';
 import { cabClassic } from '../interface/cab-classic';
 import { cabMap } from '../interface/cab-map';
 import { cabDetailsModern, cabModern } from '../interface/cab-modern';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CabService {
-
   private http = inject(HttpClient);
-
 
   public isOpenResponsiveFilter: boolean = false;
   public isOpenHorizontalFilter: boolean = false;
@@ -40,35 +39,36 @@ export class CabService {
 
   // Cabs
   cab(): Observable<cabs> {
-    return this.http.get<cabs>('assets/json/grid/cabs.json')
+    return this.http.get<cabs>('assets/json/grid/cabs.json');
   }
 
   // Cab SinglePage
   cabPage(): Observable<cabDetails> {
-    return this.http.get<cabDetails>('assets/json/pages/cab-details.json')
+    return this.http.get<cabDetails>('assets/json/pages/cab-details.json');
   }
 
   // Cab Filter
   public cabs: string | undefined;
-  getCabDetails(filter: string[]): Observable<cab[]> {
-    return this.cab().pipe(map((cab) =>
-      cab.cab.filter((item) => {
-        if (!filter.length) {
-          return true
-        }
-        this.cabs = filter.find((data: string) => {
-          if (item.tags) {
-            if (item.tags.includes(data))
-              return data
+  GetCabDetails(filter: string[]): Observable<cab[]> {
+    return this.cab().pipe(
+      map(cab =>
+        cab.cab.filter(item => {
+          if (!filter.length) {
+            return true;
           }
-        })
-        return this.cabs;
-      })
-    ));
+          this.cabs = filter.find((data: string) => {
+            if (item.tags) {
+              if (item.tags.includes(data)) return data;
+            }
+          });
+          return this.cabs;
+        }),
+      ),
+    );
   }
 
   // Get Max Price
   getMaxPrice(): Observable<number> {
-    return this.cab().pipe(map((cab) => Math.max(...cab.cab.map((price) => price.price))));
+    return this.cab().pipe(map(cab => Math.max(...cab.cab.map(price => price.price))));
   }
 }

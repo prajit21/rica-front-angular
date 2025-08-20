@@ -1,7 +1,5 @@
-@if(type() == 'basic'){
-  <app-application-one />
-}
-
-@if(type() == 'simple'){
-  <app-application-two />
+@if(type() === 'basic'){
+<app-application-one />
+} @if(type() === 'simple'){
+<app-application-two />
 }

@@ -1,17 +1,19 @@
-import { inject, Injectable } from "@angular/core";
-import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { tours } from "../../interface/tour";
-import { TourService } from "../../services/tour.service";
-import { getTours } from "../action/tour.action";
+import { inject, Injectable } from '@angular/core';
 
-export class tourModal {
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+
+import { tours } from '../../interface/tour';
+import { TourService } from '../../services/tour.service';
+import { GetTours } from '../action/tour.action';
+
+export class TourModal {
   data: {
     tour: tours[];
   };
 }
 
-@State<tourModal>({
+@State<TourModal>({
   name: 'tour',
   defaults: {
     data: {
@@ -19,31 +21,28 @@ export class tourModal {
     },
   },
 })
-
 @Injectable()
-export class tourState{
-
+export class TourState {
   private tourService = inject(TourService);
-
 
   public tours: tours[];
 
   @Selector()
-  static tour(state: tourModal) {
+  static tour(state: TourModal) {
     return state.data.tour;
   }
 
-  @Action(getTours)
-  getData( ctx: StateContext<tourModal>, action: getTours ){
+  @Action(GetTours)
+  getData(ctx: StateContext<TourModal>, action: GetTours) {
     return this.tourService.getTourDetails(action.filter).pipe(
-      tap((res) => {
-        if (action.price.minPrice != 0 || action.price.maxPrice != 0 ) {
+      tap(res => {
+        if (action.price.minPrice != 0 || action.price.maxPrice != 0) {
           this.tours = res.filter(
             (item: { price: number }) =>
-              item.price >= action.price.minPrice && item.price <= action.price.maxPrice
+              item.price >= action.price.minPrice && item.price <= action.price.maxPrice,
           );
-        }else {
-          this.tours = res
+        } else {
+          this.tours = res;
         }
 
         ctx.setState({
@@ -51,8 +50,7 @@ export class tourState{
             tour: this.tours,
           },
         });
-
-      })
-    )
+      }),
+    );
   }
 }

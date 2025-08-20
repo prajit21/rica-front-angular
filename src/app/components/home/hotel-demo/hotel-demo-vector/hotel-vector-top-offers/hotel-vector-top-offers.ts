@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { topOffers } from '../../../../../shared/interface/hotel-vector';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { topOffers } from '../../../../../shared/interface/hotel-vector';
+
 @Component({
-    selector: 'app-hotel-vector-top-offers',
-    templateUrl: './hotel-vector-top-offers.html',
-    styleUrls: ['./hotel-vector-top-offers.scss'],
-    imports: [CarouselModule]
+  selector: 'app-hotel-vector-top-offers',
+  templateUrl: './hotel-vector-top-offers.html',
+  styleUrls: ['./hotel-vector-top-offers.scss'],
+  imports: [CarouselModule],
 })
 export class HotelVectorTopOffers {
-
   @Input() topOffers: topOffers[];
 
   public options = {
@@ -46,7 +47,7 @@ export class HotelVectorTopOffers {
       1200: {
         items: 5,
         touchDrag: false,
-      }
-    }
-  }
+      },
+    },
+  };
 }

@@ -2,15 +2,20 @@
   <h6>select your wallet</h6>
   <div class="row">
     @for(details of walletDetails; track details){
-      <div class="form-check col-md-6">
-        <input class="form-check-input radio_animated" type="radio" name="exampleRadios2" id="{{ details.radioId }}" value="{{ details.radioValue }}" [checked]="details.checked">
-        <label class="form-check-label" for="{{ details.radioId }}">
-          {{ details.title }}
-        </label>
-      </div>
+    <div class="form-check col-md-6">
+      <input
+        class="form-check-input radio_animated"
+        type="radio"
+        name="exampleRadios2"
+        id="{{ details.radioId }}"
+        value="{{ details.radioValue }}"
+        [checked]="details.checked"
+      />
+      <label class="form-check-label" for="{{ details.radioId }}"> {{ details.title }} </label>
+    </div>
     }
   </div>
   <div class="payment-btn">
-    <button type="button"  class="btn btn-solid color1">make payment</button>
+    <button type="button" class="btn btn-solid color1">make payment</button>
   </div>
 </form>

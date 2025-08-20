@@ -1,24 +1,32 @@
+import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FlightService } from '../../../../../shared/services/flight.service';
-import { priceFilter } from '../../../../../shared/interface/hotel';
 import { ActivatedRoute } from '@angular/router';
+
 import { Store } from '@ngxs/store';
-import { getFlights } from '../../../../../shared/store/action/flight.action';
+
+import { FlightAirlines } from './widgets/flight-airlines/flight-airlines';
 import { FlightArrivalTime } from './widgets/flight-arrival-time/flight-arrival-time';
 import { FlightDepartureTime } from './widgets/flight-departure-time/flight-departure-time';
-import { FlightAirlines } from './widgets/flight-airlines/flight-airlines';
 import { FlightPrice } from './widgets/flight-price/flight-price';
 import { FlightStops } from './widgets/flight-stops/flight-stops';
-import { NgStyle } from '@angular/common';
+import { priceFilter } from '../../../../../shared/interface/hotel';
+import { FlightService } from '../../../../../shared/services/flight.service';
+import { GetFlights } from '../../../../../shared/store/action/flight.action';
 
 @Component({
-    selector: 'app-flight-filter',
-    templateUrl: './flight-filter.html',
-    styleUrl: './flight-filter.scss',
-    imports: [NgStyle, FlightStops, FlightPrice, FlightAirlines, FlightDepartureTime, FlightArrivalTime]
+  selector: 'app-flight-filter',
+  templateUrl: './flight-filter.html',
+  styleUrl: './flight-filter.scss',
+  imports: [
+    NgStyle,
+    FlightStops,
+    FlightPrice,
+    FlightAirlines,
+    FlightDepartureTime,
+    FlightArrivalTime,
+  ],
 })
 export class FlightFilter {
-
   private route = inject(ActivatedRoute);
   public flightService = inject(FlightService);
   private store = inject(Store);
@@ -39,53 +47,59 @@ export class FlightFilter {
   public priceData: priceFilter;
   public paramsTag: string[];
 
-  constructor(){
+  constructor() {
     this.flightService.isOpenResponsiveFilter = false;
 
-    this.route.queryParams.subscribe((params) => {
-        this.getStopParams = params['stop'] ? params['stop'].split(',') : [];
-        this.getAirlineParams = params['airline'] ? params['airline'].split(',') : [];
-        this.getArrivalTimeParams = params['arrival_time'] ? params['arrival_time'].split(',') : [];
-        this.getDepartureTimeParams = params['departure_time'] ? params['departure_time'].split(',') : [];
-        this.minPrice = params['minPrice'] ? params['minPrice'] : [];
-        this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
-        this.priceData = {
-          minPrice: this.minPrice,
-          maxPrice: this.maxPrice
-        }
+    this.route.queryParams.subscribe(params => {
+      this.getStopParams = params['stop'] ? params['stop'].split(',') : [];
+      this.getAirlineParams = params['airline'] ? params['airline'].split(',') : [];
+      this.getArrivalTimeParams = params['arrival_time'] ? params['arrival_time'].split(',') : [];
+      this.getDepartureTimeParams = params['departure_time']
+        ? params['departure_time'].split(',')
+        : [];
+      this.minPrice = params['minPrice'] ? params['minPrice'] : [];
+      this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
+      this.priceData = {
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+      };
 
-        this.paramsTag = [...this.getStopParams, ...this.getAirlineParams, ...this.getArrivalTimeParams, ...this.getDepartureTimeParams];
+      this.paramsTag = [
+        ...this.getStopParams,
+        ...this.getAirlineParams,
+        ...this.getArrivalTimeParams,
+        ...this.getDepartureTimeParams,
+      ];
 
-        this.store.dispatch(new getFlights(this.paramsTag, this.priceData));
-
-      })
+      this.store.dispatch(new GetFlights(this.paramsTag, this.priceData));
+    });
   }
 
-  openFilter(){
-    this.isOpenFilter =! this.isOpenFilter;
+  openFilter() {
+    this.isOpenFilter = !this.isOpenFilter;
   }
 
-  openStops(){
-    this.isOpenStops =! this.isOpenStops;
+  openStops() {
+    this.isOpenStops = !this.isOpenStops;
   }
 
-  openPrice(){
-    this.isOpenPrice =! this.isOpenPrice;
+  openPrice() {
+    this.isOpenPrice = !this.isOpenPrice;
   }
 
-  openAirLines(){
-    this.isOpenAirLines =! this.isOpenAirLines;
+  openAirLines() {
+    this.isOpenAirLines = !this.isOpenAirLines;
   }
 
-  openDepartureTime(){
-    this.isOpenDepartureTime =! this.isOpenDepartureTime;
+  openDepartureTime() {
+    this.isOpenDepartureTime = !this.isOpenDepartureTime;
   }
 
-  openArrivalTime(){
-    this.isOpenArrivalTime =! this.isOpenArrivalTime;
+  openArrivalTime() {
+    this.isOpenArrivalTime = !this.isOpenArrivalTime;
   }
 
-  closeResponsiveFilter(){
+  closeResponsiveFilter() {
     this.flightService.isOpenResponsiveFilter = false;
   }
 }

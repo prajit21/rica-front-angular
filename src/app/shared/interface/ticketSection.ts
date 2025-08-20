@@ -1,8 +1,8 @@
-export interface ticketSectionModel{
-  ticketSection: ticketSection[]
+export interface ticketSectionModel {
+  ticketSection: ticketSection[];
 }
 
-export interface ticketSection{
+export interface ticketSection {
   id: number;
   ticketTitle: string;
   url: string;
@@ -10,6 +10,6 @@ export interface ticketSection{
   subTitle: string;
   subTitle2: string;
   description: string;
-  price: number,
+  price: number;
   barcode: string;
 }

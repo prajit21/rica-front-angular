@@ -1,4 +1,8 @@
-<div class="top-filter-section" (clickOutside)="clickOutside()" [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+<div
+  class="top-filter-section"
+  (clickOutside)="clickOutside()"
+  [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+>
   <ul>
     <li class="back-btn">
       <div class="mobile_back text-end" (click)="closeResponsiveFilter()">

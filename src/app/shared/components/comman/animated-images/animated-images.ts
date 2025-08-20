@@ -1,21 +1,20 @@
 import { Component, Renderer2, inject, input } from '@angular/core';
+
 import { animatedImage } from '../../../../shared/interface/cab-modern';
 
 @Component({
-    selector: 'app-animated-images',
-    templateUrl: './animated-images.html',
-    styleUrls: ['./animated-images.scss'],
-    
+  selector: 'app-animated-images',
+  templateUrl: './animated-images.html',
+  styleUrls: ['./animated-images.scss'],
 })
 export class AnimatedImages {
-
-  private renderer = inject(Renderer2); 
+  private renderer = inject(Renderer2);
 
   readonly images = input<animatedImage[]>();
   readonly type = input<string>();
   readonly classic = input<boolean>();
 
-  tilt(e: MouseEvent){
+  tilt(e: MouseEvent) {
     const { top, bottom, left, right } = (e.target as HTMLElement).getBoundingClientRect();
     const middleX = right - left;
     const middleY = bottom - top;
@@ -29,7 +28,11 @@ export class AnimatedImages {
     this.renderer.setStyle(e.target, 'transform', transformValue);
   }
 
-  tiltOver(e: MouseEvent){
-    this.renderer.setStyle(e.target, 'transform', 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)');
+  tiltOver(e: MouseEvent) {
+    this.renderer.setStyle(
+      e.target,
+      'transform',
+      'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)',
+    );
   }
 }

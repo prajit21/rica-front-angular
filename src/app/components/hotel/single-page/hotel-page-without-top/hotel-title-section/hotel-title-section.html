@@ -11,7 +11,9 @@
           <i class="far fa-star"></i>
         </div>
         <div class="share-buttons">
-          <a href="javascript:void(0)" class="btn btn-solid"><i class="far fa-share-square"></i> share</a>
+          <a href="javascript:void(0)" class="btn btn-solid"
+            ><i class="far fa-share-square"></i> share</a
+          >
           <a href="javascript:void(0)" class="btn btn-solid"><i class="far fa-heart"></i> save</a>
         </div>
       </div>
@@ -22,8 +24,15 @@
       </div>
     </div>
     <div class="right-part">
-      <h2 class="price">{{ 250 | currencyPipe: hotelService.currency }} <span>/ per night</span></h2>
-      <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/hotel/booking/hotel-booking']">book this now</a>
+      <h2 class="price">
+        {{ 250 | currencyPipe: hotelService.currency }} <span>/ per night</span>
+      </h2>
+      <a
+        href="javascript:void(0)"
+        class="btn btn-rounded btn-sm color1"
+        [routerLink]="['/hotel/booking/hotel-booking']"
+        >book this now</a
+      >
     </div>
   </div>
 </div>

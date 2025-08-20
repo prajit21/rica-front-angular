@@ -1,10 +1,10 @@
 <section class="single-section small-section bg-inner">
   <div class="container">
     <div class="row">
-      @if(filterType() == 'left'){
-        <div class="col-xl-3 col-lg-4 order_cls">
-          <app-tour-single-page-skeleton-filter />
-        </div>
+      @if(filterType() === 'left'){
+      <div class="col-xl-3 col-lg-4 order_cls">
+        <app-tour-single-page-skeleton-filter />
+      </div>
       }
       <div class="col-xl-9 col-lg-8">
         <div class="description-section tab-section">
@@ -57,7 +57,7 @@
               <div class="detail-img">
                 <div class="ldr-img"></div>
               </div>
-              <div class="about-sec ">
+              <div class="about-sec">
                 <h6></h6>
                 <p>
                   <span></span>
@@ -81,10 +81,10 @@
           </div>
         </div>
       </div>
-      @if(filterType() != 'left'){
-        <div class="col-xl-3 col-lg-4">
-          <app-tour-single-page-skeleton-filter />
-        </div>
+      @if(filterType() !== 'left'){
+      <div class="col-xl-3 col-lg-4">
+        <app-tour-single-page-skeleton-filter />
+      </div>
       }
     </div>
   </div>

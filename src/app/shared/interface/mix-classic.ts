@@ -1,6 +1,6 @@
-import { animatedImage } from "./cab-modern";
+import { animatedImage } from './cab-modern';
 
-export interface mixClassic{
+export interface mixClassic {
   category: number[];
   hotelImages: animatedImage[];
 }

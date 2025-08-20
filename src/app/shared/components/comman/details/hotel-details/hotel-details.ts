@@ -1,31 +1,32 @@
 import { Component, inject, input } from '@angular/core';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
+
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { Select, Store } from '@ngxs/store';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Observable } from 'rxjs';
+
+import { pagination } from '../../../../../shared/interface/cab';
 import { hotels, priceFilter } from '../../../../../shared/interface/hotel';
 import { GridService } from '../../../../../shared/services/grid.service';
 import { HotelService } from '../../../../../shared/services/hotel.service';
 import { PaginationService } from '../../../../../shared/services/pagination.service';
-import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
-import { hotelState } from '../../../../../shared/store/state/hotel.state';
-import { Observable } from 'rxjs';
-import { pagination } from '../../../../../shared/interface/cab';
-import { getHotels } from '../../../../../shared/store/action/hotel.action';
+import { GetHotels } from '../../../../../shared/store/action/hotel.action';
+import { HotelState } from '../../../../../shared/store/state/hotel.state';
 import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
-import { Pagination } from '../../../ui/pagination/pagination';
 import { NoData } from '../../../ui/no-data/no-data';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Pagination } from '../../../ui/pagination/pagination';
 
 @Component({
-    selector: 'app-hotel-details',
-    templateUrl: './hotel-details.html',
-    styleUrls: ['./hotel-details.scss'],
-    imports: [CarouselModule, RouterLink, NgbRating, NoData, Pagination, CurrencySymbolPipe]
+  selector: 'app-hotel-details',
+  templateUrl: './hotel-details.html',
+  styleUrls: ['./hotel-details.scss'],
+  imports: [CarouselModule, RouterLink, NgbRating, NoData, Pagination, CurrencySymbolPipe],
 })
 export class HotelDetails {
-
-  private paginationService = inject(PaginationService); 
+  private paginationService = inject(PaginationService);
   public hotelService = inject(HotelService);
-  private router = inject(Router); 
+  private router = inject(Router);
   private route = inject(ActivatedRoute);
   private gridService = inject(GridService);
   private config = inject(NgbRatingConfig);
@@ -70,67 +71,71 @@ export class HotelDetails {
     loop: true,
     nav: true,
     dots: false,
-    navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>",],
+    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     responsive: {
       0: {
-        items: 1
-      }
+        items: 1,
+      },
     },
-  }
+  };
 
-  @Select(hotelState.hotel) hotel$: Observable<hotels[]>;
-  
-  constructor(){
-      this.route.queryParams.subscribe((params) => {
-        this.params = params;
-        this.pageNo = params['page'] ? params['page'] : this.pageNo;
-        this.getDistrictParams = params['district'] ? params['district'].split(',') : [];
-        this.getFacilityParams = params['facility'] ? params['facility'].split(',') : [];
-        this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
-        this.getLanguageParams = params['language'] ? params['language'].split(',') : [];
-        this.minPrice = params['minPrice'] ? params['minPrice'] : [];
-        this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
-        this.priceData = {
-          minPrice: this.minPrice,
-          maxPrice: this.maxPrice
+  @Select(HotelState.hotel) hotel$: Observable<hotels[]>;
+
+  constructor() {
+    this.route.queryParams.subscribe(params => {
+      this.params = params;
+      this.pageNo = params['page'] ? params['page'] : this.pageNo;
+      this.getDistrictParams = params['district'] ? params['district'].split(',') : [];
+      this.getFacilityParams = params['facility'] ? params['facility'].split(',') : [];
+      this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
+      this.getLanguageParams = params['language'] ? params['language'].split(',') : [];
+      this.minPrice = params['minPrice'] ? params['minPrice'] : [];
+      this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
+      this.priceData = {
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+      };
+
+      this.tags = [
+        ...this.getDistrictParams,
+        ...this.getFacilityParams,
+        ...this.getRatingParams,
+        ...this.getLanguageParams,
+      ];
+
+      // Rating
+      this.config.max = 5;
+      this.config.readonly = true;
+
+      this.hotel$.subscribe(res => {
+        this.hotelDetails = res;
+
+        if (this.hotelDetails) {
+          this.hotels = this.hotelDetails.filter(data => {
+            const selectedTabValue = this.selectedTabValue();
+            if (selectedTabValue == 'all') {
+              return data;
+            } else {
+              return data.category == selectedTabValue;
+            }
+          });
+          // Pagination
+          this.paginate = this.paginationService.getPager(this.hotels?.length, +this.pageNo);
+
+          this.hotels = this.hotels?.slice(this.paginate.startIndex, this.paginate.endIndex + 1);
         }
-
-        this.tags = [...this.getDistrictParams, ...this.getFacilityParams, ...this.getRatingParams, ...this.getLanguageParams]
-
-        // Rating
-        this.config.max = 5;
-        this.config.readonly = true;
-
-        this.hotel$.subscribe((res) => {
-          this.hotelDetails = res
-
-          if(this.hotelDetails){
-            this.hotels = this.hotelDetails.filter((data) => {
-              const selectedTabValue = this.selectedTabValue();
-              if(selectedTabValue == 'all'){
-                return data
-              }else{
-                return data.category == selectedTabValue;
-              }
-            })
-            // Pagination
-          this.paginate = this.paginationService.getPager(this.hotels?.length, +this.pageNo );
-
-          this.hotels = this.hotels?.slice(this.paginate.startIndex,this.paginate.endIndex + 1);
-          }
-        })
-      })
+      });
+    });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     const gridType = this.gridType();
-    if(gridType == '2-grid'){
+    if (gridType == '2-grid') {
       this.gridService.col_sm_6 = true;
-    }
-    else if(gridType == '3-grid'){
+    } else if (gridType == '3-grid') {
       this.gridService.col_sm_6 = true;
       this.gridService.col_xl_4 = true;
-    }else if(gridType == '4-grid'){
+    } else if (gridType == '4-grid') {
       this.gridService.col_sm_6 = true;
       this.gridService.col_xl_3 = true;
       this.gridService.col_lg_4 = true;
@@ -138,71 +143,68 @@ export class HotelDetails {
     }
   }
 
-  ngOnChanges(){
-    this.route.queryParams.subscribe((params) => {
+  ngOnChanges() {
+    this.route.queryParams.subscribe(params => {
       this.pageNo = params['page'] ? params['page'] : this.pageNo;
 
-      if(this.hotelDetails){
-          this.hotels = this.hotelDetails.filter((data) => {
-            const selectedTabValue = this.selectedTabValue();
-            if(selectedTabValue == 'all'){
-              return data
-            }else{
-              return data.category == selectedTabValue;
-            }
-          })
-        }
+      if (this.hotelDetails) {
+        this.hotels = this.hotelDetails.filter(data => {
+          const selectedTabValue = this.selectedTabValue();
+          if (selectedTabValue == 'all') {
+            return data;
+          } else {
+            return data.category == selectedTabValue;
+          }
+        });
+      }
       // Pagination
-        this.paginate = this.paginationService.getPager(this.hotels?.length, +this.pageNo );
+      this.paginate = this.paginationService.getPager(this.hotels?.length, +this.pageNo);
 
-        this.hotels = this.hotels?.slice(this.paginate.startIndex,this.paginate.endIndex + 1);
-
-    })
+      this.hotels = this.hotels?.slice(this.paginate.startIndex, this.paginate.endIndex + 1);
+    });
 
     // If No Sidebar
-    if(this.noSidebar()){
+    if (this.noSidebar()) {
       if (!Object.keys(this.params).length) {
         this.paramsTag = [];
-        this.store.dispatch(new getHotels(this.paramsTag, this.priceData));
+        this.store.dispatch(new GetHotels(this.paramsTag, this.priceData));
       }
     }
   }
 
-  setPage(page: number){
-    this.router.navigate([], {
+  setPage(page: number) {
+    void this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { page: page },
-      queryParamsHandling: "merge"
+      queryParamsHandling: 'merge',
     });
   }
 
-  openResponsiveFilter(){
+  openResponsiveFilter() {
     this.hotelService.isOpenResponsiveFilter = true;
   }
 
-  removeTag(value: string){
+  removeTag(value: string) {
     this.getDistrictParams = this.getDistrictParams.filter((district: string) => district != value);
     this.getFacilityParams = this.getFacilityParams.filter((facility: string) => facility != value);
     this.getRatingParams = this.getRatingParams.filter((rating: string) => rating != value);
     this.getLanguageParams = this.getLanguageParams.filter((language: string) => language != value);
 
-
     let params = {
       district: this.getDistrictParams.length ? this.getDistrictParams.join(',') : null,
       facility: this.getFacilityParams.length ? this.getFacilityParams.join(',') : null,
       rating: this.getRatingParams.length ? this.getRatingParams.join(',') : null,
-      language: this.getLanguageParams.length ? this.getLanguageParams.join(',') : null
-    }
+      language: this.getLanguageParams.length ? this.getLanguageParams.join(',') : null,
+    };
 
-    this.router.navigate([], {
+    void this.router.navigate([], {
       relativeTo: this.route,
       queryParams: params,
-      queryParamsHandling: "merge"
+      queryParamsHandling: 'merge',
     });
-
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     this.listView = this.gridService.listView;
     this.col_sm_6 = this.gridService.col_sm_6;
     this.col_xl_4 = this.gridService.col_xl_4;
@@ -211,7 +213,7 @@ export class HotelDetails {
     this.col_12 = this.gridService.col_12;
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.gridService.col_sm_6 = false;
     this.gridService.col_xl_4 = false;
     this.gridService.col_xl_3 = false;

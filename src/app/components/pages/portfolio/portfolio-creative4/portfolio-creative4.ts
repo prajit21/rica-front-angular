@@ -1,27 +1,28 @@
+import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
+
 import { Gallery, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { Lightbox, GallerizeDirective } from 'ng-gallery/lightbox';
 import { NgxMasonryOptions, NgxMasonryModule } from 'ngx-masonry';
+
+import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
+import { Footer } from '../../../../shared/components/footer/footer';
+import { Header } from '../../../../shared/components/header/header';
+import { Layout } from '../../../../shared/components/ui/layout/layout';
 import { portfolio, portfolioGallery } from '../../../../shared/interface/pages';
 import { PagesService } from '../../../../shared/services/pages.service';
-import { Layout } from '../../../../shared/components/ui/layout/layout';
-import { Footer } from '../../../../shared/components/footer/footer';
-import { NgClass } from '@angular/common';
-import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
-import { Header } from '../../../../shared/components/header/header';
 
 @Component({
-    selector: 'app-portfolio-creative4',
-    templateUrl: './portfolio-creative4.html',
-    styleUrl: './portfolio-creative4.scss',
-    imports: [Header, Breadcrumbs, GallerizeDirective, NgxMasonryModule, NgClass, Footer, Layout]
+  selector: 'app-portfolio-creative4',
+  templateUrl: './portfolio-creative4.html',
+  styleUrl: './portfolio-creative4.scss',
+  imports: [Header, Breadcrumbs, GallerizeDirective, NgxMasonryModule, NgClass, Footer, Layout],
 })
 export class PortfolioCreative4 {
+  private pageService = inject(PagesService);
+  public gallery = inject(Gallery);
+  public lightbox = inject(Lightbox);
 
-  private pageService = inject(PagesService); 
-  public gallery = inject(Gallery); 
-  public lightbox = inject(Lightbox); 
-  
   public bg_image = 'assets/images/tour/inner-page/breadcrumb.jpg';
   public title = 'portfolio';
   public parent = 'Home';
@@ -32,31 +33,30 @@ export class PortfolioCreative4 {
   public activeTab = 'all';
 
   public masonryOptions: NgxMasonryOptions = {
-		resize: true,
-		initLayout: true,
+    resize: true,
+    initLayout: true,
   };
 
-  constructor(){
+  constructor() {
     this.pageService.pages().subscribe(response => {
       this.portfolio = response.portfolio;
 
       this.images = [];
-      this.portfolio.forEach((data) => {
-        data.creativeSectionMasonry.forEach((items) => {
-          if(this.activeTab == 'all'){
+      this.portfolio.forEach(data => {
+        data.creativeSectionMasonry.forEach(items => {
+          if (this.activeTab == 'all') {
             this.images.push(items);
-          }else {
-            if(items.type == this.activeTab){
+          } else {
+            if (items.type == this.activeTab) {
               this.images.push(items);
             }
           }
-        })
-      })
-    })
+        });
+      });
+    });
   }
 
-
-  ngOnInit(){
+  ngOnInit() {
     const lightboxRef = this.gallery.ref('lightbox');
 
     lightboxRef.setConfig({
@@ -65,20 +65,20 @@ export class PortfolioCreative4 {
     });
   }
 
-  getTabData(value: string){
+  getTabData(value: string) {
     this.activeTab = value;
 
     this.images = [];
-    this.portfolio.forEach((data) => {
-      data.creativeSectionMasonry.forEach((items) => {
-        if(this.activeTab == 'all'){
+    this.portfolio.forEach(data => {
+      data.creativeSectionMasonry.forEach(items => {
+        if (this.activeTab == 'all') {
           this.images.push(items);
-        }else {
-          if(items.type == this.activeTab){
+        } else {
+          if (items.type == this.activeTab) {
             this.images.push(items);
           }
         }
-      })
-    })
+      });
+    });
   }
 }

@@ -1,12 +1,10 @@
 import { Directive, ElementRef, HostListener, inject, output } from '@angular/core';
 
 @Directive({
-    selector: '[clickOutside]',
+  selector: '[clickOutside]',
 })
 export class ClickOutsideDirective {
-  
   private elementRef = inject(ElementRef);
-
 
   readonly clickOutside = output<Event>();
 
@@ -17,7 +15,7 @@ export class ClickOutsideDirective {
     }
     const clickedInside = this.elementRef.nativeElement.contains(targetElement);
     if (!clickedInside) {
-        this.clickOutside.emit(event);
+      this.clickOutside.emit(event);
     }
   }
 }

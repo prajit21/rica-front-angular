@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
+
 import { interval } from 'rxjs';
+
 import { SearchBox } from '../../../../../shared/components/comman/search-box/search-box';
 
 @Component({
-    selector: 'app-hotel-minimal-home-section',
-    templateUrl: './hotel-minimal-home-section.html',
-    styleUrls: ['./hotel-minimal-home-section.scss'],
-    imports: [SearchBox]
+  selector: 'app-hotel-minimal-home-section',
+  templateUrl: './hotel-minimal-home-section.html',
+  styleUrls: ['./hotel-minimal-home-section.scss'],
+  imports: [SearchBox],
 })
 export class HotelMinimalHomeSection {
-
-  public view: { type: string; } = { type: '' };
+  public view: { type: string } = { type: '' };
   public wordList: string[] = ['hotels.', 'homes.', 'hostels.', 'villas.', 'apts.'];
 
   ngOnInit() {

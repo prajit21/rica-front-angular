@@ -5,57 +5,57 @@
       "image": "assets/images/hotel/room/11.jpg",
       "imageType": "home"
     },
-     {
+    {
       "id": 2,
       "image": "assets/images/hotel/room/10.jpg",
       "imageType": "home"
     },
-     {
+    {
       "id": 3,
       "image": "assets/images/hotel/room/9.jpg",
       "imageType": "home"
     },
-     {
+    {
       "id": 4,
       "image": "assets/images/hotel/room/12.jpg",
       "imageType": "home"
     },
-     {
+    {
       "id": 5,
       "image": "assets/images/hotel/room/4.jpg",
       "imageType": "room"
     },
-     {
+    {
       "id": 6,
       "image": "assets/images/hotel/room/5.jpg",
       "imageType": "room"
     },
-     {
+    {
       "id": 7,
       "image": "assets/images/hotel/room/6.jpg",
       "imageType": "room"
     },
-     {
+    {
       "id": 8,
       "image": "assets/images/hotel/room/7.jpg",
       "imageType": "room"
     },
-     {
+    {
       "id": 9,
       "image": "assets/images/hotel/room/8.jpg",
       "imageType": "room"
     },
-     {
+    {
       "id": 10,
       "image": "assets/images/hotel/room/13.jpg",
       "imageType": "pool"
     },
-     {
+    {
       "id": 11,
       "image": "assets/images/hotel/room/14.jpg",
       "imageType": "pool"
     },
-     {
+    {
       "id": 12,
       "image": "assets/images/hotel/room/15.jpg",
       "imageType": "pool"
@@ -88,8 +88,8 @@
           "id": 1,
           "roomType": "Deluxe Room",
           "roomImage": "assets/images/hotel/room/4.jpg",
-          "amenities": ["bed","shower","tv","couch"],
-          "inclusion": ["Wi-Fi","Breakfast","non refundable"],
+          "amenities": ["bed", "shower", "tv", "couch"],
+          "inclusion": ["Wi-Fi", "Breakfast", "non refundable"],
           "price": 1250,
           "discountPrice": 1000
         },
@@ -97,8 +97,8 @@
           "id": 2,
           "roomType": "Suite Room",
           "roomImage": "assets/images/hotel/room/5.jpg",
-          "amenities": ["bed","pool","shower","tv"],
-          "inclusion": ["Wi-Fi","Breakfast","free cancellation"],
+          "amenities": ["bed", "pool", "shower", "tv"],
+          "inclusion": ["Wi-Fi", "Breakfast", "free cancellation"],
           "price": 1350,
           "discountPrice": 1100
         },
@@ -106,8 +106,8 @@
           "id": 3,
           "roomType": "Royal Room",
           "roomImage": "assets/images/hotel/room/6.jpg",
-          "amenities": ["bed","pool","shower","tv","couch"],
-          "inclusion": ["Wi-Fi","Breakfast","Dinner & lunch"],
+          "amenities": ["bed", "pool", "shower", "tv", "couch"],
+          "inclusion": ["Wi-Fi", "Breakfast", "Dinner & lunch"],
           "price": 1950,
           "discountPrice": 1800
         }
@@ -121,7 +121,14 @@
             {
               "title": "basic facility",
               "icon": "assets/images/icon/hotel/verified.png",
-              "details": ["Free Wi-Fi", "Room Service", "Elevator Lift", "Laundry Service", "Power Backup", "Free Parking"]
+              "details": [
+                "Free Wi-Fi",
+                "Room Service",
+                "Elevator Lift",
+                "Laundry Service",
+                "Power Backup",
+                "Free Parking"
+              ]
             }
           ]
         },
@@ -131,7 +138,14 @@
             {
               "title": "payment mode",
               "icon": "assets/images/icon/hotel/credit-card.png",
-              "details": ["visa card", "master card", "American express", "debit card", "cash", "online banking"]
+              "details": [
+                "visa card",
+                "master card",
+                "American express",
+                "debit card",
+                "cash",
+                "online banking"
+              ]
             }
           ]
         },
@@ -234,39 +248,38 @@
       ]
     }
   ],
-    "hotelBooking": [
-      {
-        "id": 1,
-        "title": "debit card",
-        "value": "debit",
-        "panel": "First",
-        "checkId": "r_one",
-        "checked": true
-      },
-      {
-        "id": 2,
-        "title": "credit card",
-        "value": "credit",
-        "panel": "Second",
-        "checkId": "r_two",
-        "checked": false
-      },
-      {
-        "id": 3,
-        "title": "net banking",
-        "value": "net_banking",
-        "panel": "Third",
-        "checkId": "r_three",
-        "checked": false
-      },
-      {
-        "id": 4,
-        "title": "my wallet",
-        "value": "wallet",
-        "panel": "Fourth",
-        "checkId": "r_four",
-        "checked": false
-      }
-    ]
-
+  "hotelBooking": [
+    {
+      "id": 1,
+      "title": "debit card",
+      "value": "debit",
+      "panel": "First",
+      "checkId": "r_one",
+      "checked": true
+    },
+    {
+      "id": 2,
+      "title": "credit card",
+      "value": "credit",
+      "panel": "Second",
+      "checkId": "r_two",
+      "checked": false
+    },
+    {
+      "id": 3,
+      "title": "net banking",
+      "value": "net_banking",
+      "panel": "Third",
+      "checkId": "r_three",
+      "checked": false
+    },
+    {
+      "id": 4,
+      "title": "my wallet",
+      "value": "wallet",
+      "panel": "Fourth",
+      "checkId": "r_four",
+      "checked": false
+    }
+  ]
 }

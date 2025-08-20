@@ -17,32 +17,32 @@
 <div class="plane">
   <div class="cockpit">
     <div>
-      <img src="assets/images/flights/cockpit.png" alt="cockpit-image" class="img-fluid blur-up lazyload">
+      <img
+        src="assets/images/flights/cockpit.png"
+        alt="cockpit-image"
+        class="img-fluid blur-up lazyload"
+      />
     </div>
   </div>
-  <div class="exit exit--front fuselage">
-
-  </div>
+  <div class="exit exit--front fuselage"></div>
   <ol class="cabin fuselage">
     @for(seats of flightSeats; track seats){
-      <li class="row" [ngClass]="seats.rowClass">
-        <ol class="seats" type="A">
-          @for(seat of seats.row; track seat){
-            <li class="seat">
-              @if(seat.disabled){
-                <input type="checkbox" disabled id="{{ seat.seatId }}" />
-                <label for="{{ seat.seatId }}">Occupied</label>
-              }@else {
-                <input type="checkbox" id="{{ seat.seatId }}" />
-                <label for="{{ seat.seatId }}">{{ seat.seatNo }}</label>
-              }
-            </li>
+    <li class="row" [ngClass]="seats.rowClass">
+      <ol class="seats" type="A">
+        @for(seat of seats.row; track seat){
+        <li class="seat">
+          @if(seat.disabled){
+          <input type="checkbox" disabled id="{{ seat.seatId }}" />
+          <label for="{{ seat.seatId }}">Occupied</label>
+          }@else {
+          <input type="checkbox" id="{{ seat.seatId }}" />
+          <label for="{{ seat.seatId }}">{{ seat.seatNo }}</label>
           }
-        </ol>
-      </li>
+        </li>
+        }
+      </ol>
+    </li>
     }
   </ol>
-  <div class="exit exit--back fuselage">
-
-  </div>
+  <div class="exit exit--back fuselage"></div>
 </div>

@@ -1,16 +1,16 @@
 import { Component, inject, output } from '@angular/core';
+
 import { CabService } from '../../../../../shared/services/cab.service';
 import { GridService } from '../../../../../shared/services/grid.service';
 import { Filter } from '../../filter/filter';
 
 @Component({
-    selector: 'app-cab-grid-panel',
-    templateUrl: './cab-grid-panel.html',
-    styleUrl: './cab-grid-panel.scss',
-    imports: [Filter]
+  selector: 'app-cab-grid-panel',
+  templateUrl: './cab-grid-panel.html',
+  styleUrl: './cab-grid-panel.scss',
+  imports: [Filter],
 })
 export class CabGridPanel {
-
   private cabService = inject(CabService);
   private gridService = inject(GridService);
 
@@ -25,37 +25,36 @@ export class CabGridPanel {
   public activeTab: string = 'all';
   public isOpenTab: boolean = false;
 
-
-  ngOnInit(){
+  ngOnInit() {
     this.selectedTabValue.emit('all');
   }
 
-  grid2(){
+  grid2() {
     this.gridService.grid2();
   }
 
-  grid3(){
+  grid3() {
     this.gridService.grid3();
   }
 
-  grid4(){
+  grid4() {
     this.gridService.grid4();
   }
 
-  openHorizontalFilter(){
-    this.cabService.isOpenHorizontalFilter =! this.cabService.isOpenHorizontalFilter;
+  openHorizontalFilter() {
+    this.cabService.isOpenHorizontalFilter = !this.cabService.isOpenHorizontalFilter;
   }
 
-  openResponsiveTab(){
-    this.isOpenTab =! this.isOpenTab;
+  openResponsiveTab() {
+    this.isOpenTab = !this.isOpenTab;
   }
 
-  changedValue(value: string){
+  changedValue(value: string) {
     this.activeTab = value;
     this.selectedTabValue.emit(value);
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     this.listView = this.gridService.listView;
     this.col_sm_6 = this.gridService.col_sm_6;
     this.col_xl_4 = this.gridService.col_xl_4;

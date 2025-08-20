@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { RestaurantPageClassic } from './restaurant-page-classic/restaurant-page-classic';
 import { RestaurantPageImageSlider } from './restaurant-page-image-slider/restaurant-page-image-slider';
 import { RestaurantPageLeftCart } from './restaurant-page-left-cart/restaurant-page-left-cart';
@@ -6,14 +7,14 @@ import { RestaurantPageLeftCart } from './restaurant-page-left-cart/restaurant-p
 export default [
   {
     path: 'classic',
-    component: RestaurantPageClassic
+    component: RestaurantPageClassic,
   },
   {
     path: 'image-slider',
-    component: RestaurantPageImageSlider
+    component: RestaurantPageImageSlider,
   },
   {
     path: 'left-cart',
-    component: RestaurantPageLeftCart
-  }
+    component: RestaurantPageLeftCart,
+  },
 ] as Routes;

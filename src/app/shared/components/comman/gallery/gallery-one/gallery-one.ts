@@ -1,16 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { gallery } from '../../../../../shared/interface/hotel-classic';
 import { RouterLink } from '@angular/router';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { gallery } from '../../../../../shared/interface/hotel-classic';
+
 @Component({
-    selector: 'app-gallery-one',
-    templateUrl: './gallery-one.html',
-    styleUrls: ['./gallery-one.scss'],
-    imports: [CarouselModule, RouterLink]
+  selector: 'app-gallery-one',
+  templateUrl: './gallery-one.html',
+  styleUrls: ['./gallery-one.scss'],
+  imports: [CarouselModule, RouterLink],
 })
 export class GalleryOne {
-
   @Input() gallery: gallery[];
 
   public Options = {
@@ -22,14 +23,14 @@ export class GalleryOne {
         items: 1,
       },
       586: {
-        items: 2
+        items: 2,
       },
       991: {
-        items: 3
+        items: 3,
       },
       1200: {
-        items: 4
-      }
+        items: 4,
+      },
     },
   };
 }

@@ -1,6 +1,12 @@
 <app-header [headerClass]="'light_header'" />
 
-<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'cab'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <div class="xs-section pb-0">
   <div class="container">
@@ -14,10 +20,18 @@
   <div class="container">
     <div class="row success-detail mt-0">
       <div class="col">
-        <img src="assets/images/cab/car/2.png" class="img-fluid blur-up lazyload" alt="cab">
+        <img src="assets/images/cab/car/2.png" class="img-fluid blur-up lazyload" alt="cab" />
         <h2>oops ! no cars found</h2>
-        <p>no cars were found for this route and date combination. modify your search and try again</p>
-        <button type="submit" class="btn  btn-solid color1" [routerLink]="['/cab/listing/list-view/left-sidebar']">search again</button>
+        <p>
+          no cars were found for this route and date combination. modify your search and try again
+        </p>
+        <button
+          type="submit"
+          class="btn btn-solid color1"
+          [routerLink]="['/cab/listing/list-view/left-sidebar']"
+        >
+          search again
+        </button>
       </div>
     </div>
   </div>

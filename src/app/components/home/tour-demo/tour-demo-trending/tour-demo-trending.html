@@ -3,15 +3,15 @@
 <app-tour-trending-home-section />
 
 @if(tourTrending){
-  <app-tour-trending-holidays [id]="tourTrending.deals" />
+<app-tour-trending-holidays [id]="tourTrending.deals" />
 
-  <app-tour-trending-explore-continents [continents]="tourTrending.continents" />
+<app-tour-trending-explore-continents [continents]="tourTrending.continents" />
 
-  <app-tour-trending-explore-themes [themes]="tourTrending.themes" />
+<app-tour-trending-explore-themes [themes]="tourTrending.themes" />
 
-  <div class="trending-testimonial">
-    <app-tour-trending-testimonial [id]="tourTrending.testimonial" />
-  </div>
+<div class="trending-testimonial">
+  <app-tour-trending-testimonial [id]="tourTrending.testimonial" />
+</div>
 }
 
 <app-footer [places]="true" [bgImage]="true" [subFooter]="false" />

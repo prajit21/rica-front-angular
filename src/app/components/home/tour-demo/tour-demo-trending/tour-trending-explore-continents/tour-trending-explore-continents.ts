@@ -1,20 +1,20 @@
 import { Component, inject, Input } from '@angular/core';
-import { continents } from '../../../../../shared/interface/tour-trending';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
+
 import { Title } from '../../../../../shared/components/comman/title/title';
+import { continents } from '../../../../../shared/interface/tour-trending';
+import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+import { HotelService } from '../../../../../shared/services/hotel.service';
 
 @Component({
-    selector: 'app-tour-trending-explore-continents',
-    templateUrl: './tour-trending-explore-continents.html',
-    styleUrls: ['./tour-trending-explore-continents.scss'],
-    imports: [Title, CarouselModule, CurrencySymbolPipe]
+  selector: 'app-tour-trending-explore-continents',
+  templateUrl: './tour-trending-explore-continents.html',
+  styleUrls: ['./tour-trending-explore-continents.scss'],
+  imports: [Title, CarouselModule, CurrencySymbolPipe],
 })
 export class TourTrendingExploreContinents {
-
   public hotelService = inject(HotelService);
-
 
   @Input() continents: continents[];
 
@@ -26,12 +26,11 @@ export class TourTrendingExploreContinents {
     center: true,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       668: {
-        items: 3
-      }
-    }
-  }
-
+        items: 3,
+      },
+    },
+  };
 }

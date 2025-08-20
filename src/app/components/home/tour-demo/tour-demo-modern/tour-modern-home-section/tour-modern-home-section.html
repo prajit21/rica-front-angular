@@ -1,14 +1,19 @@
-<section class="home_section  p-0">
+<section class="home_section p-0">
   <div class="classic-slider no-arrow">
     <owl-carousel-o [options]="options">
       @for(sliderData of sliderData; track sliderData){
-        <ng-template carouselSlide [dotContent]="sliderData.value">
-          <div class="slide">
-            <div class="home ripple-effect" [style.background-image]="'url('+sliderData.image+')'">
-              <img [src]="sliderData.image" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
-            </div>
+      <ng-template carouselSlide [dotContent]="sliderData.value">
+        <div class="slide">
+          <div class="home ripple-effect" [style.background-image]="'url('+sliderData.image+')'">
+            <img
+              [src]="sliderData.image"
+              class="img-fluid blur-up lazyload bg-img"
+              alt="background-image"
+              style="display: none"
+            />
           </div>
-        </ng-template>
+        </div>
+      </ng-template>
       }
     </owl-carousel-o>
   </div>

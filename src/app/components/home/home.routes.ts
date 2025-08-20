@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { CabDemoClassic } from './cab-demo/cab-demo-classic/cab-demo-classic';
 import { CabDemoMap } from './cab-demo/cab-demo-map/cab-demo-map';
 import { CabDemoModern } from './cab-demo/cab-demo-modern/cab-demo-modern';
@@ -16,69 +17,69 @@ import { TourDemoModern } from './tour-demo/tour-demo-modern/tour-demo-modern';
 import { TourDemoTrending } from './tour-demo/tour-demo-trending/tour-demo-trending';
 import { TourDemoVector } from './tour-demo/tour-demo-vector/tour-demo-vector';
 
-export default[
+export default [
   {
     path: 'hotel/classic',
-    component: HotelDemoClassic
+    component: HotelDemoClassic,
   },
   {
     path: 'hotel/minimal',
-    component: HotelDemoMinimal
+    component: HotelDemoMinimal,
   },
   {
     path: 'hotel/vector',
-    component: HotelDemoVector
+    component: HotelDemoVector,
   },
   {
     path: 'tour/modern',
-    component: TourDemoModern
+    component: TourDemoModern,
   },
   {
     path: 'tour/trending',
-    component: TourDemoTrending
+    component: TourDemoTrending,
   },
   {
     path: 'tour/vector',
-    component: TourDemoVector
+    component: TourDemoVector,
   },
   {
     path: 'cab/modern',
-    component: CabDemoModern
+    component: CabDemoModern,
   },
   {
     path: 'cab/classic',
-    component: CabDemoClassic
+    component: CabDemoClassic,
   },
   {
     path: 'cab/map-demo',
-    component: CabDemoMap
+    component: CabDemoMap,
   },
   {
     path: 'flight/modern',
-    component: FlightDemoModern
+    component: FlightDemoModern,
   },
   {
     path: 'flight/minimal',
-    component: FlightDemoMinimal
+    component: FlightDemoMinimal,
   },
   {
     path: 'flight/left-sidebar',
-    component: FlightDemoLeftSidebar
+    component: FlightDemoLeftSidebar,
   },
   {
     path: 'restaurant/classic',
-    component: RestaurantDemoClassic
+    component: RestaurantDemoClassic,
   },
   {
     path: 'restaurant/minimal',
-    component: RestaurantDemoMinimal
+    component: RestaurantDemoMinimal,
   },
   {
     path: 'mix-demo/classic',
-    component: MixDemoClassic
+    component: MixDemoClassic,
   },
   {
     path: 'mix-demo/minimal',
-    component: MixDemoMinimal
-  }
+    component: MixDemoMinimal,
+  },
 ] as Routes;

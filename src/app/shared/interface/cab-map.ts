@@ -1,3 +1,3 @@
-export interface cabMap{
+export interface cabMap {
   cab: number[];
 }

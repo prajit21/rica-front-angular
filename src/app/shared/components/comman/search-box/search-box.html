@@ -1,39 +1,30 @@
-@if(type() == 'basic'){
-  <app-search-box-one [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()!" [shadow]="shadow()" />
-}
-
-@if(type() == 'simple'){
-  <app-search-box-two />
-}
-
-@if(type() == 'classic'){
-  <app-search-box-three />
-}
-
-@if(type() == 'standard'){
-  <app-search-box-four />
-}
-
-@if(type() == 'cab'){
-  <app-search-box-five />
-}
-
-@if(type() == 'flight'){
-  <app-flight-search-box [selectedValue]="selectedValue()" />
-}
-
-@if(type() == 'holiday'){
-  <app-holiday-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
-}
-
-@if(type() == 'flight-two'){
-  <app-flight-search-box-two [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
-}
-
-@if(type() == 'cab-two'){
-  <app-cab-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
-}
-
-@if(type() == 'food'){
-  <app-food-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
+@if(type() === 'basic'){
+<app-search-box-one
+  [text]="text()"
+  [borderClass]="borderClass()"
+  [searchFix]="searchFix()!"
+  [shadow]="shadow()"
+/>
+} @if(type() === 'simple'){
+<app-search-box-two />
+} @if(type() === 'classic'){
+<app-search-box-three />
+} @if(type() === 'standard'){
+<app-search-box-four />
+} @if(type() === 'cab'){
+<app-search-box-five />
+} @if(type() === 'flight'){
+<app-flight-search-box [selectedValue]="selectedValue()" />
+} @if(type() === 'holiday'){
+<app-holiday-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
+} @if(type() === 'flight-two'){
+<app-flight-search-box-two
+  [text]="text()"
+  [borderClass]="borderClass()"
+  [searchFix]="searchFix()"
+/>
+} @if(type() === 'cab-two'){
+<app-cab-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
+} @if(type() === 'food'){
+<app-food-search-box [text]="text()" [borderClass]="borderClass()" [searchFix]="searchFix()" />
 }

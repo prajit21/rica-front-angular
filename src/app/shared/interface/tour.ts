@@ -1,10 +1,10 @@
-import { hotelLocation, hotelReview, images } from "./hotel";
+import { hotelLocation, hotelReview, images } from './hotel';
 
-export interface tour{
-  tour: tours[]
+export interface tour {
+  tour: tours[];
 }
 
-export interface tours{
+export interface tours {
   id: number;
   img: string;
   title: string;
@@ -29,18 +29,18 @@ export interface tours{
   tags: string[];
 }
 
-export interface includesDetails{
+export interface includesDetails {
   icon: string;
   title: string;
   includes: boolean;
 }
 
-export interface tourDetails{
+export interface tourDetails {
   tour: tourDetail[];
   tourClassicGallery: tourClassicGallery[];
 }
 
-export interface tourDetail{
+export interface tourDetail {
   highlight: tourHighlight[];
   itinerary: tourItinerary[];
   gallery: tourGallery[];
@@ -50,7 +50,7 @@ export interface tourDetail{
   policy: tourPolicy[];
 }
 
-export interface tourHighlight{
+export interface tourHighlight {
   title?: string;
   description?: string;
   textClass?: string;
@@ -59,33 +59,33 @@ export interface tourHighlight{
   highLightPosition?: string;
 }
 
-export interface highlightData{
+export interface highlightData {
   title: string;
-  details: highlightDetails[]
+  details: highlightDetails[];
 }
 
-export interface highlightDetails{
+export interface highlightDetails {
   data: string;
 }
 
-export interface tourItinerary{
+export interface tourItinerary {
   id: number;
   title: string;
   description: string;
-  facility: tourFacility[]
+  facility: tourFacility[];
 }
 
-export interface tourFacility{
+export interface tourFacility {
   title: string;
   icon: string;
 }
 
-export interface tourGallery{
+export interface tourGallery {
   id: number;
   url: string;
 }
 
-export interface tourAccommodation{
+export interface tourAccommodation {
   id: number;
   hotelName: string;
   description: string;
@@ -96,12 +96,12 @@ export interface tourAccommodation{
   hotelFacility: string[];
 }
 
-export interface tourPolicy{
+export interface tourPolicy {
   title: string;
-  details: highlightDetails[]
+  details: highlightDetails[];
 }
 
-export interface tourClassicGallery{
+export interface tourClassicGallery {
   id: number;
   title: string;
   subTitle?: string;

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { BlogCreativeLeftSidebar } from './blog-creative-left-sidebar/blog-creative-left-sidebar';
 import { BlogCreativeNoSidebar } from './blog-creative-no-sidebar/blog-creative-no-sidebar';
 import { BlogCreativeRightSidebar } from './blog-creative-right-sidebar/blog-creative-right-sidebar';
@@ -16,70 +17,69 @@ import { BlogMixListRightSidebar } from './blog-mix-list-right-sidebar/blog-mix-
 import { BlogNoSidebar } from './blog-no-sidebar/blog-no-sidebar';
 import { BlogRightSidebar } from './blog-right-sidebar/blog-right-sidebar';
 
-export default[
+export default [
   {
     path: 'left-sidebar',
-    component: BlogLeftSidebar
+    component: BlogLeftSidebar,
   },
   {
     path: 'right-sidebar',
-    component: BlogRightSidebar
+    component: BlogRightSidebar,
   },
   {
     path: 'no-sidebar',
-    component: BlogNoSidebar
+    component: BlogNoSidebar,
   },
   {
     path: 'creative-left-sidebar',
-    component: BlogCreativeLeftSidebar
+    component: BlogCreativeLeftSidebar,
   },
   {
     path: 'creative-right-sidebar',
-    component: BlogCreativeRightSidebar
+    component: BlogCreativeRightSidebar,
   },
   {
     path: 'creative-no-sidebar',
-    component: BlogCreativeNoSidebar
+    component: BlogCreativeNoSidebar,
   },
   {
     path: 'list-left-sidebar',
-    component: BlogListLeftSidebar
+    component: BlogListLeftSidebar,
   },
   {
     path: 'list-right-sidebar',
-    component: BlogListRightSidebar
+    component: BlogListRightSidebar,
   },
   {
     path: 'list-no-sidebar',
-    component: BlogListNoSidebar
+    component: BlogListNoSidebar,
   },
   {
     path: 'masonry-left-sidebar',
-    component: BlogMasonryLeftSidebar
+    component: BlogMasonryLeftSidebar,
   },
   {
     path: 'masonry-right-sidebar',
-    component: BlogMasonryRightSidebar
+    component: BlogMasonryRightSidebar,
   },
   {
     path: 'masonry-no-sidebar',
-    component: BlogMasonryNoSidebar
+    component: BlogMasonryNoSidebar,
   },
   {
     path: 'mix-list-left-sidebar',
-    component: BlogMixListLeftSidebar
+    component: BlogMixListLeftSidebar,
   },
   {
     path: 'mix-list-right-sidebar',
-    component: BlogMixListRightSidebar
+    component: BlogMixListRightSidebar,
   },
   {
     path: 'mix-grid-left-sidebar',
-    component: BlogMixGridLeftSidebar
+    component: BlogMixGridLeftSidebar,
   },
   {
     path: 'mix-grid-right-sidebar',
-    component: BlogMixGridRightSidebar
-  }
+    component: BlogMixGridRightSidebar,
+  },
 ] as Routes;
-

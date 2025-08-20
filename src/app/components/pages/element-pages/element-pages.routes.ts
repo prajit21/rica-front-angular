@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { ElementAbout } from './element-about/element-about';
 import { ElementApplication } from './element-application/element-application';
 import { ElementBlog } from './element-blog/element-blog';
@@ -15,65 +16,65 @@ import { ElementTestimonial } from './element-testimonial/element-testimonial';
 import { ElementTitle } from './element-title/element-title';
 import { ElementVideo } from './element-video/element-video';
 
-export default[
+export default [
   {
     path: 'image-ratio',
-    component: ElementImageRatio
+    component: ElementImageRatio,
   },
   {
     path: 'about',
-    component: ElementAbout
+    component: ElementAbout,
   },
   {
     path: 'application',
-    component: ElementApplication
+    component: ElementApplication,
   },
   {
     path: 'blog',
-    component: ElementBlog
+    component: ElementBlog,
   },
   {
     path: 'button',
-    component: ElementButton
+    component: ElementButton,
   },
   {
     path: 'category',
-    component: ElementCategory
+    component: ElementCategory,
   },
   {
     path: 'date-time-picker',
-    component: ElementDateTimePicker
+    component: ElementDateTimePicker,
   },
   {
     path: 'full-banner',
-    component: ElementFullBanner
+    component: ElementFullBanner,
   },
   {
     path: 'gallery',
-    component: ElementGallery
+    component: ElementGallery,
   },
   {
     path: 'other-element',
-    component: ElementOtherElement
+    component: ElementOtherElement,
   },
   {
     path: 'service',
-    component: ElementService
+    component: ElementService,
   },
   {
     path: 'subscribe',
-    component: ElementSubscribe
+    component: ElementSubscribe,
   },
   {
     path: 'testimonial',
-    component: ElementTestimonial
+    component: ElementTestimonial,
   },
   {
     path: 'title',
-    component: ElementTitle
+    component: ElementTitle,
   },
   {
     path: 'video',
-    component: ElementVideo
-  }
+    component: ElementVideo,
+  },
 ] as Routes;

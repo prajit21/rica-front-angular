@@ -3,27 +3,57 @@
     <div class="col-12">
       <ul class="nav mix-pills nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" id="pills-hotel-tab" [class.active]="activeTab == 'hotel'" (click)="tabbed('hotel')">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            id="pills-hotel-tab"
+            [class.active]="activeTab === 'hotel'"
+            (click)="tabbed('hotel')"
+          >
             <svg-icon [src]="'assets/images/svg/mix/hotel.svg'" /> hotel
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" id="pills-holiday-tab" [class.active]="activeTab == 'holiday'" (click)="tabbed('holiday')">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            id="pills-holiday-tab"
+            [class.active]="activeTab === 'holiday'"
+            (click)="tabbed('holiday')"
+          >
             <svg-icon [src]="'assets/images/svg/mix/holiday.svg'" /> holiday
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" id="pills-flight-tab" [class.active]="activeTab == 'flight'" (click)="tabbed('flight')">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            id="pills-flight-tab"
+            [class.active]="activeTab === 'flight'"
+            (click)="tabbed('flight')"
+          >
             <svg-icon [src]="'assets/images/svg/mix/flight.svg'" /> flight
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" id="pills-cab-tab" [class.active]="activeTab == 'cab'" (click)="tabbed('cab')">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            id="pills-cab-tab"
+            [class.active]="activeTab === 'cab'"
+            (click)="tabbed('cab')"
+          >
             <svg-icon [src]="'assets/images/svg/mix/cab.svg'" /> cab
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" id="pills-food-tab" [class.active]="activeTab == 'food'" (click)="tabbed('food')">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            id="pills-food-tab"
+            [class.active]="activeTab === 'food'"
+            (click)="tabbed('food')"
+          >
             <svg-icon [src]="'assets/images/svg/mix/food.svg'" /> food
           </a>
         </li>

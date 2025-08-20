@@ -1,16 +1,20 @@
-
-@if(type() == 'basic'){
-  <app-title-one [title]="title()" [subTitle]="subTitle()" [background_text]="background_text()" [rounded]="rounded()" [textWhite]="textWhite()" />
-}
-
-@if(type() == 'simple'){
-  <app-title-two [title]="title()" [subTitle]="subTitle()" [textWhite]="textWhite()" />
-}
-
-@if(type() == 'classic'){
-  <app-title-three [titleClass]="titleClass()" [title]="title()" [subTitle]="subTitle()" [description]="description()" />
-}
-
-@if(type() == 'standard'){
-  <app-title-four [title]="title()" [subTitle]="subTitle()" [description]="description()" />
+@if(type() === 'basic'){
+<app-title-one
+  [title]="title()"
+  [subTitle]="subTitle()"
+  [background_text]="background_text()"
+  [rounded]="rounded()"
+  [textWhite]="textWhite()"
+/>
+} @if(type() === 'simple'){
+<app-title-two [title]="title()" [subTitle]="subTitle()" [textWhite]="textWhite()" />
+} @if(type() === 'classic'){
+<app-title-three
+  [titleClass]="titleClass()"
+  [title]="title()"
+  [subTitle]="subTitle()"
+  [description]="description()"
+/>
+} @if(type() === 'standard'){
+<app-title-four [title]="title()" [subTitle]="subTitle()" [description]="description()" />
 }

@@ -1,24 +1,25 @@
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { withNgxsStoragePlugin } from '@ngxs/storage-plugin';
-
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { provideStore } from '@ngxs/store';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { provideAngularSvgIcon } from 'angular-svg-icon';
+
 import { routes } from './app.routes';
-import { cabState } from './shared/store/state/cab.state';
-import { flightState } from './shared/store/state/flight.state';
-import { hotelState } from './shared/store/state/hotel.state';
-import { restaurantState } from './shared/store/state/restaurant.state';
-import { tourState } from './shared/store/state/tour.state';
+import { CabState } from './shared/store/state/cab.state';
+import { FlightState } from './shared/store/state/flight.state';
+import { HotelState } from './shared/store/state/hotel.state';
+import { RestaurantState } from './shared/store/state/restaurant.state';
+import { TourState } from './shared/store/state/tour.state';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {
@@ -41,9 +42,11 @@ export const appConfig: ApplicationConfig = {
         useFactory: adapterFactory,
       }),
     ),
-    provideStore([hotelState, tourState, flightState, cabState, restaurantState], withNgxsStoragePlugin({
-      keys: '*'
-    })
+    provideStore(
+      [HotelState, TourState, FlightState, CabState, RestaurantState],
+      withNgxsStoragePlugin({
+        keys: '*',
+      }),
     ),
-  ]
+  ],
 };

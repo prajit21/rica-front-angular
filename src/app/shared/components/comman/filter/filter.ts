@@ -1,21 +1,30 @@
 import { Component, input } from '@angular/core';
-import { RestaurantFilter } from './restaurant-filter/restaurant-filter';
+
 import { CabFilter } from './cab-filter/cab-filter';
-import { FlightFilterTwo } from './flight-filter-two/flight-filter-two';
 import { FlightFilter } from './flight-filter/flight-filter';
-import { TourFilterHorizontal } from './tour-filter-horizontal/tour-filter-horizontal';
-import { TourFilter } from './tour-filter/tour-filter';
-import { HotelFilterHorizontal } from './hotel-filter-horizontal/hotel-filter-horizontal';
+import { FlightFilterTwo } from './flight-filter-two/flight-filter-two';
 import { HotelFilter } from './hotel-filter/hotel-filter';
+import { HotelFilterHorizontal } from './hotel-filter-horizontal/hotel-filter-horizontal';
+import { RestaurantFilter } from './restaurant-filter/restaurant-filter';
+import { TourFilter } from './tour-filter/tour-filter';
+import { TourFilterHorizontal } from './tour-filter-horizontal/tour-filter-horizontal';
 
 @Component({
-    selector: 'app-filter',
-    templateUrl: './filter.html',
-    styleUrls: ['./filter.scss'],
-    imports: [HotelFilter, HotelFilterHorizontal, TourFilter, TourFilterHorizontal, FlightFilter, FlightFilterTwo, CabFilter, RestaurantFilter]
+  selector: 'app-filter',
+  templateUrl: './filter.html',
+  styleUrls: ['./filter.scss'],
+  imports: [
+    HotelFilter,
+    HotelFilterHorizontal,
+    TourFilter,
+    TourFilterHorizontal,
+    FlightFilter,
+    FlightFilterTwo,
+    CabFilter,
+    RestaurantFilter,
+  ],
 })
 export class Filter {
-
   readonly type = input<string>();
   readonly mapFilter = input<boolean>();
 

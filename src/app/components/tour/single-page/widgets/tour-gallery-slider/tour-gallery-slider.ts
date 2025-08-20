@@ -1,20 +1,21 @@
 import { Component, inject } from '@angular/core';
-import { tours } from '../../../../../shared/interface/tour';
-import { TourService } from '../../../../../shared/services/tour.service';
 import { RouterLink } from '@angular/router';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { tours } from '../../../../../shared/interface/tour';
+import { TourService } from '../../../../../shared/services/tour.service';
+
 @Component({
-    selector: 'app-tour-gallery-slider',
-    templateUrl: './tour-gallery-slider.html',
-    styleUrl: './tour-gallery-slider.scss',
-    imports: [CarouselModule, RouterLink]
+  selector: 'app-tour-gallery-slider',
+  templateUrl: './tour-gallery-slider.html',
+  styleUrl: './tour-gallery-slider.scss',
+  imports: [CarouselModule, RouterLink],
 })
 export class TourGallerySlider {
+  public tourService = inject(TourService);
 
-  public tourService = inject(TourService); 
-
-  public tourDetails : tours[];
+  public tourDetails: tours[];
 
   public options = {
     loop: true,
@@ -37,12 +38,12 @@ export class TourGallerySlider {
       1199: {
         items: 3,
       },
-    }
-  }
+    },
+  };
 
-  constructor(){
+  constructor() {
     this.tourService.tour().subscribe(response => {
-        this.tourDetails = response.tour;
-      })
+      this.tourDetails = response.tour;
+    });
   }
 }

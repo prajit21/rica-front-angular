@@ -1,7 +1,5 @@
-@if(type() == 'basic'){
-  <app-subscribe-one />
-}
-
-@if(type() == 'simple'){
-  <app-subscribe-two />
+@if(type() === 'basic'){
+<app-subscribe-one />
+} @if(type() === 'simple'){
+<app-subscribe-two />
 }

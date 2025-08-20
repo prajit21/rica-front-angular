@@ -13,7 +13,7 @@
       "fare": "refundable",
       "price": 1500,
       "activeFrom": true,
-      "tags": ["1_stop","cathay","departure_evening","arrival_morning","refundable"]
+      "tags": ["1_stop", "cathay", "departure_evening", "arrival_morning", "refundable"]
     },
     {
       "id": 2,
@@ -27,7 +27,7 @@
       "departureTime": "22:30",
       "fare": "non-refundable",
       "price": 1245,
-      "tags": ["2_stop","emirates","departure_evening","arrival_noon","non_refundable"]
+      "tags": ["2_stop", "emirates", "departure_evening", "arrival_noon", "non_refundable"]
     },
 
     {
@@ -43,7 +43,7 @@
       "fare": "refundable",
       "price": 1100,
       "activeTo": true,
-      "tags": ["non_stop","oman","departure_morning","arrival_evening","refundable"]
+      "tags": ["non_stop", "oman", "departure_morning", "arrival_evening", "refundable"]
     },
 
     {
@@ -58,7 +58,7 @@
       "arriveTime": "19:30",
       "fare": "refundable",
       "price": 900,
-      "tags": ["1_stop","middle_east","departure_evening","arrival_noon","refundable"]
+      "tags": ["1_stop", "middle_east", "departure_evening", "arrival_noon", "refundable"]
     },
 
     {
@@ -73,7 +73,7 @@
       "arriveTime": "12:30",
       "fare": "non-refundable",
       "price": 1000,
-      "tags": ["2_stop","gulf","departure_noon","arrival_evening","non_refundable"]
+      "tags": ["2_stop", "gulf", "departure_noon", "arrival_evening", "non_refundable"]
     },
 
     {
@@ -88,7 +88,7 @@
       "arriveTime": "15:00",
       "fare": "non-refundable",
       "price": 1350,
-      "tags": ["2_stop","royal","departure_morning","arrival_evening","non_refundable"]
+      "tags": ["2_stop", "royal", "departure_morning", "arrival_evening", "non_refundable"]
     },
 
     {
@@ -103,7 +103,7 @@
       "arriveTime": "20:00",
       "fare": "refundable",
       "price": 1470,
-      "tags": ["non_stop","china","departure_evening","arrival_morning","refundable"]
+      "tags": ["non_stop", "china", "departure_evening", "arrival_morning", "refundable"]
     },
 
     {
@@ -118,7 +118,7 @@
       "arriveTime": "20:00",
       "fare": "non-refundable",
       "price": 850,
-      "tags": ["non_stop","qatar","departure_evening","arrival_morning","non_refundable"]
+      "tags": ["non_stop", "qatar", "departure_evening", "arrival_morning", "non_refundable"]
     },
 
     {
@@ -133,7 +133,7 @@
       "arriveTime": "20:00",
       "fare": "non-refundable",
       "price": 1245,
-      "tags": ["non_stop","singapore","departure_evening","arrival_morning","non_refundable"]
+      "tags": ["non_stop", "singapore", "departure_evening", "arrival_morning", "non_refundable"]
     },
 
     {
@@ -148,7 +148,7 @@
       "arriveTime": "20:00",
       "fare": "refundable",
       "price": 1440,
-      "tags": ["non_stop","nippon","departure_evening","arrival_morning","refundable"]
+      "tags": ["non_stop", "nippon", "departure_evening", "arrival_morning", "refundable"]
     },
 
     {
@@ -163,7 +163,7 @@
       "arriveTime": "20:00",
       "fare": "refundable",
       "price": 1050,
-      "tags": ["non_stop","qantas","departure_evening","arrival_morning","refundable"]
+      "tags": ["non_stop", "qantas", "departure_evening", "arrival_morning", "refundable"]
     }
   ]
 }

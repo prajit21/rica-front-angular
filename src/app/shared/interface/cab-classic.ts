@@ -1,8 +1,8 @@
-import { brand } from "./cab-modern";
-import { ricaBenefit } from "./hotel-minimal";
-import { booking } from "./hotel-vector";
+import { brand } from './cab-modern';
+import { ricaBenefit } from './hotel-minimal';
+import { booking } from './hotel-vector';
 
-export interface cabClassic{
+export interface cabClassic {
   ricaBenefits: ricaBenefit[];
   booking: booking[];
   carTypes: carTypes[];
@@ -10,7 +10,7 @@ export interface cabClassic{
   brand: brand[];
 }
 
-export interface carTypes{
+export interface carTypes {
   id: number;
   title: string;
   description: string;

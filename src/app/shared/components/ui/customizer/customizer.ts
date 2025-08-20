@@ -2,50 +2,48 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-customizer',
-    templateUrl: './customizer.html',
-    styleUrls: ['./customizer.scss'],
-    imports: [FormsModule]
+  selector: 'app-customizer',
+  templateUrl: './customizer.html',
+  styleUrls: ['./customizer.scss'],
+  imports: [FormsModule],
 })
 export class Customizer {
-
   public themeColor: boolean = false;
   public themeDirection: boolean = false;
 
-  constructor(){
+  constructor() {
     let layout_version = localStorage.getItem('layout_version');
-    let layout_type = localStorage.getItem("layout_type");
-    if(layout_version == 'dark-layout'){
+    let layout_type = localStorage.getItem('layout_type');
+    if (layout_version == 'dark-layout') {
       this.themeColor = true;
       document.body.classList.add('dark');
-      localStorage.setItem('layout_version', 'dark-layout')
-    }else{
+      localStorage.setItem('layout_version', 'dark-layout');
+    } else {
       this.themeColor = false;
       document.body.classList.remove('dark');
-      localStorage.setItem('layout_version', '')
+      localStorage.setItem('layout_version', '');
     }
 
-    if(layout_type == 'rtl'){
+    if (layout_type == 'rtl') {
       this.themeDirection = true;
       document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
       document.body.classList.add('rtl');
-      localStorage.setItem('layout_type', 'rtl')
-    }else{
+      localStorage.setItem('layout_type', 'rtl');
+    } else {
       this.themeDirection = false;
       document.getElementsByTagName('html')[0].removeAttribute('dir');
       document.body.classList.remove('rtl');
-      localStorage.setItem('layout_type', '')
+      localStorage.setItem('layout_type', '');
     }
   }
-
 
   changeThemeColor(color: boolean) {
     if (color == true) {
       document.body.classList.add('dark');
-      localStorage.setItem('layout_version', 'dark-layout')
+      localStorage.setItem('layout_version', 'dark-layout');
     } else {
       document.body.classList.remove('dark');
-      localStorage.setItem('layout_version', '')
+      localStorage.setItem('layout_version', '');
     }
   }
 
@@ -53,11 +51,11 @@ export class Customizer {
     if (direction == true) {
       document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
       document.body.classList.add('rtl');
-      localStorage.setItem('layout_type', 'rtl')
+      localStorage.setItem('layout_type', 'rtl');
     } else {
       document.getElementsByTagName('html')[0].removeAttribute('dir');
       document.body.classList.remove('rtl');
-      localStorage.setItem('layout_type', '')
+      localStorage.setItem('layout_type', '');
     }
   }
 }

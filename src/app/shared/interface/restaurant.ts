@@ -1,6 +1,6 @@
-import { hotelGallery, hotelLocation, hotelReview } from "./hotel";
+import { hotelGallery, hotelLocation, hotelReview } from './hotel';
 
-export interface restaurants{
+export interface restaurants {
   restaurantOrders: restaurantOrders[];
   restaurantOverview: restaurantOverview[];
   restaurantGallery: hotelGallery[];
@@ -8,7 +8,7 @@ export interface restaurants{
   restaurantReview: hotelReview[];
 }
 
-export interface restaurantOrders{
+export interface restaurantOrders {
   id: number;
   title: string;
   value: string;
@@ -18,7 +18,7 @@ export interface restaurantOrders{
   active?: boolean;
 }
 
-export interface OrderItems{
+export interface OrderItems {
   id: number;
   title: string;
   description: string;
@@ -30,18 +30,18 @@ export interface OrderItems{
   cartItem?: boolean;
 }
 
-export interface restaurantOverview{
+export interface restaurantOverview {
   id: number;
   sectionClass: string;
-  items: overviewItems[]
+  items: overviewItems[];
 }
 
-export interface overviewItems{
+export interface overviewItems {
   id: number;
   title: string;
   data?: itemsData[];
 }
 
-export interface itemsData{
+export interface itemsData {
   item: string;
 }

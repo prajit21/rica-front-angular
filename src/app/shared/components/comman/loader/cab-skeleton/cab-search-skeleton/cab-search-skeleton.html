@@ -1,5 +1,5 @@
-<div  [ngClass]="map() ? 'container-fluid' : 'container'">
-  <div class="flight-search" [class.shadow-cls]="skeletonType() == 'cab'">
+<div [ngClass]="map() ? 'container-fluid' : 'container'">
+  <div class="flight-search" [class.shadow-cls]="skeletonType() === 'cab'">
     <div class="responsive-detail">
       <div class="destination">
         <span></span>
@@ -16,13 +16,13 @@
         <div class="col">
           <div class="form-group">
             <label></label>
-            <input class="form-control open-select">
+            <input class="form-control open-select" />
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label></label>
-            <input class="form-control open-select">
+            <input class="form-control open-select" />
           </div>
         </div>
         <div class="col">

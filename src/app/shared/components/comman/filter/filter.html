@@ -1,31 +1,34 @@
-@if(type() == 'hotel'){
-  <app-hotel-filter [mapFilter]="mapFilter()" [district]="district()" [price]="price()" [hotels]="hotels()" [facility]="facility()" [rating]="rating()" [language]="language()" />
-}
-
-@if(type() == 'hotel-horizontal'){
-  <app-hotel-filter-horizontal />
-}
-
-@if(type() == 'tour'){
-  <app-tour-filter />
-}
-
-@if(type() == 'tour-horizontal'){
-  <app-tour-filter-horizontal />
-}
-
-@if(type() == 'flight'){
-  <app-flight-filter />
-}
-
-@if(type() == 'flight-two'){
-  <app-flight-filter-two />
-}
-
-@if(type() == 'cab'){
-  <app-cab-filter [cabHorizontal]="cabHorizontal()" [shadowClass]="shadowClass()" />
-}
-
-@if(type() == 'restaurant'){
-  <app-restaurant-filter [horizontalFilter]="horizontalFilter()" [mapFilter]="mapFilter()" [tags]="tags()" [price]="price()" [restaurant]="restaurant()" [cuisines]="cuisines()" [rating]="rating()" [time]="time()" />
+@if(type() === 'hotel'){
+<app-hotel-filter
+  [mapFilter]="mapFilter()"
+  [district]="district()"
+  [price]="price()"
+  [hotels]="hotels()"
+  [facility]="facility()"
+  [rating]="rating()"
+  [language]="language()"
+/>
+} @if(type() === 'hotel-horizontal'){
+<app-hotel-filter-horizontal />
+} @if(type() === 'tour'){
+<app-tour-filter />
+} @if(type() === 'tour-horizontal'){
+<app-tour-filter-horizontal />
+} @if(type() === 'flight'){
+<app-flight-filter />
+} @if(type() === 'flight-two'){
+<app-flight-filter-two />
+} @if(type() === 'cab'){
+<app-cab-filter [cabHorizontal]="cabHorizontal()" [shadowClass]="shadowClass()" />
+} @if(type() === 'restaurant'){
+<app-restaurant-filter
+  [horizontalFilter]="horizontalFilter()"
+  [mapFilter]="mapFilter()"
+  [tags]="tags()"
+  [price]="price()"
+  [restaurant]="restaurant()"
+  [cuisines]="cuisines()"
+  [rating]="rating()"
+  [time]="time()"
+/>
 }

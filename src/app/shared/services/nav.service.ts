@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 // Menu
 export interface IMenu {
-  items?: IMenu[]
+  items?: IMenu[];
   path?: string;
   title?: string;
   icon?: string;
@@ -15,21 +15,19 @@ export interface IMenu {
   badgeIcon?: boolean;
   children?: IMenu[];
   level?: number;
-  section?: IMenu[]
+  section?: IMenu[];
   right?: boolean;
 }
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavService {
-
-  constructor() { }
+  constructor() {}
 
   public MENUITEMS: IMenu[] = [
     {
-      title: "Home",
+      title: 'Home',
       type: 'sub',
       active: false,
       level: 1,
@@ -43,19 +41,19 @@ export class NavService {
             {
               title: 'classic',
               path: '/home/hotel/classic',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'minimal',
               path: '/home/hotel/minimal',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'vector',
               path: '/home/hotel/vector',
-              type: 'link'
-            }
-          ]
+              type: 'link',
+            },
+          ],
         },
         {
           title: 'Tour Demo',
@@ -66,19 +64,19 @@ export class NavService {
             {
               title: 'modern',
               path: '/home/tour/modern',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'trending',
               path: '/home/tour/trending',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'Vector demo',
               path: '/home/tour/vector',
-              type: 'link'
-            }
-          ]
+              type: 'link',
+            },
+          ],
         },
         {
           title: 'Cab Demo',
@@ -89,19 +87,19 @@ export class NavService {
             {
               title: 'modern',
               path: '/home/cab/modern',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'classic',
               path: '/home/cab/classic',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'Map demo',
               path: '/home/cab/map-demo',
-              type: 'link'
-            }
-          ]
+              type: 'link',
+            },
+          ],
         },
         {
           title: 'Flight Demo',
@@ -112,19 +110,19 @@ export class NavService {
             {
               title: 'modern',
               path: '/home/flight/modern',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'minimal',
               path: '/home/flight/minimal',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'left sidebar',
               path: '/home/flight/left-sidebar',
-              type: 'link'
-            }
-          ]
+              type: 'link',
+            },
+          ],
         },
         {
           title: 'Restaurant Demo',
@@ -135,14 +133,14 @@ export class NavService {
             {
               title: 'classic',
               path: '/home/restaurant/classic',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'minimal',
               path: '/home/restaurant/minimal',
-              type: 'link'
+              type: 'link',
             },
-          ]
+          ],
         },
         {
           title: 'Mix Demo',
@@ -153,192 +151,192 @@ export class NavService {
             {
               title: 'classic',
               path: '/home/mix-demo/classic',
-              type: 'link'
+              type: 'link',
             },
             {
               title: 'minimal',
               path: '/home/mix-demo/minimal',
-              type: 'link'
+              type: 'link',
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
     {
-      title: "hotel",
-      type: "sub",
+      title: 'hotel',
+      type: 'sub',
       active: false,
       level: 1,
       children: [
         {
-          title: "Listing",
-          type: "sub",
+          title: 'Listing',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
             {
-              title: "grid view",
-              type: "sub",
+              title: 'grid view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "2 Grid",
-                  path: "/hotel/listing/grid/2-grid",
-                  type: "link",
+                  title: '2 Grid',
+                  path: '/hotel/listing/grid/2-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "3 Grid",
-                  path: "/hotel/listing/grid/3-grid",
-                  type: "link",
+                  title: '3 Grid',
+                  path: '/hotel/listing/grid/3-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "4 Grid",
-                  path: "/hotel/listing/grid/4-grid",
-                  type: "link",
+                  title: '4 Grid',
+                  path: '/hotel/listing/grid/4-grid',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "sidebar",
-              type: "sub",
+              title: 'sidebar',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "Left Sidebar",
-                  path: "/hotel/listing/sidebar/left-sidebar",
-                  type: "link",
+                  title: 'Left Sidebar',
+                  path: '/hotel/listing/sidebar/left-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "Right Sidebar",
-                  path: "/hotel/listing/sidebar/right-sidebar",
-                  type: "link",
+                  title: 'Right Sidebar',
+                  path: '/hotel/listing/sidebar/right-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "No Sidebar",
-                  path: "/hotel/listing/sidebar/no-sidebar",
-                  type: "link",
+                  title: 'No Sidebar',
+                  path: '/hotel/listing/sidebar/no-sidebar',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "map",
-              type: "sub",
+              title: 'map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/hotel/listing/map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/hotel/listing/map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/hotel/listing/map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/hotel/listing/map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "map modal",
-              type: "sub",
+              title: 'map modal',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/hotel/listing/map-modal/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/hotel/listing/map-modal/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/hotel/listing/map-modal/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/hotel/listing/map-modal/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "onclick map",
-              type: "sub",
+              title: 'onclick map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/hotel/listing/onclick-map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/hotel/listing/onclick-map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/hotel/listing/onclick-map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/hotel/listing/onclick-map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "left side map",
-              type: "sub",
+              title: 'left side map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/hotel/listing/leftside-map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/hotel/listing/leftside-map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/hotel/listing/leftside-map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/hotel/listing/leftside-map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "list view",
-              type: "sub",
+              title: 'list view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "List View",
-                  path: "/hotel/listing/list-view/list-view",
-                  type: "link",
+                  title: 'List View',
+                  path: '/hotel/listing/list-view/list-view',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "Map",
-                  type: "sub",
+                  title: 'Map',
+                  type: 'sub',
                   active: false,
                   level: 4,
                   children: [
                     {
-                      title: "google map",
-                      path: "/hotel/listing/list-view/map/google-map",
-                      type: "link",
+                      title: 'google map',
+                      path: '/hotel/listing/list-view/map/google-map',
+                      type: 'link',
                       level: 5,
                     },
                     {
-                      title: "leaflet map",
-                      path: "/hotel/listing/list-view/map/leaflet-map",
-                      type: "link",
+                      title: 'leaflet map',
+                      path: '/hotel/listing/list-view/map/leaflet-map',
+                      type: 'link',
                       level: 5,
                     },
-                  ]
+                  ],
                 },
                 {
                   title: 'Slider',
@@ -358,7 +356,7 @@ export class NavService {
                   type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
               title: 'Hotel with Slider',
@@ -366,11 +364,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "single page",
-          type: "sub",
+          title: 'single page',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -422,11 +420,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "booking",
-          type: "sub",
+          title: 'booking',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -454,84 +452,84 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     {
-      title: "tour",
-      type: "sub",
+      title: 'tour',
+      type: 'sub',
       active: false,
       level: 1,
       children: [
         {
-          title: "Listing",
-          type: "sub",
+          title: 'Listing',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
             {
-              title: "grid view",
-              type: "sub",
+              title: 'grid view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "2 Grid",
-                  path: "/tour/listing/grid/2-grid",
-                  type: "link",
+                  title: '2 Grid',
+                  path: '/tour/listing/grid/2-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "3 Grid",
-                  path: "/tour/listing/grid/3-grid",
-                  type: "link",
+                  title: '3 Grid',
+                  path: '/tour/listing/grid/3-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "4 Grid",
-                  path: "/tour/listing/grid/4-grid",
-                  type: "link",
+                  title: '4 Grid',
+                  path: '/tour/listing/grid/4-grid',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "sidebar",
-              type: "sub",
+              title: 'sidebar',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "Left Sidebar",
-                  path: "/tour/listing/sidebar/left-sidebar",
-                  type: "link",
+                  title: 'Left Sidebar',
+                  path: '/tour/listing/sidebar/left-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "Right Sidebar",
-                  path: "/tour/listing/sidebar/right-sidebar",
-                  type: "link",
+                  title: 'Right Sidebar',
+                  path: '/tour/listing/sidebar/right-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "No Sidebar",
-                  path: "/tour/listing/sidebar/no-sidebar",
-                  type: "link",
+                  title: 'No Sidebar',
+                  path: '/tour/listing/sidebar/no-sidebar',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "list view",
-              type: "sub",
+              title: 'list view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "List View",
-                  path: "/tour/listing/list-view/list-view",
-                  type: "link",
+                  title: 'List View',
+                  path: '/tour/listing/list-view/list-view',
+                  type: 'link',
                   level: 4,
                 },
                 {
@@ -552,7 +550,7 @@ export class NavService {
                   type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
               title: 'with Slider',
@@ -572,12 +570,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-
-          ]
+          ],
         },
         {
-          title: "single page",
-          type: "sub",
+          title: 'single page',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -623,11 +620,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "booking",
-          type: "sub",
+          title: 'booking',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -655,19 +652,19 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     {
-      title: "flight",
-      type: "sub",
+      title: 'flight',
+      type: 'sub',
       active: false,
       level: 1,
       children: [
         {
-          title: "Listing",
-          type: "sub",
+          title: 'Listing',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -701,11 +698,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "booking",
-          type: "sub",
+          title: 'booking',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -739,125 +736,125 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     {
-      title: "cab",
-      type: "sub",
+      title: 'cab',
+      type: 'sub',
       active: false,
       level: 1,
       children: [
         {
-          title: "Listing",
-          type: "sub",
+          title: 'Listing',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
             {
-              title: "list view",
-              type: "sub",
+              title: 'list view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "left sidebar",
-                  path: "/cab/listing/list-view/left-sidebar",
-                  type: "link",
+                  title: 'left sidebar',
+                  path: '/cab/listing/list-view/left-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "right sidebar",
-                  path: "/cab/listing/list-view/right-sidebar",
-                  type: "link",
+                  title: 'right sidebar',
+                  path: '/cab/listing/list-view/right-sidebar',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "grid view",
-              type: "sub",
+              title: 'grid view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "3 grid",
-                  path: "/cab/listing/grid-view/3-grid",
-                  type: "link",
+                  title: '3 grid',
+                  path: '/cab/listing/grid-view/3-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "4 grid",
-                  path: "/cab/listing/grid-view/4-grid",
-                  type: "link",
+                  title: '4 grid',
+                  path: '/cab/listing/grid-view/4-grid',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "sidebar",
-              type: "sub",
+              title: 'sidebar',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "left sidebar",
-                  path: "/cab/listing/sidebar/left-sidebar",
-                  type: "link",
+                  title: 'left sidebar',
+                  path: '/cab/listing/sidebar/left-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "right sidebar",
-                  path: "/cab/listing/sidebar/right-sidebar",
-                  type: "link",
+                  title: 'right sidebar',
+                  path: '/cab/listing/sidebar/right-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "no sidebar",
-                  path: "/cab/listing/sidebar/no-sidebar",
-                  type: "link",
+                  title: 'no sidebar',
+                  path: '/cab/listing/sidebar/no-sidebar',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "with map",
-              type: "sub",
+              title: 'with map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/cab/listing/map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/cab/listing/map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/cab/listing/map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/cab/listing/map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "slider",
-              path: "/cab/listing/slider",
-              type: "link",
+              title: 'slider',
+              path: '/cab/listing/slider',
+              type: 'link',
               level: 3,
             },
             {
-              title: "not found",
-              path: "/cab/listing/not-found",
-              type: "link",
+              title: 'not found',
+              path: '/cab/listing/not-found',
+              type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "booking",
-          type: "sub",
+          title: 'booking',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -885,7 +882,7 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
           title: 'single detail',
@@ -893,151 +890,151 @@ export class NavService {
           type: 'link',
           level: 2,
         },
-      ]
+      ],
     },
     {
-      title: "restaurant",
-      type: "sub",
+      title: 'restaurant',
+      type: 'sub',
       active: false,
       level: 1,
       children: [
         {
-          title: "Listing",
-          type: "sub",
+          title: 'Listing',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
             {
-              title: "grid view",
-              type: "sub",
+              title: 'grid view',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "2 Grid",
-                  path: "/restaurant/listing/grid-view/2-grid",
-                  type: "link",
+                  title: '2 Grid',
+                  path: '/restaurant/listing/grid-view/2-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "3 Grid",
-                  path: "/restaurant/listing/grid-view/3-grid",
-                  type: "link",
+                  title: '3 Grid',
+                  path: '/restaurant/listing/grid-view/3-grid',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "4 Grid",
-                  path: "/restaurant/listing/grid-view/4-grid",
-                  type: "link",
+                  title: '4 Grid',
+                  path: '/restaurant/listing/grid-view/4-grid',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "sidebar",
-              type: "sub",
+              title: 'sidebar',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "Left Sidebar",
-                  path: "/restaurant/listing/sidebar/left-sidebar",
-                  type: "link",
+                  title: 'Left Sidebar',
+                  path: '/restaurant/listing/sidebar/left-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "Right Sidebar",
-                  path: "/restaurant/listing/sidebar/right-sidebar",
-                  type: "link",
+                  title: 'Right Sidebar',
+                  path: '/restaurant/listing/sidebar/right-sidebar',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "No Sidebar",
-                  path: "/restaurant/listing/sidebar/no-sidebar",
-                  type: "link",
+                  title: 'No Sidebar',
+                  path: '/restaurant/listing/sidebar/no-sidebar',
+                  type: 'link',
                   level: 4,
-                }
-              ]
+                },
+              ],
             },
             {
-              title: "map",
-              type: "sub",
+              title: 'map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/restaurant/listing/map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/restaurant/listing/map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/restaurant/listing/map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/restaurant/listing/map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "map modal",
-              type: "sub",
+              title: 'map modal',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/restaurant/listing/map-modal/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/restaurant/listing/map-modal/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/restaurant/listing/map-modal/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/restaurant/listing/map-modal/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "onclick map",
-              type: "sub",
+              title: 'onclick map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/restaurant/listing/onclick-map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/restaurant/listing/onclick-map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/restaurant/listing/onclick-map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/restaurant/listing/onclick-map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
-              title: "left side map",
-              type: "sub",
+              title: 'left side map',
+              type: 'sub',
               active: false,
               level: 3,
               children: [
                 {
-                  title: "google map",
-                  path: "/restaurant/listing/left-side-map/google-map",
-                  type: "link",
+                  title: 'google map',
+                  path: '/restaurant/listing/left-side-map/google-map',
+                  type: 'link',
                   level: 4,
                 },
                 {
-                  title: "leaflet map",
-                  path: "/restaurant/listing/left-side-map/leaflet-map",
-                  type: "link",
+                  title: 'leaflet map',
+                  path: '/restaurant/listing/left-side-map/leaflet-map',
+                  type: 'link',
                   level: 4,
                 },
-              ]
+              ],
             },
             {
               title: 'full width',
@@ -1057,11 +1054,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "single page",
-          type: "sub",
+          title: 'single page',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -1083,11 +1080,11 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
+          ],
         },
         {
-          title: "booking",
-          type: "sub",
+          title: 'booking',
+          type: 'sub',
           active: false,
           level: 2,
           children: [
@@ -1109,9 +1106,9 @@ export class NavService {
               type: 'link',
               level: 3,
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     {
       title: 'pages',
@@ -1194,7 +1191,7 @@ export class NavService {
               title: 'creative 4',
               path: '/page/portfolio/creative-4',
               type: 'link',
-            }
+            },
           ],
         },
         {
@@ -1561,5 +1558,5 @@ export class NavService {
         },
       ],
     },
-  ]
+  ];
 }

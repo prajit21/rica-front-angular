@@ -1,17 +1,18 @@
 import { Component, inject, Input } from '@angular/core';
+
 import { Gallery, GalleryItem, ImageItem, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { Lightbox, GallerizeDirective } from 'ng-gallery/lightbox';
-import { hotelGallery } from '../../../../../shared/interface/hotel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { hotelGallery } from '../../../../../shared/interface/hotel';
+
 @Component({
-    selector: 'app-hotel-gallery',
-    templateUrl: './hotel-gallery.html',
-    styleUrls: ['./hotel-gallery.scss'],
-    imports: [CarouselModule, GallerizeDirective]
+  selector: 'app-hotel-gallery',
+  templateUrl: './hotel-gallery.html',
+  styleUrls: ['./hotel-gallery.scss'],
+  imports: [CarouselModule, GallerizeDirective],
 })
 export class HotelGallery {
-
   public gallery = inject(Gallery);
   public lightbox = inject(Lightbox);
 
@@ -24,13 +25,13 @@ export class HotelGallery {
     loop: true,
     nav: true,
     dots: false,
-    navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>",],
+    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     responsive: {
       0: {
-        items: 1
-      }
-    }
-  }
+        items: 1,
+      },
+    },
+  };
 
   public galleryOptions = {
     loop: true,
@@ -38,18 +39,18 @@ export class HotelGallery {
     dots: false,
     responsive: {
       0: {
-        items: 1
-      }
-    }
-  }
+        items: 1,
+      },
+    },
+  };
 
-  openLightBox(){
+  openLightBox() {
     this.images = [];
-    this.hotelGallery.forEach((image) => {
-        this.images.push(image)
-    })
+    this.hotelGallery.forEach(image => {
+      this.images.push(image);
+    });
 
-    this.items = this.images.map((item) => new ImageItem({ src: item.image, thumb: item.image }));
+    this.items = this.images.map(item => new ImageItem({ src: item.image, thumb: item.image }));
 
     const lightboxRef = this.gallery.ref('lightbox');
 
@@ -58,9 +59,7 @@ export class HotelGallery {
       thumbPosition: ThumbnailsPosition.Top,
     });
 
-    this.lightbox.open()
-    lightboxRef.load(this.items)
+    this.lightbox.open();
+    lightboxRef.load(this.items);
   }
-  }
-
-
+}

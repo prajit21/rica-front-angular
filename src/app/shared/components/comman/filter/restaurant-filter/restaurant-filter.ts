@@ -1,25 +1,35 @@
+import { NgStyle, NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
-import { RestaurantService } from '../../../../../shared/services/restaurant.service';
-import { priceFilter } from '../../../../../shared/interface/hotel';
 import { ActivatedRoute } from '@angular/router';
+
 import { Store } from '@ngxs/store';
-import { getRestaurant } from '../../../../../shared/store/action/restaurant.action';
-import { RestaurantMapFiler } from './restaurant-map-filer/restaurant-map-filer';
+
+import { RestaurantCuisines } from './restaurant-cuisines/restaurant-cuisines';
 import { RestaurantDeliveryTime } from './restaurant-delivery-time/restaurant-delivery-time';
+import { RestaurantMapFiler } from './restaurant-map-filer/restaurant-map-filer';
+import { RestaurantPopularTags } from './restaurant-popular-tags/restaurant-popular-tags';
 import { RestaurantPrice } from './restaurant-price/restaurant-price';
 import { RestaurantRating } from './restaurant-rating/restaurant-rating';
-import { RestaurantCuisines } from './restaurant-cuisines/restaurant-cuisines';
-import { RestaurantPopularTags } from './restaurant-popular-tags/restaurant-popular-tags';
-import { NgStyle, NgClass } from '@angular/common';
+import { priceFilter } from '../../../../../shared/interface/hotel';
+import { RestaurantService } from '../../../../../shared/services/restaurant.service';
+import { GetRestaurant } from '../../../../../shared/store/action/restaurant.action';
 
 @Component({
-    selector: 'app-restaurant-filter',
-    templateUrl: './restaurant-filter.html',
-    styleUrl: './restaurant-filter.scss',
-    imports: [NgStyle, NgClass, RestaurantPopularTags, RestaurantCuisines, RestaurantRating, RestaurantPrice, RestaurantDeliveryTime, RestaurantMapFiler]
+  selector: 'app-restaurant-filter',
+  templateUrl: './restaurant-filter.html',
+  styleUrl: './restaurant-filter.scss',
+  imports: [
+    NgStyle,
+    NgClass,
+    RestaurantPopularTags,
+    RestaurantCuisines,
+    RestaurantRating,
+    RestaurantPrice,
+    RestaurantDeliveryTime,
+    RestaurantMapFiler,
+  ],
 })
 export class RestaurantFilter {
-
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   public restaurantService = inject(RestaurantService);
@@ -43,35 +53,39 @@ export class RestaurantFilter {
   public priceData: priceFilter;
   public paramsTag: string[];
 
-  constructor(){
-      this.route.queryParams.subscribe((params) => {
-        this.getTagParams = params['tag'] ? params['tag'].split(',') : [];
-        this.getCuisinesParams = params['cuisines'] ? params['cuisines'].split(',') : [];
-        this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
-        this.getDeliveryTime = params['delivery_time'] ? params['delivery_time'].split(',') : [];
-        this.minPrice = params['minPrice'] ? params['minPrice'] : [];
-        this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
-        this.priceData = {
-          minPrice: this.minPrice,
-          maxPrice: this.maxPrice
-        }
+  constructor() {
+    this.route.queryParams.subscribe(params => {
+      this.getTagParams = params['tag'] ? params['tag'].split(',') : [];
+      this.getCuisinesParams = params['cuisines'] ? params['cuisines'].split(',') : [];
+      this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
+      this.getDeliveryTime = params['delivery_time'] ? params['delivery_time'].split(',') : [];
+      this.minPrice = params['minPrice'] ? params['minPrice'] : [];
+      this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
+      this.priceData = {
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+      };
 
-        this.paramsTag = [...this.getTagParams, ...this.getCuisinesParams, ...this.getRatingParams, ...this.getDeliveryTime];
+      this.paramsTag = [
+        ...this.getTagParams,
+        ...this.getCuisinesParams,
+        ...this.getRatingParams,
+        ...this.getDeliveryTime,
+      ];
 
-        this.store.dispatch(new getRestaurant(this.paramsTag, this.priceData));
-
-      })
-    }
-
-  openFilter(){
-    this.isOpenFilter =! this.isOpenFilter;
+      this.store.dispatch(new GetRestaurant(this.paramsTag, this.priceData));
+    });
   }
 
-  closeResponsiveFilter(){
+  openFilter() {
+    this.isOpenFilter = !this.isOpenFilter;
+  }
+
+  closeResponsiveFilter() {
     this.restaurantService.isOpenResponsiveFilter = false;
   }
 
-  closeResponsiveHorizontal(){
+  closeResponsiveHorizontal() {
     this.restaurantService.isOpenHorizontalFilter = false;
   }
 }

@@ -53,7 +53,8 @@
       "price": 220,
       "image": "assets/images/tour/slider/6.jpg",
       "tag": false
-    },{
+    },
+    {
       "id": 4,
       "cityName": "sydney",
       "price": 220,

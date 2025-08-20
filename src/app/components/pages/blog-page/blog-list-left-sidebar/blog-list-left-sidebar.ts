@@ -1,23 +1,23 @@
 import { Component, inject } from '@angular/core';
+
+import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
+import { Footer } from '../../../../shared/components/footer/footer';
+import { Header } from '../../../../shared/components/header/header';
+import { Layout } from '../../../../shared/components/ui/layout/layout';
 import { blogFilter } from '../../../../shared/interface/pages';
 import { PagesService } from '../../../../shared/services/pages.service';
-import { Layout } from '../../../../shared/components/ui/layout/layout';
-import { Footer } from '../../../../shared/components/footer/footer';
-import { BlogList } from '../widgets/blog-list/blog-list';
 import { BlogFilter } from '../widgets/blog-filter/blog-filter';
-import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
-import { Header } from '../../../../shared/components/header/header';
+import { BlogList } from '../widgets/blog-list/blog-list';
 
 @Component({
-    selector: 'app-blog-list-left-sidebar',
-    templateUrl: './blog-list-left-sidebar.html',
-    styleUrl: './blog-list-left-sidebar.scss',
-    imports: [Header, Breadcrumbs, BlogFilter, BlogList, Footer, Layout]
+  selector: 'app-blog-list-left-sidebar',
+  templateUrl: './blog-list-left-sidebar.html',
+  styleUrl: './blog-list-left-sidebar.scss',
+  imports: [Header, Breadcrumbs, BlogFilter, BlogList, Footer, Layout],
 })
 export class BlogListLeftSidebar {
-
   private pageService = inject(PagesService);
-  
+
   public bg_image = 'assets/images/tour/inner-page/breadcrumb.jpg';
   public title = 'blog';
   public parent = 'Home';
@@ -28,11 +28,11 @@ export class BlogListLeftSidebar {
 
   constructor() {
     this.pageService.pages().subscribe(response => {
-      response.blogPage.forEach((data) => {
+      response.blogPage.forEach(data => {
         this.blogDetails = data.blog;
 
         this.blogFilter = data.blogFilter;
-      })
-    })
+      });
+    });
   }
 }

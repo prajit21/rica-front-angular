@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { HotelGrid2 } from './grid/hotel-grid2/hotel-grid2';
 import { HotelGrid3 } from './grid/hotel-grid3/hotel-grid3';
 import { HotelGrid4 } from './grid/hotel-grid4/hotel-grid4';
@@ -11,99 +12,99 @@ import { HotelListVideo } from './list-view/hotel-list-video/hotel-list-video';
 import { Listview } from './list-view/listview/listview';
 import { HotelListGoogleMap } from './list-view/map/hotel-list-google-map/hotel-list-google-map';
 import { HotelListLeafletMap } from './list-view/map/hotel-list-leaflet-map/hotel-list-leaflet-map';
-import { HotelGoogleMapModal } from './map-modal/hotel-google-map-modal/hotel-google-map-modal';
-import { HotelLeafletMapModal } from './map-modal/hotel-leaflet-map-modal/hotel-leaflet-map-modal';
 import { HotelGoogleMap } from './map/hotel-google-map/hotel-google-map';
 import { HotelLeafletMap } from './map/hotel-leaflet-map/hotel-leaflet-map';
+import { HotelGoogleMapModal } from './map-modal/hotel-google-map-modal/hotel-google-map-modal';
+import { HotelLeafletMapModal } from './map-modal/hotel-leaflet-map-modal/hotel-leaflet-map-modal';
 import { HotelGoogleOnclick } from './onclick-map/hotel-google-onclick/hotel-google-onclick';
 import { HotelLeafletOnclick } from './onclick-map/hotel-leaflet-onclick/hotel-leaflet-onclick';
 import { HotelLeftSidebar } from './sidebar/hotel-left-sidebar/hotel-left-sidebar';
 import { HotelNoSidebar } from './sidebar/hotel-no-sidebar/hotel-no-sidebar';
 import { HotelRightSidebar } from './sidebar/hotel-right-sidebar/hotel-right-sidebar';
 
-export default[
+export default [
   {
     path: 'grid/2-grid',
-    component: HotelGrid2
+    component: HotelGrid2,
   },
   {
     path: 'grid/3-grid',
-    component: HotelGrid3
+    component: HotelGrid3,
   },
   {
     path: 'grid/4-grid',
-    component: HotelGrid4
+    component: HotelGrid4,
   },
   {
     path: 'sidebar/left-sidebar',
-    component: HotelLeftSidebar
+    component: HotelLeftSidebar,
   },
   {
     path: 'sidebar/right-sidebar',
-    component: HotelRightSidebar
+    component: HotelRightSidebar,
   },
   {
     path: 'sidebar/no-sidebar',
-    component: HotelNoSidebar
+    component: HotelNoSidebar,
   },
   {
     path: 'map/google-map',
-    component: HotelGoogleMap
+    component: HotelGoogleMap,
   },
   {
     path: 'map/leaflet-map',
-    component: HotelLeafletMap
+    component: HotelLeafletMap,
   },
   {
     path: 'map-modal/google-map',
-    component: HotelGoogleMapModal
+    component: HotelGoogleMapModal,
   },
   {
     path: 'map-modal/leaflet-map',
-    component: HotelLeafletMapModal
+    component: HotelLeafletMapModal,
   },
   {
     path: 'onclick-map/google-map',
-    component: HotelGoogleOnclick
+    component: HotelGoogleOnclick,
   },
   {
     path: 'onclick-map/leaflet-map',
-    component: HotelLeafletOnclick
+    component: HotelLeafletOnclick,
   },
   {
     path: 'leftside-map/google-map',
-    component: HotelGoogleLeftsideMap
+    component: HotelGoogleLeftsideMap,
   },
   {
     path: 'leftside-map/leaflet-map',
-    component: HotelLeafletLeftsideMap
+    component: HotelLeafletLeftsideMap,
   },
   {
     path: 'list-view/list-view',
-    component: Listview
+    component: Listview,
   },
   {
     path: 'list-view/map/google-map',
-    component: HotelListGoogleMap
+    component: HotelListGoogleMap,
   },
   {
     path: 'list-view/map/leaflet-map',
-    component: HotelListLeafletMap
+    component: HotelListLeafletMap,
   },
   {
     path: 'list-view/slider',
-    component: HotelListSlider
+    component: HotelListSlider,
   },
   {
     path: 'list-view/multiple-image',
-    component: HotelListMultipleImage
+    component: HotelListMultipleImage,
   },
   {
     path: 'list-view/video',
-    component: HotelListVideo
+    component: HotelListVideo,
   },
   {
     path: 'hotel-slider',
-    component: HotelSlider
-  }
+    component: HotelSlider,
+  },
 ] as Routes;

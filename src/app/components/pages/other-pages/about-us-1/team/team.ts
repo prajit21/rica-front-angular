@@ -1,15 +1,16 @@
 import { Component, Input, input } from '@angular/core';
-import { team } from '../../../../../shared/interface/pages';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { team } from '../../../../../shared/interface/pages';
+
 @Component({
-    selector: 'app-team',
-    templateUrl: './team.html',
-    styleUrl: './team.scss',
-    imports: [CarouselModule]
+  selector: 'app-team',
+  templateUrl: './team.html',
+  styleUrl: './team.scss',
+  imports: [CarouselModule],
 })
 export class Team {
-
   @Input() team: team[];
   readonly classic = input<boolean>(false);
 
@@ -20,14 +21,14 @@ export class Team {
     margin: 50,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       668: {
-        items: 2
+        items: 2,
       },
       999: {
-        items: 3
-      }
-    }
-  }
+        items: 3,
+      },
+    },
+  };
 }

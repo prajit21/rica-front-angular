@@ -1,21 +1,22 @@
-import { Component, inject } from '@angular/core';
-import { restaurantDetail } from '../../../../../shared/interface/restaurant-minimal';
-import { RestaurantService } from '../../../../../shared/services/restaurant.service';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
 import { NgClass } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { restaurantDetail } from '../../../../../shared/interface/restaurant-minimal';
+import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+import { HotelService } from '../../../../../shared/services/hotel.service';
+import { RestaurantService } from '../../../../../shared/services/restaurant.service';
+
 @Component({
-    selector: 'app-restaurant-detail-slider',
-    templateUrl: './restaurant-detail-slider.html',
-    styleUrl: './restaurant-detail-slider.scss',
-    imports: [CarouselModule, NgClass, CurrencySymbolPipe]
+  selector: 'app-restaurant-detail-slider',
+  templateUrl: './restaurant-detail-slider.html',
+  styleUrl: './restaurant-detail-slider.scss',
+  imports: [CarouselModule, NgClass, CurrencySymbolPipe],
 })
 export class RestaurantDetailSlider {
-
-  private restaurantService = inject(RestaurantService); 
-  public hotelService = inject(HotelService); 
+  private restaurantService = inject(RestaurantService);
+  public hotelService = inject(HotelService);
 
   public restaurantDetails: restaurantDetail[];
 
@@ -26,20 +27,20 @@ export class RestaurantDetailSlider {
     margin: 30,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       668: {
-        items: 2
+        items: 2,
       },
       999: {
-        items: 3
-      }
-    }
-  }
+        items: 3,
+      },
+    },
+  };
 
-  constructor(){
+  constructor() {
     this.restaurantService.restaurant().subscribe(response => {
       this.restaurantDetails = response.restaurant;
-    })
+    });
   }
 }

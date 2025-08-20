@@ -1,7 +1,15 @@
 <app-header [headerClass]="'light_header'" />
 
-<section class="breadcrumb-section flight-sec pt-0 bg-size" [style.background-image]="'url(assets/images/flights/flight-breadcrumb.jpg)'">
-  <img src="assets/images/flights/flight-breadcrumb.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+<section
+  class="breadcrumb-section flight-sec pt-0 bg-size"
+  [style.background-image]="'url(assets/images/flights/flight-breadcrumb.jpg)'"
+>
+  <img
+    src="assets/images/flights/flight-breadcrumb.jpg"
+    class="bg-img img-fluid blur-up lazyload"
+    alt="background-image"
+    style="display: none"
+  />
   <div class="flight run"></div>
 </section>
 
@@ -26,4 +34,9 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [filterType]="'left'"  [flight]="true" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'single-page'"
+  [filterType]="'left'"
+  [flight]="true"
+/>

@@ -1,7 +1,7 @@
-import { animatedImage } from "./cab-modern";
-import { images } from "./hotel";
+import { animatedImage } from './cab-modern';
+import { images } from './hotel';
 
-export interface pages{
+export interface pages {
   portfolio: portfolio[];
   blogPage: blogPage[];
   blogDetailPage: blogDetailPage[];
@@ -9,7 +9,7 @@ export interface pages{
   elementPages: elementPages;
 }
 
-export interface portfolio{
+export interface portfolio {
   tab: portfolioTab[];
   gallery: portfolioGallery[];
   masonryGallery: portfolioGallery[];
@@ -19,13 +19,13 @@ export interface portfolio{
   creativeSectionMasonry: portfolioGallery[];
 }
 
-export interface portfolioTab{
+export interface portfolioTab {
   id: number;
   title: string;
   value: string;
 }
 
-export interface portfolioGallery{
+export interface portfolioGallery {
   id: number;
   image: string;
   title?: string;
@@ -35,35 +35,35 @@ export interface portfolioGallery{
   class?: string;
 }
 
-export interface blogPage{
+export interface blogPage {
   blog: number[];
-  blogFilter: blogFilter[]
+  blogFilter: blogFilter[];
 }
 
-export interface blogFilter{
+export interface blogFilter {
   blogCategory: blogCategory[];
   blogPopularPost: blogPopularPost[];
   blogPopularTags: blogCategory[];
 }
 
-export interface blogCategory{
+export interface blogCategory {
   id: number;
   title: string;
 }
 
-export interface blogPopularPost{
+export interface blogPopularPost {
   id: number;
   image: string;
   date: string;
-  hits: number
+  hits: number;
 }
 
-export interface blogDetailPage{
+export interface blogDetailPage {
   blogDetail: blogDetail;
   blogComments: blogComments[];
 }
 
-export interface blogDetail{
+export interface blogDetail {
   id: number;
   title: string;
   image: string;
@@ -72,14 +72,14 @@ export interface blogDetail{
   posted_by: string;
   hits: number;
   comments: number;
-  blogData: blogData[]
+  blogData: blogData[];
 }
 
-export interface blogData{
+export interface blogData {
   data: string;
 }
 
-export interface blogComments{
+export interface blogComments {
   id: number;
   name: string;
   image: string;
@@ -87,14 +87,14 @@ export interface blogComments{
   date: string;
 }
 
-export interface otherPages{
+export interface otherPages {
   about: about[];
   contact: contact[];
   faq: faq;
   userDashboard: userDashboard;
 }
 
-export interface about{
+export interface about {
   gallery: animatedImage[];
   team: team[];
   testimonial: number[];
@@ -103,21 +103,21 @@ export interface about{
   services: aboutService[];
 }
 
-export interface team{
+export interface team {
   id: number;
   name: string;
   image: string;
   designation: string;
 }
 
-export interface fact{
+export interface fact {
   id: number;
   image: string;
   title: string;
   count: number;
 }
 
-export interface aboutService{
+export interface aboutService {
   id: number;
   title: string;
   subTitle: string;
@@ -126,31 +126,31 @@ export interface aboutService{
   rating: number;
 }
 
-export interface contact{
+export interface contact {
   id: number;
   title: string;
   icon: string;
   details: blogData[];
 }
 
-export interface faq{
+export interface faq {
   tabs: tabs[];
   details: faqDetails[];
 }
 
-export interface tabs{
+export interface tabs {
   id: number;
   title: string;
   value: string;
 }
 
-export interface faqDetails{
+export interface faqDetails {
   id: number;
   title: string;
   description: string;
 }
 
-export interface userDashboard{
+export interface userDashboard {
   tabs: tabs[];
   dashboardDetails: dashboardDetails;
   userProfile: userProfile[];
@@ -159,26 +159,26 @@ export interface userDashboard{
   bookmark: bookmark[];
 }
 
-export interface dashboardDetails{
+export interface dashboardDetails {
   verificationDetail: verificationDetail[];
   totalCount: totalCount[];
   recentActivity: recentActivity[];
 }
 
-export interface verificationDetail{
+export interface verificationDetail {
   id: number;
   title: string;
   verified: boolean;
 }
 
-export interface totalCount{
+export interface totalCount {
   id: number;
   title: string;
   count: number;
   image: string;
 }
 
-export interface recentActivity{
+export interface recentActivity {
   id: number;
   title: string;
   date: string;
@@ -186,7 +186,7 @@ export interface recentActivity{
   class?: string;
 }
 
-export interface userProfile{
+export interface userProfile {
   title: string;
   value?: string;
   modal?: boolean;
@@ -194,13 +194,13 @@ export interface userProfile{
   details: userProfile[];
 }
 
-export interface booking{
+export interface booking {
   id: number;
   title: string;
   details: bookingDetails[];
 }
 
-export interface bookingDetails{
+export interface bookingDetails {
   id: number;
   title: string;
   amount: number;
@@ -213,40 +213,40 @@ export interface bookingDetails{
   icon: string;
 }
 
-export interface cards{
-  id: number,
+export interface cards {
+  id: number;
   holderName: string;
   cardNumber: string;
   expDate: string;
   cardIcon: string;
-  primary?: boolean,
+  primary?: boolean;
   class: string;
 }
 
-export interface bookmark{
+export interface bookmark {
   id: number;
   title: string;
   subTitle: string;
   image: string;
 }
 
-export interface elementPages{
+export interface elementPages {
   imageRatio: imageRatio;
   button: elementButton[];
 }
 
-export interface imageRatio{
+export interface imageRatio {
   images: images[];
   ratioDetails: ratioDetails[];
 }
 
-export interface ratioDetails{
+export interface ratioDetails {
   title: string;
   subTitle: string;
   ratioClass: string;
 }
 
-export interface elementButton{
+export interface elementButton {
   id: number;
   title: string;
   colClass: string;
@@ -256,8 +256,8 @@ export interface elementButton{
   grid?: boolean;
 }
 
-export interface buttonData{
+export interface buttonData {
   id: number;
   title: string;
-  buttonClass: string
+  buttonClass: string;
 }

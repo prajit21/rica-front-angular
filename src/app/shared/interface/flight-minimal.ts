@@ -1,4 +1,4 @@
-export interface flightMinimal{
+export interface flightMinimal {
   deals: number[];
   category: number[];
   blog: number[];

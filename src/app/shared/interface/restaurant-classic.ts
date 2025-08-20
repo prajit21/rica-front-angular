@@ -1,6 +1,6 @@
-import { socialGallery } from "./hotel-classic";
+import { socialGallery } from './hotel-classic';
 
-export interface restaurantClassic{
+export interface restaurantClassic {
   category: number[];
   breakfast: breakfast[];
   service: number[];
@@ -10,7 +10,7 @@ export interface restaurantClassic{
   socialGallery: socialGallery[];
 }
 
-export interface breakfast{
+export interface breakfast {
   id: number;
   title: string;
   image: string;

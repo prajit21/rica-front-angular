@@ -1,17 +1,17 @@
 import { Component, input, output } from '@angular/core';
-import { RestaurantGridPanel } from './restaurant-grid-panel/restaurant-grid-panel';
+
 import { CabGridPanel } from './cab-grid-panel/cab-grid-panel';
-import { TourGridPanel } from './tour-grid-panel/tour-grid-panel';
 import { HotelGridPanel } from './hotel-grid-panel/hotel-grid-panel';
+import { RestaurantGridPanel } from './restaurant-grid-panel/restaurant-grid-panel';
+import { TourGridPanel } from './tour-grid-panel/tour-grid-panel';
 
 @Component({
-    selector: 'app-grid-panel',
-    templateUrl: './grid-panel.html',
-    styleUrls: ['./grid-panel.scss'],
-    imports: [HotelGridPanel, TourGridPanel, CabGridPanel, RestaurantGridPanel]
+  selector: 'app-grid-panel',
+  templateUrl: './grid-panel.html',
+  styleUrls: ['./grid-panel.scss'],
+  imports: [HotelGridPanel, TourGridPanel, CabGridPanel, RestaurantGridPanel],
 })
 export class GridPanel {
-
   readonly type = input<string>();
   readonly grid4Option = input<boolean>(true);
   readonly horizontalFilter = input<boolean>(false);
@@ -31,16 +31,16 @@ export class GridPanel {
 
   constructor() {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.selectedTabValue.emit('all');
   }
 
-  getTabValue(value: string){
+  getTabValue(value: string) {
     this.selectedTabValue.emit(value);
   }
 
-  openMap(value: boolean){
+  openMap(value: boolean) {
     this.isOpenMap = value;
-    this.map.emit(this.isOpenMap)
+    this.map.emit(this.isOpenMap);
   }
 }

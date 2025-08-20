@@ -3,17 +3,29 @@
   <h6 class="title">fare calender</h6>
 </div>
 <div class="calender-external" [class.show]="isOpenCalender" [ngStyle]="{'margin-top' : '70px'}">
-  <div id='calendar'>
+  <div id="calendar">
     <div class="row">
       <div class="col-md-8">
         <div class="btn-group">
-          <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <div
+            class="btn btn-primary"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (viewDateChange)="closeOpenMonthViewDay()"
+          >
             Previous
           </div>
           <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
             Today
           </div>
-          <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+          <div
+            class="btn btn-primary"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (viewDateChange)="closeOpenMonthViewDay()"
+          >
             Next
           </div>
         </div>

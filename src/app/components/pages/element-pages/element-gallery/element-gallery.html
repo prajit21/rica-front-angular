@@ -1,13 +1,17 @@
 <app-header [headerClass]="'inner-page'" />
 
-<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'pages'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 @if(homeSectionData){
-  <app-hotel-classic-gallery [gallery]="homeSectionData.gallery" [sectionClass]="false" />
-}
-
-@if(tourModern){
-  <app-tour-modern-gallery [gallery]="tourModern.gallery" [title]="true" [sectionClass]="false" />
+<app-hotel-classic-gallery [gallery]="homeSectionData.gallery" [sectionClass]="false" />
+} @if(tourModern){
+<app-tour-modern-gallery [gallery]="tourModern.gallery" [title]="true" [sectionClass]="false" />
 
 }
 <app-footer [location]="true" />

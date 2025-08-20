@@ -6,13 +6,13 @@
     <div class="footer-links">
       <ul>
         @for(about of footerAbout; track about){
-          <li>
-            @if(about?.externalTab){
-              <a [href]="about.path">{{ about.title  }}</a>
-            }@else {
-              <a href="javascript:void(0)" [routerLink]="about.path">{{ about.title  }}</a>
-            }
-          </li>
+        <li>
+          @if(about?.externalTab){
+          <a [href]="about.path">{{ about.title }}</a>
+          }@else {
+          <a href="javascript:void(0)" [routerLink]="about.path">{{ about.title }}</a>
+          }
+        </li>
         }
       </ul>
     </div>

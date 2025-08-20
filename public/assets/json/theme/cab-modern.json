@@ -1,9 +1,9 @@
 {
-   "category": [8,9,10,11,12],
-   "ticketSection": [1,2],
-   "service": [10,11,12],
-   "deals": [3,4,5,6],
-   "call": [
+  "category": [8, 9, 10, 11, 12],
+  "ticketSection": [1, 2],
+  "service": [10, 11, 12],
+  "deals": [3, 4, 5, 6],
+  "call": [
     {
       "id": 1,
       "url": "assets/images/mix/emergency/1.jpg",
@@ -14,9 +14,9 @@
       "url": "assets/images/mix/emergency/2.jpg",
       "title": "02"
     }
-   ],
-   "blog": [8,9,10],
-   "brand": [
+  ],
+  "blog": [8, 9, 10],
+  "brand": [
     {
       "id": 1,
       "logo": "assets/images/cab/logo/1.png"
@@ -41,5 +41,5 @@
       "id": 2,
       "logo": "assets/images/cab/logo/2.png"
     }
-   ]
+  ]
 }

@@ -28,12 +28,12 @@
       "facility": ["swimming pool", "restaurant"],
       "rating": 4,
       "language": "french",
-      "tags": ["paris_center", "swimming_pool","restaurant", "four", "french"],
+      "tags": ["paris_center", "swimming_pool", "restaurant", "four", "french"],
       "price": 1300,
       "discountPrice": 1245,
       "deal": true,
       "dealText": "8 people booked this hotel today",
-      "hotelFacility": ["bar","wifi","beach","swimming"]
+      "hotelFacility": ["bar", "wifi", "beach", "swimming"]
     },
     {
       "id": 2,
@@ -59,11 +59,11 @@
       "facility": ["restaurant", "spa & salon"],
       "rating": 2,
       "language": "arabic",
-      "tags": ["latin", "spa_salon","restaurant", "two", "arabic"],
+      "tags": ["latin", "spa_salon", "restaurant", "two", "arabic"],
       "price": 1200,
       "discountPrice": 1175,
       "deal": false,
-      "hotelFacility": ["bar","wifi","restaurant","swimming"]
+      "hotelFacility": ["bar", "wifi", "restaurant", "swimming"]
     },
     {
       "id": 3,
@@ -88,13 +88,12 @@
       "facility": ["parking", "fitness center"],
       "rating": 5,
       "language": "espanol",
-      "tags": ["latin", "parking","fitness_center", "five", "espanol"],
+      "tags": ["latin", "parking", "fitness_center", "five", "espanol"],
       "price": 1300,
       "discountPrice": 1245,
       "deal": true,
       "dealText": "Hurry, Only 1 room left",
-      "hotelFacility": ["wifi","beach","swimming"]
-
+      "hotelFacility": ["wifi", "beach", "swimming"]
     },
     {
       "id": 4,
@@ -119,11 +118,11 @@
       "facility": ["wifi", "pet allowed"],
       "rating": 3,
       "language": "english",
-      "tags": ["la_defance", "wifi","pet_allowed", "three", "english"],
+      "tags": ["la_defance", "wifi", "pet_allowed", "three", "english"],
       "price": 1200,
       "discountPrice": 1190,
       "deal": false,
-      "hotelFacility": ["bar","wifi","beach","swimming"]
+      "hotelFacility": ["bar", "wifi", "beach", "swimming"]
     },
     {
       "id": 5,
@@ -149,11 +148,11 @@
       "facility": ["restaurant", "wifi"],
       "rating": 5,
       "language": "italiano",
-      "tags": ["latin", "wifi","restaurant", "five", "italiano"],
+      "tags": ["latin", "wifi", "restaurant", "five", "italiano"],
       "price": 1000,
       "discountPrice": 985,
       "deal": false,
-      "hotelFacility": ["bar","wifi","swimming"]
+      "hotelFacility": ["bar", "wifi", "swimming"]
     },
     {
       "id": 6,
@@ -178,12 +177,12 @@
       "facility": ["restaurant", "parking"],
       "rating": 3,
       "language": "suomi",
-      "tags": ["latin", "parking","restaurant", "three", "suomi"],
+      "tags": ["latin", "parking", "restaurant", "three", "suomi"],
       "price": 1500,
       "discountPrice": 1425,
       "deal": true,
       "dealText": "8 people booked this hotel today",
-      "hotelFacility": ["bar","wifi","beach","restaurant","swimming"]
+      "hotelFacility": ["bar", "wifi", "beach", "restaurant", "swimming"]
     },
     {
       "id": 7,
@@ -209,11 +208,11 @@
       "facility": ["pet allowed", "swimming pool"],
       "rating": 3,
       "language": "espanol",
-      "tags": ["paris_center", "swimming_pool","pet_allowed", "three", "espanol"],
+      "tags": ["paris_center", "swimming_pool", "pet_allowed", "three", "espanol"],
       "price": 1100,
       "discountPrice": 1000,
       "deal": false,
-      "hotelFacility": ["bar","wifi","swimming"]
+      "hotelFacility": ["bar", "wifi", "swimming"]
     },
     {
       "id": 8,
@@ -238,11 +237,11 @@
       "facility": ["wifi", "fitness center"],
       "rating": 4,
       "language": "suomi",
-      "tags": ["latin", "wifi","fitness_center", "four", "suomi"],
+      "tags": ["latin", "wifi", "fitness_center", "four", "suomi"],
       "price": 1000,
       "discountPrice": 985,
       "deal": false,
-      "hotelFacility": ["bar","wifi","beach","restaurant"]
+      "hotelFacility": ["bar", "wifi", "beach", "restaurant"]
     }
   ]
 }

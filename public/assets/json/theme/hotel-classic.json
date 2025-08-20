@@ -35,8 +35,8 @@
       "url": "assets/images/mix/emergency/5.jpg",
       "title": "03"
     }
-   ],
-  "ticketSection": [1,2],
+  ],
+  "ticketSection": [1, 2],
   "gallery": [
     {
       "id": 1,
@@ -64,9 +64,9 @@
       "url": "assets/images/hotel/gallery/5.jpg"
     }
   ],
-  "specialRooms": [1,2,3,4],
-  "service": [1,2,3,4,5,6],
-  "testimonial": [1,2,3],
+  "specialRooms": [1, 2, 3, 4],
+  "service": [1, 2, 3, 4, 5, 6],
+  "testimonial": [1, 2, 3],
   "socialGallery": [
     {
       "id": 1,

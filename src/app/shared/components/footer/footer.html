@@ -1,4 +1,8 @@
-<footer [class.sticky-footer]="sticky() == true" [ngClass]="{ 'effect-cls-up footer-bg bg-size' : bgImage() == true, 'footer-light' : footerClass()}" [ngStyle]="{'background-image': bgImage() ? 'url(\'assets/images/tour/background/13.jpg\')' : 'url(\'\')'}">
+<footer
+  [class.sticky-footer]="sticky() === true"
+  [ngClass]="{ 'effect-cls-up footer-bg bg-size' : bgImage() === true, 'footer-light' : footerClass()}"
+  [ngStyle]="{'background-image': bgImage() ? 'url(\'assets/images/tour/background/13.jpg\')' : 'url(\'\')'}"
+>
   <div class="footer section-b-space section-t-space">
     <div class="container">
       <div class="row order-row">
@@ -11,9 +15,7 @@
         <div class="col-xl-3 col-md-6">
           @if(location()){
           <app-location />
-          }
-
-          @if(places()){
+          } @if(places()){
           <app-top-places />
           }
         </div>
@@ -29,7 +31,7 @@
   @if(subFooter()){
   <div class="sub-footer">
     <div class="container">
-      <div class="row ">
+      <div class="row">
         <div class="col-xl-6 col-md-6 col-sm-12">
           <app-social-media />
         </div>

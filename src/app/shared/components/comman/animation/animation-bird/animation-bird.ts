@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-animation-bird',
-    templateUrl: './animation-bird.html',
-    styleUrls: ['./animation-bird.scss'],
-    
+  selector: 'app-animation-bird',
+  templateUrl: './animation-bird.html',
+  styleUrls: ['./animation-bird.scss'],
 })
-export class AnimationBird {
-
-}
+export class AnimationBird {}

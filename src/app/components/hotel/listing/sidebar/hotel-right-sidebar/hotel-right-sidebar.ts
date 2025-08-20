@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { Layout } from '../../../../../shared/components/ui/layout/layout';
-import { Footer } from '../../../../../shared/components/footer/footer';
-import { Filter } from '../../../../../shared/components/comman/filter/filter';
+
+import { Breadcrumbs } from '../../../../../shared/components/comman/breadcrumbs/breadcrumbs';
 import { Details } from '../../../../../shared/components/comman/details/details';
+import { Filter } from '../../../../../shared/components/comman/filter/filter';
 import { GridPanel } from '../../../../../shared/components/comman/grid-panel/grid-panel';
 import { SearchBox } from '../../../../../shared/components/comman/search-box/search-box';
-import { Breadcrumbs } from '../../../../../shared/components/comman/breadcrumbs/breadcrumbs';
+import { Footer } from '../../../../../shared/components/footer/footer';
 import { Header } from '../../../../../shared/components/header/header';
+import { Layout } from '../../../../../shared/components/ui/layout/layout';
 
 @Component({
-    selector: 'app-hotel-right-sidebar',
-    templateUrl: './hotel-right-sidebar.html',
-    styleUrls: ['./hotel-right-sidebar.scss'],
-    imports: [Header, Breadcrumbs, SearchBox, GridPanel, Details, Filter, Footer, Layout]
+  selector: 'app-hotel-right-sidebar',
+  templateUrl: './hotel-right-sidebar.html',
+  styleUrls: ['./hotel-right-sidebar.scss'],
+  imports: [Header, Breadcrumbs, SearchBox, GridPanel, Details, Filter, Footer, Layout],
 })
 export class HotelRightSidebar {
-  
   public bg_image = 'assets/images/inner-pages/bg-bread.jpg';
   public title = 'hotels in dubai';
   public parent = 'Home';
@@ -25,11 +25,11 @@ export class HotelRightSidebar {
 
   constructor() {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.selectedTabValue = 'all';
   }
 
-  getTabValue(value: string){
+  getTabValue(value: string) {
     this.selectedTabValue = value;
   }
 }

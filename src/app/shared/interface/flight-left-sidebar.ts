@@ -1,12 +1,12 @@
-import { airlines } from "./flight-modern";
+import { airlines } from './flight-modern';
 
-export interface flightLeftSidebar{
+export interface flightLeftSidebar {
   airlines: airlines[];
   destination: airlineDestination[];
   deals: airlinesDeal[];
 }
 
-export interface airlineDestination{
+export interface airlineDestination {
   id: number;
   cityName: string;
   price: number;
@@ -15,7 +15,7 @@ export interface airlineDestination{
   tagText?: string;
 }
 
-export interface airlinesDeal{
+export interface airlinesDeal {
   id: number;
   from: string;
   to: string;

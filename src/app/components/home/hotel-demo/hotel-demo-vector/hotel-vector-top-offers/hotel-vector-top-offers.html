@@ -8,23 +8,31 @@
           </div>
           <div class="flight-5 no-arrow">
             @if(topOffers){
-              <owl-carousel-o [options]="options">
-                @for(offers of topOffers; track offers){
-                  <ng-template carouselSlide>
-                    <div>
-                      <div class="tourBox wow zoomIn" >
-                        <div class="tourImg bg-size" [style.background-image]="'url('+ offers.image +')'">
-                          <img [src]="offers.image" class="img-fluid blur-up lazyload bg-img" alt="offer-img" style="display: none;">
-                        </div>
-                        <div class="tourContent">
-                          <h3>{{ offers.title }}</h3>
-                          <h6>{{ offers.description }}</h6>
-                        </div>
-                      </div>
+            <owl-carousel-o [options]="options">
+              @for(offers of topOffers; track offers){
+              <ng-template carouselSlide>
+                <div>
+                  <div class="tourBox wow zoomIn">
+                    <div
+                      class="tourImg bg-size"
+                      [style.background-image]="'url('+ offers.image +')'"
+                    >
+                      <img
+                        [src]="offers.image"
+                        class="img-fluid blur-up lazyload bg-img"
+                        alt="offer-img"
+                        style="display: none"
+                      />
                     </div>
-                  </ng-template>
-                }
-              </owl-carousel-o>
+                    <div class="tourContent">
+                      <h3>{{ offers.title }}</h3>
+                      <h6>{{ offers.description }}</h6>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              }
+            </owl-carousel-o>
             }
           </div>
         </div>

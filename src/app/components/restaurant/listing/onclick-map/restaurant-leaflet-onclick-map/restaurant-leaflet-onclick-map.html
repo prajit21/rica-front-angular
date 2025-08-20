@@ -6,7 +6,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <app-grid-panel [type]="'restaurant'" (selectedTabValue)="getTabValue($event)" [onClickMap]="true" [mapType]="'leafletMap'" (map)="openMap($event)" />
+        <app-grid-panel
+          [type]="'restaurant'"
+          (selectedTabValue)="getTabValue($event)"
+          [onClickMap]="true"
+          [mapType]="'leafletMap'"
+          (map)="openMap($event)"
+        />
       </div>
       <div class="col-xl-12 onclick-map" [class.show]="isOpenMap">
         <app-details [type]="'leafletMap'" />
@@ -15,7 +21,12 @@
         <app-filter [type]="'restaurant'" />
       </div>
       <div class="col-lg-9 ratio3_2">
-        <app-details [type]="'restaurant'" [selectedTabValue]="selectedTabValue" [gridType]="'3-grid'" [responsiveLatestFilter]="true" />
+        <app-details
+          [type]="'restaurant'"
+          [selectedTabValue]="selectedTabValue"
+          [gridType]="'3-grid'"
+          [responsiveLatestFilter]="true"
+        />
       </div>
     </div>
   </div>
@@ -23,4 +34,10 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'restaurant'" [gridType]="'3-grid'" [filterType]="'left'" [filter]="true" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'restaurant'"
+  [gridType]="'3-grid'"
+  [filterType]="'left'"
+  [filter]="true"
+/>

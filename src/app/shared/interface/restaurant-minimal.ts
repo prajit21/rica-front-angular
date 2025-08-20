@@ -1,21 +1,21 @@
-import { images } from "./hotel";
-import { booking } from "./hotel-vector";
+import { images } from './hotel';
+import { booking } from './hotel-vector';
 
-export interface restaurantMinimal{
+export interface restaurantMinimal {
   category: restaurantCategory[];
   banner: restaurantBanner[];
   booking: booking[];
   restaurant: number[];
 }
 
-export interface restaurantCategory{
+export interface restaurantCategory {
   id: number;
   title: string;
   restaurant: number;
   image: string;
 }
 
-export interface restaurantBanner{
+export interface restaurantBanner {
   id: number;
   title: string;
   subTitle: string;
@@ -24,11 +24,11 @@ export interface restaurantBanner{
   left?: boolean;
 }
 
-export interface restaurant{
+export interface restaurant {
   restaurant: restaurantDetail[];
 }
 
-export interface restaurantDetail{
+export interface restaurantDetail {
   id: number;
   restaurantName: string;
   image: string;

@@ -1,18 +1,19 @@
+import { NgClass } from '@angular/common';
 import { Component, inject, input, output } from '@angular/core';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { GridService } from '../../../../../shared/services/grid.service';
 import { TourService } from '../../../../../shared/services/tour.service';
 import { Filter } from '../../filter/filter';
-import { NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-tour-grid-panel',
-    templateUrl: './tour-grid-panel.html',
-    styleUrls: ['./tour-grid-panel.scss'],
-    imports: [NgClass, Filter]
+  selector: 'app-tour-grid-panel',
+  templateUrl: './tour-grid-panel.html',
+  styleUrls: ['./tour-grid-panel.scss'],
+  imports: [NgClass, Filter],
 })
 export class TourGridPanel {
-
   private gridService = inject(GridService);
   private tourService = inject(TourService);
   private modal = inject(NgbModal);
@@ -35,42 +36,42 @@ export class TourGridPanel {
   public isOpenFilter: boolean = false;
   public isOpenMap: boolean = false;
 
-  ngOnInit(){
+  ngOnInit() {
     this.selectedTabValue.emit('all');
   }
 
-  grid2(){
+  grid2() {
     this.gridService.grid2();
   }
 
-  grid3(){
+  grid3() {
     this.gridService.grid3();
   }
 
-  grid4(){
+  grid4() {
     this.gridService.grid4();
   }
 
-  changedValue(value: string){
+  changedValue(value: string) {
     this.activeTab = value;
     this.selectedTabValue.emit(value);
   }
 
-  openResponsiveTab(){
-    this.isOpenTab =! this.isOpenTab;
+  openResponsiveTab() {
+    this.isOpenTab = !this.isOpenTab;
   }
 
-  openTourHorizontalFilter(){
-    if(window.innerWidth > 992){
-      this.tourService.isOpenHorizontalFilter =! this.tourService.isOpenHorizontalFilter;
+  openTourHorizontalFilter() {
+    if (window.innerWidth > 992) {
+      this.tourService.isOpenHorizontalFilter = !this.tourService.isOpenHorizontalFilter;
     }
 
-    if(window.innerWidth < 992){
+    if (window.innerWidth < 992) {
       this.tourService.isOpenResponsiveHorizontal = true;
     }
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     this.listView = this.gridService.listView;
     this.col_sm_6 = this.gridService.col_sm_6;
     this.col_xl_4 = this.gridService.col_xl_4;
@@ -79,7 +80,7 @@ export class TourGridPanel {
     this.col_12 = this.gridService.col_12;
   }
 
-  openTourFilter(){
-    this.tourService.isOpenFindTours =! this.tourService.isOpenFindTours;
+  openTourFilter() {
+    this.tourService.isOpenFindTours = !this.tourService.isOpenFindTours;
   }
 }

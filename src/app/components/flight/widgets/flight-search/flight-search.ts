@@ -1,38 +1,39 @@
 import { Component } from '@angular/core';
-import { seatType } from '../../../../shared/components/data/data/flight';
 import { RouterLink } from '@angular/router';
+
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
+
+import { seatType } from '../../../../shared/components/data/data/flight';
 import { ClickOutsideDirective } from '../../../../shared/directives/outside.directive';
 
 @Component({
-    selector: 'app-flight-search',
-    templateUrl: './flight-search.html',
-    styleUrl: './flight-search.scss',
-    imports: [ClickOutsideDirective, NgbInputDatepicker, RouterLink]
+  selector: 'app-flight-search',
+  templateUrl: './flight-search.html',
+  styleUrl: './flight-search.scss',
+  imports: [ClickOutsideDirective, NgbInputDatepicker, RouterLink],
 })
 export class FlightSearch {
-
   public seatType = seatType;
 
   public adults = 1;
   public child = 1;
   public isTraveler: boolean = false;
 
-  openTraveler(){
-    this.isTraveler =! this.isTraveler;
+  openTraveler() {
+    this.isTraveler = !this.isTraveler;
   }
 
-  changeValue(value: string, number:number){
-    if(number == -1){
-      if(value == 'adult' && this.adults > 1){
+  changeValue(value: string, number: number) {
+    if (number == -1) {
+      if (value == 'adult' && this.adults > 1) {
         this.adults -= 1;
-      }else if(value == 'children' && this.child > 1){
+      } else if (value == 'children' && this.child > 1) {
         this.child -= 1;
       }
-    }else if(number == 1){
-      if(value == 'adult'){
+    } else if (number == 1) {
+      if (value == 'adult') {
         this.adults += 1;
-      }else if(value == 'children'){
+      } else if (value == 'children') {
         this.child += 1;
       }
     }

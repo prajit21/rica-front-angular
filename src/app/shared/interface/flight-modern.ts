@@ -1,4 +1,4 @@
-export interface flightModern{
+export interface flightModern {
   destination: destination[];
   airlines: airlines[];
   category: number[];
@@ -7,7 +7,7 @@ export interface flightModern{
   blog: number[];
 }
 
-export interface destination{
+export interface destination {
   id: number;
   country: string;
   city: string;
@@ -16,21 +16,21 @@ export interface destination{
   price: number;
 }
 
-export interface airlines{
+export interface airlines {
   id: number;
   airlineName: string;
   title: string;
   subTitle: string;
 }
 
-export interface topDestination{
+export interface topDestination {
   id: number;
   title: string;
   image: string;
   flights: flights[];
 }
 
-export interface flights{
+export interface flights {
   id: number;
   country: string;
   price: number;

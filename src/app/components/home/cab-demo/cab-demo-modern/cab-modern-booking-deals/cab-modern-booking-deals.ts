@@ -1,18 +1,19 @@
 import { Component, inject, Input, input } from '@angular/core';
-import { cabDetails } from '../../../../../shared/interface/cab-modern';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
+
 import { Title } from '../../../../../shared/components/comman/title/title';
+import { cabDetails } from '../../../../../shared/interface/cab-modern';
+import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+import { HotelService } from '../../../../../shared/services/hotel.service';
 
 @Component({
-    selector: 'app-cab-modern-booking-deals',
-    templateUrl: './cab-modern-booking-deals.html',
-    styleUrls: ['./cab-modern-booking-deals.scss'],
-    imports: [Title, CarouselModule, CurrencySymbolPipe]
+  selector: 'app-cab-modern-booking-deals',
+  templateUrl: './cab-modern-booking-deals.html',
+  styleUrls: ['./cab-modern-booking-deals.scss'],
+  imports: [Title, CarouselModule, CurrencySymbolPipe],
 })
 export class CabModernBookingDeals {
-
   public hotelService = inject(HotelService);
 
   readonly id = input<number[]>();
@@ -39,14 +40,14 @@ export class CabModernBookingDeals {
       1199: {
         items: 3,
       },
-    }
-  }
+    },
+  };
 
-  ngOnChanges(){
-    if(Array.isArray(this.id())){
-      this.cab = this.cab.filter((item) => {
-        return this.id()?.includes(item.id)
-      })
+  ngOnChanges() {
+    if (Array.isArray(this.id())) {
+      this.cab = this.cab.filter(item => {
+        return this.id()?.includes(item.id);
+      });
     }
   }
 }

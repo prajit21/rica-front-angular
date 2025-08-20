@@ -1,38 +1,38 @@
 import { Component, Input } from '@angular/core';
-import { airlines } from '../../../../../shared/interface/flight-modern';
 import { RouterLink } from '@angular/router';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { airlines } from '../../../../../shared/interface/flight-modern';
+
 @Component({
-    selector: 'app-flight-left-sidebar-airline-details',
-    templateUrl: './flight-left-sidebar-airline-details.html',
-    styleUrls: ['./flight-left-sidebar-airline-details.scss'],
-    imports: [CarouselModule, RouterLink]
+  selector: 'app-flight-left-sidebar-airline-details',
+  templateUrl: './flight-left-sidebar-airline-details.html',
+  styleUrls: ['./flight-left-sidebar-airline-details.scss'],
+  imports: [CarouselModule, RouterLink],
 })
 export class FlightLeftSidebarAirlineDetails {
+  @Input() airlines: airlines[];
 
-   @Input() airlines: airlines[];
-
-   public options = {
+  public options = {
     loop: false,
     nav: true,
     dots: false,
     margin: 30,
-    navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>",],
+    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       550: {
-        items: 2
+        items: 2,
       },
       949: {
-        items: 3
+        items: 3,
       },
       1200: {
-        items: 4
-      }
-    }
-   }
-
+        items: 4,
+      },
+    },
+  };
 }

@@ -1,17 +1,19 @@
-import { inject, Injectable } from "@angular/core";
-import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { flight } from "../../interface/flight";
-import { FlightService } from "../../services/flight.service";
-import { getFlights } from "../action/flight.action";
+import { inject, Injectable } from '@angular/core';
 
-export class flightModal {
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+
+import { flight } from '../../interface/flight';
+import { FlightService } from '../../services/flight.service';
+import { GetFlights } from '../action/flight.action';
+
+export class FlightModal {
   data: {
     flight: flight[];
   };
 }
 
-@State<flightModal>({
+@State<FlightModal>({
   name: 'flight',
   defaults: {
     data: {
@@ -19,31 +21,28 @@ export class flightModal {
     },
   },
 })
-
 @Injectable()
-export class flightState{
-
+export class FlightState {
   private flightService = inject(FlightService);
 
   public flights: flight[];
 
   @Selector()
-  static flight(state: flightModal) {
+  static flight(state: FlightModal) {
     return state.data.flight;
   }
 
-  @Action(getFlights)
-  getData( ctx: StateContext<flightModal>, action: getFlights ){
+  @Action(GetFlights)
+  getData(ctx: StateContext<FlightModal>, action: GetFlights) {
     return this.flightService.getFlightDetails(action.filter).pipe(
-
-      tap((res) => {
-        if (action.price.minPrice  || action.price.maxPrice ) {
+      tap(res => {
+        if (action.price.minPrice || action.price.maxPrice) {
           this.flights = res.filter(
             (item: { price: number }) =>
-              item.price >= action.price.minPrice && item.price <= action.price.maxPrice
+              item.price >= action.price.minPrice && item.price <= action.price.maxPrice,
           );
-        }else {
-          this.flights = res
+        } else {
+          this.flights = res;
         }
 
         ctx.setState({
@@ -51,8 +50,7 @@ export class flightState{
             flight: this.flights,
           },
         });
-
-      })
-    )
+      }),
+    );
   }
 }

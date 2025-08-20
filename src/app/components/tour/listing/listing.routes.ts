@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { TourGrid2 } from './grid/tour-grid2/tour-grid2';
 import { TourGrid3 } from './grid/tour-grid3/tour-grid3';
 import { TourGrid4 } from './grid/tour-grid4/tour-grid4';
@@ -16,54 +17,54 @@ import { TourWithSlider } from './tour-with-slider/tour-with-slider';
 export default [
   {
     path: 'grid/2-grid',
-    component: TourGrid2
+    component: TourGrid2,
   },
   {
     path: 'grid/3-grid',
-    component: TourGrid3
+    component: TourGrid3,
   },
   {
     path: 'grid/4-grid',
-    component: TourGrid4
+    component: TourGrid4,
   },
   {
     path: 'sidebar/left-sidebar',
-    component: TourLeftSidebar
+    component: TourLeftSidebar,
   },
   {
     path: 'sidebar/right-sidebar',
-    component: TourRightSidebar
+    component: TourRightSidebar,
   },
   {
     path: 'sidebar/no-sidebar',
-    component: TourNoSidebar
+    component: TourNoSidebar,
   },
   {
     path: 'list-view/list-view',
-    component: TourListView
+    component: TourListView,
   },
   {
     path: 'list-view/slider',
-    component: TourListSlider
+    component: TourListSlider,
   },
   {
     path: 'list-view/multiple-images',
-    component: TourListMultipleImages
+    component: TourListMultipleImages,
   },
   {
     path: 'list-view/video',
-    component: TourListVideo
+    component: TourListVideo,
   },
   {
     path: 'slider',
-    component: TourWithSlider
+    component: TourWithSlider,
   },
   {
     path: 'minimal',
-    component: TourMinimal
+    component: TourMinimal,
   },
   {
     path: 'classic',
-    component: TourClassic
-  }
+    component: TourClassic,
+  },
 ] as Routes;

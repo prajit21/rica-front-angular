@@ -6,9 +6,9 @@
     <div class="footer-links">
       <ul>
         @for(links of footerUsefulLink; track links){
-          <li>
-            <a href="javascript:void(0)" [routerLink]="links.path">{{ links.title }}</a>
-          </li>
+        <li>
+          <a href="javascript:void(0)" [routerLink]="links.path">{{ links.title }}</a>
+        </li>
         }
       </ul>
     </div>

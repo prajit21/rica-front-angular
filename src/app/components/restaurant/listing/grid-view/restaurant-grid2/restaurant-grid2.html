@@ -12,7 +12,12 @@
         <app-filter [type]="'restaurant'" />
       </div>
       <div class="col-lg-9 ratio3_2">
-        <app-details [type]="'restaurant'" [selectedTabValue]="selectedTabValue" [gridType]="'2-grid'" [responsiveLatestFilter]="true" />
+        <app-details
+          [type]="'restaurant'"
+          [selectedTabValue]="selectedTabValue"
+          [gridType]="'2-grid'"
+          [responsiveLatestFilter]="true"
+        />
       </div>
     </div>
   </div>
@@ -20,4 +25,9 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'restaurant'" [gridType]="'2-grid'" [filterType]="'left'" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'restaurant'"
+  [gridType]="'2-grid'"
+  [filterType]="'left'"
+/>

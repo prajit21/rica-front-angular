@@ -1,19 +1,20 @@
 import { Component, inject, Input, input, output } from '@angular/core';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { GridService } from '../../../../../shared/services/grid.service';
 import { RestaurantService } from '../../../../../shared/services/restaurant.service';
+import { Filter } from '../../filter/filter';
 import { GoogleMapModal } from '../../modal/google-map-modal/google-map-modal';
 import { LeafletMapModal } from '../../modal/leaflet-map-modal/leaflet-map-modal';
-import { Filter } from '../../filter/filter';
 
 @Component({
-    selector: 'app-restaurant-grid-panel',
-    templateUrl: './restaurant-grid-panel.html',
-    styleUrl: './restaurant-grid-panel.scss',
-    imports: [Filter]
+  selector: 'app-restaurant-grid-panel',
+  templateUrl: './restaurant-grid-panel.html',
+  styleUrl: './restaurant-grid-panel.scss',
+  imports: [Filter],
 })
 export class RestaurantGridPanel {
-
   private gridService = inject(GridService);
   private restaurantService = inject(RestaurantService);
   private modal = inject(NgbModal);
@@ -39,55 +40,63 @@ export class RestaurantGridPanel {
   public isOpenTab: boolean = false;
   public isOpenMap: boolean = false;
 
-  ngOnInit(){
+  ngOnInit() {
     this.selectedTabValue.emit('all');
   }
 
-  grid2(){
+  grid2() {
     this.gridService.grid2();
   }
 
-  grid3(){
+  grid3() {
     this.gridService.grid3();
   }
 
-  grid4(){
+  grid4() {
     this.gridService.grid4();
   }
 
-  changedValue(value: string){
+  changedValue(value: string) {
     this.activeTab = value;
     this.selectedTabValue.emit(value);
   }
 
-  openHorizontalFilter(){
-    this.restaurantService.isOpenHorizontalFilter =! this.restaurantService.isOpenHorizontalFilter;
+  openHorizontalFilter() {
+    this.restaurantService.isOpenHorizontalFilter = !this.restaurantService.isOpenHorizontalFilter;
   }
 
-  openResponsiveTab(){
-    this.isOpenTab =! this.isOpenTab;
+  openResponsiveTab() {
+    this.isOpenTab = !this.isOpenTab;
   }
 
-  openMapFilter(){
-    this.restaurantService.isOpenMapFilter =! this.restaurantService.isOpenMapFilter;
+  openMapFilter() {
+    this.restaurantService.isOpenMapFilter = !this.restaurantService.isOpenMapFilter;
   }
 
-  openMap(){
-    this.isOpenMap =! this.isOpenMap;
-    this.map.emit(this.isOpenMap)
+  openMap() {
+    this.isOpenMap = !this.isOpenMap;
+    this.map.emit(this.isOpenMap);
   }
 
-  openMapModal(mapType: string){
-    if(mapType == 'googleMap'){
-      const modal = this.modal.open(GoogleMapModal, { size: 'xl', centered: true, modalDialogClass:'xxl-custom'})
+  openMapModal(mapType: string) {
+    if (mapType == 'googleMap') {
+      const modal = this.modal.open(GoogleMapModal, {
+        size: 'xl',
+        centered: true,
+        modalDialogClass: 'xxl-custom',
+      });
       modal.componentInstance.filterType = 'restaurant';
-    }else if(mapType == 'leafletMap'){
-      const modal = this.modal.open(LeafletMapModal, { size: 'xl',centered: true, modalDialogClass:'xxl-custom'});
+    } else if (mapType == 'leafletMap') {
+      const modal = this.modal.open(LeafletMapModal, {
+        size: 'xl',
+        centered: true,
+        modalDialogClass: 'xxl-custom',
+      });
       modal.componentInstance.filterType = 'restaurant';
     }
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     this.listView = this.gridService.listView;
     this.col_sm_6 = this.gridService.col_sm_6;
     this.col_xl_4 = this.gridService.col_xl_4;

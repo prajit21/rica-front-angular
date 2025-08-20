@@ -5,10 +5,10 @@
 <section class="single-section small-section bg-inner">
   <div class="container">
     <div class="row">
-      <div class="col-xl-3 col-lg-4 ">
+      <div class="col-xl-3 col-lg-4">
         <div class="sticky-cls-top">
           @if(restaurantDetails){
-            <app-restaurant-cart-items [restaurantOrders]="restaurantDetails.restaurantOrders" />
+          <app-restaurant-cart-items [restaurantOrders]="restaurantDetails.restaurantOrders" />
           }
         </div>
       </div>
@@ -18,27 +18,30 @@
             <app-restaurant-page-tabs (tabValue)="getTabValue($event)" />
           </div>
           <div class="description-details tab-content" id="top-tabContent">
-            <div class="menu-part tab-pane fade show active" [class.p-0]="activeTab == 'order'" [class.about]="activeTab == 'overview'" [class.map]="activeTab == 'location'" [class.review]="activeTab == 'review'">
-              @if(restaurantDetails){
-                @if(activeTab == 'order'){
-                  <app-restaurant-orders [restaurantOrders]="restaurantDetails.restaurantOrders" />
-                }
-                @if(activeTab == 'overview'){
-                  <app-restaurant-overview [restaurantOverview]="restaurantDetails.restaurantOverview" />
-                }
-                @if(activeTab == 'gallery'){
-                  <app-restaurant-gallery [restaurantGallery]="restaurantDetails.restaurantGallery" />
-                }
-                @if(activeTab == 'location'){
-                  <app-restaurant-location [restaurantLocation]="restaurantDetails.restaurantLocation" />
-                }
-                @if(activeTab == 'book'){
-                  <app-restaurant-book-table />
-                }
-                @if(activeTab == 'review'){
-                  <app-restaurant-review [restaurantReview]="restaurantDetails.restaurantReview" />
-                }
-              }
+            <div
+              class="menu-part tab-pane fade show active"
+              [class.p-0]="activeTab === 'order'"
+              [class.about]="activeTab === 'overview'"
+              [class.map]="activeTab === 'location'"
+              [class.review]="activeTab === 'review'"
+            >
+              @if(restaurantDetails){ @if(activeTab === 'order'){
+              <app-restaurant-orders [restaurantOrders]="restaurantDetails.restaurantOrders" />
+              } @if(activeTab === 'overview'){
+              <app-restaurant-overview
+                [restaurantOverview]="restaurantDetails.restaurantOverview"
+              />
+              } @if(activeTab === 'gallery'){
+              <app-restaurant-gallery [restaurantGallery]="restaurantDetails.restaurantGallery" />
+              } @if(activeTab === 'location'){
+              <app-restaurant-location
+                [restaurantLocation]="restaurantDetails.restaurantLocation"
+              />
+              } @if(activeTab === 'book'){
+              <app-restaurant-book-table />
+              } @if(activeTab === 'review'){
+              <app-restaurant-review [restaurantReview]="restaurantDetails.restaurantReview" />
+              } }
             </div>
           </div>
         </div>
@@ -58,4 +61,8 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'restaurant-single-page'" [filterType]="'left'" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'restaurant-single-page'"
+  [filterType]="'left'"
+/>

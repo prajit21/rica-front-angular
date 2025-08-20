@@ -1,16 +1,17 @@
 import { Component, Input, input } from '@angular/core';
-import { socialGallery } from '../../../../../shared/interface/hotel-classic';
 import { RouterLink } from '@angular/router';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { socialGallery } from '../../../../../shared/interface/hotel-classic';
+
 @Component({
-    selector: 'app-hotel-classic-social-gallery',
-    templateUrl: './hotel-classic-social-gallery.html',
-    styleUrls: ['./hotel-classic-social-gallery.scss'],
-    imports: [CarouselModule, RouterLink]
+  selector: 'app-hotel-classic-social-gallery',
+  templateUrl: './hotel-classic-social-gallery.html',
+  styleUrls: ['./hotel-classic-social-gallery.scss'],
+  imports: [CarouselModule, RouterLink],
 })
 export class HotelClassicSocialGallery {
-
   readonly id = input<number[]>();
   @Input() socialGallery: socialGallery[];
   readonly title = input<boolean>(false);
@@ -25,17 +26,17 @@ export class HotelClassicSocialGallery {
         items: 2,
       },
       480: {
-        items: 3
+        items: 3,
       },
       768: {
-        items: 4
+        items: 4,
       },
       1024: {
-        items: 5
+        items: 5,
       },
       1367: {
-        items: 6
-      }
+        items: 6,
+      },
     },
   };
 }

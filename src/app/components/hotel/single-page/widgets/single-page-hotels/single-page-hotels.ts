@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { hotels } from '../../../../../shared/interface/hotel';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
 import { RouterLink } from '@angular/router';
 
+import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
+
+import { hotels } from '../../../../../shared/interface/hotel';
+import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency.pipe';
+import { HotelService } from '../../../../../shared/services/hotel.service';
+
 @Component({
-    selector: 'app-single-page-hotels',
-    templateUrl: './single-page-hotels.html',
-    styleUrls: ['./single-page-hotels.scss'],
-    imports: [CarouselModule, RouterLink, NgbRating, CurrencySymbolPipe]
+  selector: 'app-single-page-hotels',
+  templateUrl: './single-page-hotels.html',
+  styleUrls: ['./single-page-hotels.scss'],
+  imports: [CarouselModule, RouterLink, NgbRating, CurrencySymbolPipe],
 })
 export class SinglePageHotels {
-
   public hotelDetails: hotels[];
   public hotels: hotels[];
 
@@ -24,32 +25,32 @@ export class SinglePageHotels {
     margin: 30,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       668: {
-        items: 2
+        items: 2,
       },
       999: {
-        items: 3
-      }
-    }
-  }
+        items: 3,
+      },
+    },
+  };
 
   constructor(
     public hotelService: HotelService,
     private config: NgbRatingConfig,
-    ){
+  ) {
     this.config.max = 5;
-		this.config.readonly = true;
+    this.config.readonly = true;
 
     this.hotelService.hotel().subscribe(response => {
       this.hotelDetails = response.hotels;
 
-      if(this.hotelDetails){
-        this.hotels = this.hotelDetails.filter((data) => {
-            return data;
-        })
+      if (this.hotelDetails) {
+        this.hotels = this.hotelDetails.filter(data => {
+          return data;
+        });
       }
-    })
+    });
   }
 }

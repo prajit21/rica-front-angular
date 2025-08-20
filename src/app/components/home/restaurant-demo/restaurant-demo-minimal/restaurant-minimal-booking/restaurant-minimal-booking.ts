@@ -1,14 +1,13 @@
 import { Component, HostListener, input } from '@angular/core';
+
 import { booking } from '../../../../../shared/interface/hotel-vector';
 
 @Component({
-    selector: 'app-restaurant-minimal-booking',
-    templateUrl: './restaurant-minimal-booking.html',
-    styleUrls: ['./restaurant-minimal-booking.scss'],
-
+  selector: 'app-restaurant-minimal-booking',
+  templateUrl: './restaurant-minimal-booking.html',
+  styleUrls: ['./restaurant-minimal-booking.scss'],
 })
 export class RestaurantMinimalBooking {
-
   readonly booking = input<booking[]>();
 
   public top1: number = -30;
@@ -21,7 +20,7 @@ export class RestaurantMinimalBooking {
   public previousScrollY: number = 0;
 
   @HostListener('window:scroll', [])
-  onWindowScroll(event: Event): void {
+  onWindowScroll(_event: Event): void {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > this.previousScrollY) {
@@ -49,7 +48,7 @@ export class RestaurantMinimalBooking {
   }
 
   onScrollUp(): void {
-    if(window.scrollY == 0){
+    if (window.scrollY == 0) {
       this.top1 = -30;
       this.rotate1 = 0;
 
@@ -60,9 +59,7 @@ export class RestaurantMinimalBooking {
       this.rotate3 = 0;
 
       this.top4 = -35;
-
-    }
-    else{
+    } else {
       this.top1 = this.top1 - 0.75;
       this.rotate1 = this.rotate1 - 0.14;
 
@@ -73,7 +70,6 @@ export class RestaurantMinimalBooking {
       this.rotate3 = this.rotate3 - 0.14;
 
       this.top4 = this.top4 - 0.75;
-
     }
   }
 }

@@ -1,19 +1,26 @@
 import { Component, Input, input } from '@angular/core';
+
 import { BlogDetailPageSkeleton } from './blog-detail-page-skeleton/blog-detail-page-skeleton';
 import { BlogSkeleton } from './blog-skeleton/blog-skeleton';
 import { FlightLoader } from './flight-loader/flight-loader';
-import { SkeletonLoader } from './skeleton-loader/skeleton-loader';
-import { LoaderTwo } from './loader-two/loader-two';
 import { LoaderOne } from './loader-one/loader-one';
+import { LoaderTwo } from './loader-two/loader-two';
+import { SkeletonLoader } from './skeleton-loader/skeleton-loader';
 
 @Component({
-    selector: 'app-loader',
-    templateUrl: './loader.html',
-    styleUrls: ['./loader.scss'],
-    imports: [LoaderOne, LoaderTwo, SkeletonLoader, FlightLoader, BlogSkeleton, BlogDetailPageSkeleton]
+  selector: 'app-loader',
+  templateUrl: './loader.html',
+  styleUrls: ['./loader.scss'],
+  imports: [
+    LoaderOne,
+    LoaderTwo,
+    SkeletonLoader,
+    FlightLoader,
+    BlogSkeleton,
+    BlogDetailPageSkeleton,
+  ],
 })
 export class Loader {
-
   @Input() loaderType: string;
   readonly gridType = input<string>();
   readonly filter = input<boolean>();

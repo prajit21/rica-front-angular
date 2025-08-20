@@ -1,18 +1,18 @@
-export interface hotelMinimal{
+export interface hotelMinimal {
   topCity: topCities[];
   hotels: hotels[];
   blog: number[];
   ricaBenefits: ricaBenefit[];
 }
 
-export interface topCities{
+export interface topCities {
   id: number;
   url: string;
   cityName: string;
   totalProperty: number;
 }
 
-export interface hotels{
+export interface hotels {
   id: number;
   hotelName: string;
   location: string;
@@ -23,11 +23,11 @@ export interface hotels{
   rating: number;
 }
 
-export interface blog{
-  blog: blogs[]
+export interface blog {
+  blog: blogs[];
 }
 
-export interface blogs{
+export interface blogs {
   id: number;
   blogTitle: string;
   description: string;
@@ -39,7 +39,7 @@ export interface blogs{
   posted_date?: string;
 }
 
-export interface ricaBenefit{
+export interface ricaBenefit {
   id: number;
   title: string;
   description: string;

@@ -1,5 +1,5 @@
 {
-  "category": [33,34,35,36,37],
+  "category": [33, 34, 35, 36, 37],
   "hotelImages": [
     {
       "id": 1,
@@ -16,5 +16,5 @@
       "url": "assets/images/mix/emergency/5.jpg",
       "title": "03"
     }
-   ]
+  ]
 }

@@ -5,25 +5,40 @@
         <div class="col">
           <div class="slide-6 no-arrow">
             @if(topCity){
-              <owl-carousel-o [options]="Options">
-                @for(city of topCity; track city){
-                  <ng-template carouselSlide>
-                    <div class="category-block">
-                      <a href="javascript:void(0)" tabindex="0" [routerLink]="['/page/other-pages/about-us-2']">
-                        <div class="category-image bg-size" [style.background-image]="'url('+ city.url +')'">
-                          <img [src]="city.url" class="img-fluid blur-up lazyload bg-img" alt="destination-image">
-                        </div>
-                      </a>
-                      <div class="category-details">
-                        <a href="javascript:void(0)" tabindex="0"  [routerLink]="['/page/other-pages/about-us-2']">
-                          <h3>{{ city.cityName }}</h3>
-                        </a>
-                        <h6>{{ city.totalProperty }} properties</h6>
-                      </div>
+            <owl-carousel-o [options]="Options">
+              @for(city of topCity; track city){
+              <ng-template carouselSlide>
+                <div class="category-block">
+                  <a
+                    href="javascript:void(0)"
+                    tabindex="0"
+                    [routerLink]="['/page/other-pages/about-us-2']"
+                  >
+                    <div
+                      class="category-image bg-size"
+                      [style.background-image]="'url('+ city.url +')'"
+                    >
+                      <img
+                        [src]="city.url"
+                        class="img-fluid blur-up lazyload bg-img"
+                        alt="destination-image"
+                      />
                     </div>
-                  </ng-template>
-                }
-              </owl-carousel-o>
+                  </a>
+                  <div class="category-details">
+                    <a
+                      href="javascript:void(0)"
+                      tabindex="0"
+                      [routerLink]="['/page/other-pages/about-us-2']"
+                    >
+                      <h3>{{ city.cityName }}</h3>
+                    </a>
+                    <h6>{{ city.totalProperty }} properties</h6>
+                  </div>
+                </div>
+              </ng-template>
+              }
+            </owl-carousel-o>
             }
           </div>
         </div>

@@ -1,15 +1,15 @@
-import { images } from "./hotel";
+import { images } from './hotel';
 
-export interface cabs{
-  cab: cab[]
+export interface cabs {
+  cab: cab[];
 }
 
-export interface cabDetails{
+export interface cabDetails {
   cabGallery: cabGallery[];
-  cabDetails: cabDetail[]
+  cabDetails: cabDetail[];
 }
 
-export interface cab{
+export interface cab {
   id: number;
   carName: string;
   carImage: string;
@@ -27,29 +27,29 @@ export interface cab{
   tags: string[];
 }
 
-export interface pagination{
-  totalItems: number,
-  currentPage: number,
-  pageSize: number,
-  totalPages: number,
-  startPage: number,
-  endPage: number,
-  startIndex: number,
-  endIndex: number,
-  pages: number[],
+export interface pagination {
+  totalItems: number;
+  currentPage: number;
+  pageSize: number;
+  totalPages: number;
+  startPage: number;
+  endPage: number;
+  startIndex: number;
+  endIndex: number;
+  pages: number[];
 }
 
-export interface cabGallery{
+export interface cabGallery {
   id: number;
   image: string;
   type: string;
 }
 
-export interface cabDetail{
+export interface cabDetail {
   title: string;
-  details: data[]
+  details: data[];
 }
 
-export interface data{
+export interface data {
   data: string;
 }

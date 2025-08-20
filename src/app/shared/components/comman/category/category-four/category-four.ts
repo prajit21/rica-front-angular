@@ -1,20 +1,21 @@
 import { Component, inject, Input } from '@angular/core';
+
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 import { category } from '../../../../../shared/interface/tour-modern';
 import { HotelService } from '../../../../../shared/services/hotel.service';
 import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @Component({
-    selector: 'app-category-four',
-    templateUrl: './category-four.html',
-    styleUrls: ['./category-four.scss'],
-    imports: [CarouselModule, NgbRating, CurrencySymbolPipe]
+  selector: 'app-category-four',
+  templateUrl: './category-four.html',
+  styleUrls: ['./category-four.scss'],
+  imports: [CarouselModule, NgbRating, CurrencySymbolPipe],
 })
 export class CategoryFour {
-
-  private config = inject(NgbRatingConfig); 
-  public hotelService = inject(HotelService); 
+  private config = inject(NgbRatingConfig);
+  public hotelService = inject(HotelService);
 
   @Input() category: category[];
 
@@ -25,22 +26,22 @@ export class CategoryFour {
     margin: 50,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       550: {
-        items: 2
+        items: 2,
       },
       949: {
-        items: 3
+        items: 3,
       },
       1200: {
-        items: 4
-      }
-    }
-   }
+        items: 4,
+      },
+    },
+  };
 
-   constructor() {
-		this.config.max = 5;
-		this.config.readonly = true;
-	}
+  constructor() {
+    this.config.max = 5;
+    this.config.readonly = true;
+  }
 }

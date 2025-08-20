@@ -1,28 +1,29 @@
 import { Component, inject } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { VideoModal } from '../../modal/video-modal/video-modal';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
 import { RouterLink } from '@angular/router';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { HotelService } from '../../../../../shared/services/hotel.service';
+import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
+import { VideoModal } from '../../modal/video-modal/video-modal';
+
 @Component({
-    selector: 'app-video-one',
-    templateUrl: './video-one.html',
-    styleUrls: ['./video-one.scss'],
-    imports: [RouterLink, CurrencySymbolPipe]
+  selector: 'app-video-one',
+  templateUrl: './video-one.html',
+  styleUrls: ['./video-one.scss'],
+  imports: [RouterLink, CurrencySymbolPipe],
 })
 export class VideoOne {
-
   private model = inject(NgbModal);
   public hotelService = inject(HotelService);
 
   public seconds: number;
-  public interval;
+  public interval: ReturnType<typeof setInterval>;
 
   constructor() {
-    this.interval = setInterval(function (this: any) {
+    this.interval = setInterval(() => {
       let currentDate = new Date();
-      currentDate.setHours(0);  // Set the desired hours
+      currentDate.setHours(0); // Set the desired hours
       currentDate.setMinutes(0); // Set the desired minutes
       currentDate.setSeconds(0);
 
@@ -31,20 +32,23 @@ export class VideoOne {
       currentDate.setDate(currentDate.getDate() + daysToAdd);
       let distance = currentDate.getTime() - nowDate.getTime();
 
-      this.document.querySelectorAll('#days').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-        });
+      document.querySelectorAll<HTMLElement>('#days').forEach(element => {
+        element.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)).toString();
+      });
 
-      this.document.querySelectorAll('#hours').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        });
+      document.querySelectorAll<HTMLElement>('#hours').forEach(element => {
+        element.innerHTML = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ).toString();
+      });
 
-      this.document.querySelectorAll('#minutes').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        });
+      document.querySelectorAll<HTMLElement>('#minutes').forEach(element => {
+        element.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString();
+      });
 
-      this.document.querySelectorAll('#seconds').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);});
+      document.querySelectorAll<HTMLElement>('#seconds').forEach(element => {
+        element.innerHTML = Math.floor((distance % (1000 * 60)) / 1000).toString();
+      });
     }, this.seconds);
   }
 
@@ -54,7 +58,7 @@ export class VideoOne {
     }
   }
 
-  openModel(){
-    this.model.open(VideoModal, { size: 'lg', centered: true })
+  openModel() {
+    this.model.open(VideoModal, { size: 'lg', centered: true });
   }
 }

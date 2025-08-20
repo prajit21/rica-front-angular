@@ -1,5 +1,5 @@
 {
-  "deals": [1,2,3],
+  "deals": [1, 2, 3],
   "continents": [
     {
       "id": 1,
@@ -58,5 +58,5 @@
       "price": 5000
     }
   ],
-  "testimonial": [1,2,3]
+  "testimonial": [1, 2, 3]
 }

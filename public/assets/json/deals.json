@@ -245,7 +245,7 @@
           "image": "assets/images/restaurant/menu/5.jpg",
           "price": 300,
           "discountPrice": 250,
-           "rating": 4.8,
+          "rating": 4.8,
           "tag": false
         },
         {

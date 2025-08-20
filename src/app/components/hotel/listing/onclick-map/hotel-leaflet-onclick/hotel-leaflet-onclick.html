@@ -1,6 +1,12 @@
 <app-header [headerClass]="'inner-page'" />
 
-<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'hotel'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="bg-white pt-0 search-panel" id="searchBar">
   <div class="container">
@@ -16,7 +22,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <app-grid-panel [type]="'hotel'" (selectedTabValue)="getTabValue($event)" [grid4Option]="false" [onClickMap]="true" [mapType]="'leafletMap'" (map)="openMap($event)" />
+        <app-grid-panel
+          [type]="'hotel'"
+          (selectedTabValue)="getTabValue($event)"
+          [grid4Option]="false"
+          [onClickMap]="true"
+          [mapType]="'leafletMap'"
+          (map)="openMap($event)"
+        />
       </div>
       <div class="col-xl-12 onclick-map" [class.show]="isOpenMap">
         <app-details [type]="'leafletMap'" />
@@ -25,7 +38,12 @@
         <app-filter [type]="'hotel'" />
       </div>
       <div class="col-lg-9 ratio3_2">
-        <app-details [type]="'hotel'" [selectedTabValue]="selectedTabValue" [gridType]="'3-grid'" [responsiveLatestFilter]="true" />
+        <app-details
+          [type]="'hotel'"
+          [selectedTabValue]="selectedTabValue"
+          [gridType]="'3-grid'"
+          [responsiveLatestFilter]="true"
+        />
       </div>
     </div>
   </div>
@@ -33,4 +51,10 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'hotel'" [filterType]="'left'" [gridType]="'3-grid'" [filter]="true" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'hotel'"
+  [filterType]="'left'"
+  [gridType]="'3-grid'"
+  [filter]="true"
+/>

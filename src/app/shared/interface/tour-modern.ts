@@ -1,4 +1,4 @@
-export interface tourModern{
+export interface tourModern {
   category: number[];
   package: number[];
   testimonial: number[];
@@ -6,20 +6,20 @@ export interface tourModern{
   service: number[];
 }
 
-export interface categoryModel{
-  category: category[]
+export interface categoryModel {
+  category: category[];
 }
 
-export interface category{
+export interface category {
   id: number;
-  categoryTitle: string,
-  categoryDescription?: string,
-  categoryImage: string,
-  price: number,
-  discountPrice: number,
-  days?: number,
-  night?: number,
-  person?: number,
+  categoryTitle: string;
+  categoryDescription?: string;
+  categoryImage: string;
+  price: number;
+  discountPrice: number;
+  days?: number;
+  night?: number;
+  person?: number;
   coupon_code?: string;
   like?: boolean;
   startFrom?: number;
@@ -34,19 +34,19 @@ export interface category{
   time?: string;
 }
 
-export interface tourGallery{
+export interface tourGallery {
   id: number;
   colClass: string;
-  images: images[]
+  images: images[];
 }
 
-export interface images{
+export interface images {
   title: string;
   url: string;
   fileType: string;
 }
 
-export interface flightDetails{
+export interface flightDetails {
   city: string;
   price: number;
 }

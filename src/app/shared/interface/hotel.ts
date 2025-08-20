@@ -1,8 +1,8 @@
-export interface hotel{
-  hotels: hotels[]
+export interface hotel {
+  hotels: hotels[];
 }
 
-export interface hotels{
+export interface hotels {
   id: number;
   hotelName: string;
   description: string;
@@ -22,28 +22,27 @@ export interface hotels{
   discountPrice: number;
   deal: boolean;
   dealText?: string;
-  hotelFacility: string[]
+  hotelFacility: string[];
 }
 
-export interface images{
+export interface images {
   url: string;
-  fileType: string
+  fileType: string;
 }
 
-
-export interface hotelDetails{
+export interface hotelDetails {
   gallery: hotelGallery[];
   details: hotelDetail[];
   hotelBooking: hotelBooking[];
 }
 
-export interface hotelGallery{
+export interface hotelGallery {
   id: number;
   image: string;
   imageType: string;
 }
 
-export interface hotelDetail{
+export interface hotelDetail {
   about: hotelAbout[];
   rooms: hotelRooms[];
   facility: hotelFacility[];
@@ -52,12 +51,12 @@ export interface hotelDetail{
   policy: hotelPolicy[];
 }
 
-export interface hotelAbout{
+export interface hotelAbout {
   title: string;
-  description: string
+  description: string;
 }
 
-export interface hotelRooms{
+export interface hotelRooms {
   id: number;
   roomType: string;
   roomImage: string;
@@ -67,23 +66,23 @@ export interface hotelRooms{
   discountPrice: number;
 }
 
-export interface hotelFacility{
+export interface hotelFacility {
   id: number;
   data: facilityData[];
 }
 
-export interface facilityData{
+export interface facilityData {
   title: string;
   icon: string;
   details: string[];
   marginClass?: boolean;
 }
 
-export interface hotelLocation{
+export interface hotelLocation {
   url: string;
 }
 
-export interface hotelReview{
+export interface hotelReview {
   id: number;
   title: string;
   by: string;
@@ -92,11 +91,11 @@ export interface hotelReview{
   rating: number;
 }
 
-export interface hotelPolicy{
+export interface hotelPolicy {
   details: string;
 }
 
-export interface hotelBooking{
+export interface hotelBooking {
   id: number;
   title: string;
   value: string;
@@ -105,14 +104,15 @@ export interface hotelBooking{
   checked: boolean;
 }
 
-export interface currency{
+export interface currency {
   name: string;
-  currency: string;value: string;
+  currency: string;
+  value: string;
   symbol: string;
-  price: number
+  price: number;
 }
 
-export interface priceFilter{
+export interface priceFilter {
   minPrice: number;
-  maxPrice: number
+  maxPrice: number;
 }

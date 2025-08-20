@@ -1,8 +1,14 @@
 <app-header [headerClass]="'light_header'" />
 
-<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'cab'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
-<div class="small-section  pb-0">
+<div class="small-section pb-0">
   <div class="container">
     <div class="flight-search shadow-cls">
       <app-cab-search />
@@ -25,4 +31,11 @@
 
 <app-footer [location]="true" />
 
-<app-layout [loaderType]="'skeleton'" [skeletonType]="'cab'" [gridType]="'3-grid'" [grid]="false" [filter]="true" [filterType]="'right'" />
+<app-layout
+  [loaderType]="'skeleton'"
+  [skeletonType]="'cab'"
+  [gridType]="'3-grid'"
+  [grid]="false"
+  [filter]="true"
+  [filterType]="'right'"
+/>

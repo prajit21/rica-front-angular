@@ -9,40 +9,97 @@
     <div class="row">
       <div class="col-md-4">
         <label>Date Picker</label>
-        <input class="form-control" placeholder="Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+        <input
+          class="form-control"
+          placeholder="Date"
+          name="dp"
+          ngbDatepicker
+          #d="ngbDatepicker"
+          (click)="d.toggle()"
+        />
       </div>
       <div class="col-md-4">
         <label>Time Picker</label>
-        <input class="form-control" placeholder="Time" [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+        <input
+          class="form-control"
+          placeholder="Time"
+          [owlDateTimeTrigger]="dt4"
+          [owlDateTime]="dt4"
+        />
         <owl-date-time [pickerType]="'timer'" #dt4 />
       </div>
       <div class="col-md-4">
         <label>Date & Time Picker</label>
-        <input class="form-control datetimepicker-input digits" placeholder="Date & time picker" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup">
+        <input
+          class="form-control datetimepicker-input digits"
+          placeholder="Date & time picker"
+          type="text"
+          [owlDateTimeTrigger]="pickup"
+          [owlDateTime]="pickup"
+        />
         <owl-date-time #pickup />
       </div>
     </div>
     <div class="row mt-5" (clickOutside)="clickOutside()">
       <div class="col-md-6">
-        <div class="rooms-section" >
+        <div class="rooms-section">
           <label>Rooms & Guests</label>
-          <input type="text" class="form-control open-select" placeholder="Rooms & guests" (click)="openTraveler()">
+          <input
+            type="text"
+            class="form-control open-select"
+            placeholder="Rooms & guests"
+            (click)="openTraveler()"
+          />
           <div class="selector-box-flight" [class.show]="isTraveler">
             <div class="room-cls">
               <div class="qty-box">
                 <label>adult</label>
                 <div class="input-group">
-                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
-                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
-                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+                  <button
+                    type="button"
+                    class="btn quantity-left-minus"
+                    (click)="changeValue('adult',-1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    name="quantity"
+                    class="form-control qty-input input-number"
+                    [value]="adults"
+                  />
+                  <button
+                    type="button"
+                    class="btn quantity-right-plus"
+                    (click)="changeValue('adult',1)"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
               <div class="qty-box">
                 <label>children</label>
                 <div class="input-group">
-                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
-                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
-                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+                  <button
+                    type="button"
+                    class="btn quantity-left-minus"
+                    (click)="changeValue('children',-1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    name="quantity"
+                    class="form-control qty-input input-number"
+                    [value]="child"
+                  />
+                  <button
+                    type="button"
+                    class="btn quantity-right-plus"
+                    (click)="changeValue('children',1)"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             </div>
@@ -54,11 +111,21 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="suggestion_box" >
+        <div class="suggestion_box">
           <div class="form-group">
             <label>Destination</label>
-            <input type="text" class="form-control open-select" placeholder="To" (click)="openLocation()" [value]="fromLocation">
-            <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+            <input
+              type="text"
+              class="form-control open-select"
+              placeholder="To"
+              (click)="openLocation()"
+              [value]="fromLocation"
+            />
+            <img
+              src="assets/images/icon/location.png"
+              class="img-fluid blur-up lazyload"
+              alt="location-icon"
+            />
             <div class="selector-box" [class.show]="isFrom">
               <h6 class="title">popular cities</h6>
               <ul>

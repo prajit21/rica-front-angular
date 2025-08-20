@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { HotelPageClassic } from './hotel-page-classic/hotel-page-classic';
 import { HotelPageImageBox } from './hotel-page-image-box/hotel-page-image-box';
 import { HotelPageImageSlider } from './hotel-page-image-slider/hotel-page-image-slider';
@@ -11,34 +12,34 @@ import { HotelPageWithoutTop } from './hotel-page-without-top/hotel-page-without
 export default [
   {
     path: 'classic',
-    component: HotelPageClassic
+    component: HotelPageClassic,
   },
   {
     path: 'without-top',
-    component: HotelPageWithoutTop
+    component: HotelPageWithoutTop,
   },
   {
     path: 'left-sidebar',
-    component: HotelPageLeftSidebar
+    component: HotelPageLeftSidebar,
   },
   {
     path: 'info-tab',
-    component: HotelPageInfoTab
+    component: HotelPageInfoTab,
   },
   {
     path: 'image-slider',
-    component: HotelPageImageSlider
+    component: HotelPageImageSlider,
   },
   {
     path: 'thumbnail-image',
-    component: HotelPageThumbnailImage
+    component: HotelPageThumbnailImage,
   },
   {
     path: 'image-box',
-    component: HotelPageImageBox
+    component: HotelPageImageBox,
   },
   {
     path: 'theme-breadcrumb',
-    component: HotelPageThemeBreadcrumb
-  }
+    component: HotelPageThemeBreadcrumb,
+  },
 ] as Routes;

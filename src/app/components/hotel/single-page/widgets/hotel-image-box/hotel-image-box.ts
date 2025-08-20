@@ -1,17 +1,18 @@
+import { SlicePipe } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
+
 import { Gallery, GalleryItem, ImageItem, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { Lightbox } from 'ng-gallery/lightbox';
+
 import { hotelGallery } from '../../../../../shared/interface/hotel';
-import { SlicePipe } from '@angular/common';
 
 @Component({
-    selector: 'app-hotel-image-box',
-    templateUrl: './hotel-image-box.html',
-    styleUrls: ['./hotel-image-box.scss'],
-    imports: [SlicePipe]
+  selector: 'app-hotel-image-box',
+  templateUrl: './hotel-image-box.html',
+  styleUrls: ['./hotel-image-box.scss'],
+  imports: [SlicePipe],
 })
 export class HotelImageBox {
-
   public gallery = inject(Gallery);
   public lightbox = inject(Lightbox);
 
@@ -20,15 +21,15 @@ export class HotelImageBox {
   public images: hotelGallery[];
   public items: GalleryItem[];
 
-  openLightBox(){
+  openLightBox() {
     this.images = [];
-    this.hotelGallery()?.forEach((image) => {
-      if(image.id <= 5){
-        this.images.push(image)
+    this.hotelGallery()?.forEach(image => {
+      if (image.id <= 5) {
+        this.images.push(image);
       }
-    })
+    });
 
-    this.items = this.images.map((item) => new ImageItem({ src: item.image, thumb: item.image }));
+    this.items = this.images.map(item => new ImageItem({ src: item.image, thumb: item.image }));
 
     const lightboxRef = this.gallery.ref('lightbox');
 
@@ -37,7 +38,7 @@ export class HotelImageBox {
       thumbPosition: ThumbnailsPosition.Top,
     });
 
-    this.lightbox.open()
-    lightboxRef.load(this.items)
+    this.lightbox.open();
+    lightboxRef.load(this.items);
   }
 }

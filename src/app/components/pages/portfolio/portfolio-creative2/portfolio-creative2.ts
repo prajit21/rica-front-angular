@@ -1,21 +1,21 @@
 import { Component, inject } from '@angular/core';
+
+import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
+import { Footer } from '../../../../shared/components/footer/footer';
+import { Header } from '../../../../shared/components/header/header';
+import { Layout } from '../../../../shared/components/ui/layout/layout';
 import { portfolio } from '../../../../shared/interface/pages';
 import { PagesService } from '../../../../shared/services/pages.service';
-import { Layout } from '../../../../shared/components/ui/layout/layout';
-import { Footer } from '../../../../shared/components/footer/footer';
-import { Breadcrumbs } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs';
-import { Header } from '../../../../shared/components/header/header';
 
 @Component({
-    selector: 'app-portfolio-creative2',
-    templateUrl: './portfolio-creative2.html',
-    styleUrl: './portfolio-creative2.scss',
-    imports: [Header, Breadcrumbs, Footer, Layout]
+  selector: 'app-portfolio-creative2',
+  templateUrl: './portfolio-creative2.html',
+  styleUrl: './portfolio-creative2.scss',
+  imports: [Header, Breadcrumbs, Footer, Layout],
 })
 export class PortfolioCreative2 {
+  private pageService = inject(PagesService);
 
-  private pageService = inject(PagesService); 
-  
   public bg_image = 'assets/images/tour/inner-page/breadcrumb.jpg';
   public title = 'portfolio';
   public parent = 'Home';

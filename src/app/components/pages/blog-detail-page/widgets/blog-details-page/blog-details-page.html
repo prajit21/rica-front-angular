@@ -1,25 +1,24 @@
 <div class="blog-single-detail">
   <div class="top-image">
     @if(imageSlider()){
-      <div class="slide-1 arrow-dark">
-        <owl-carousel-o [options]="options">
-          @for(images of blogDetails()?.images; track images){
-            <ng-template carouselSlide>
-              <div>
-                <img [src]="images.url" alt="blog-image" class="img-fluid blur-up lazyload">
-              </div>
-            </ng-template>
-          }
-        </owl-carousel-o>
-      </div>
+    <div class="slide-1 arrow-dark">
+      <owl-carousel-o [options]="options">
+        @for(images of blogDetails()?.images; track images){
+        <ng-template carouselSlide>
+          <div>
+            <img [src]="images.url" alt="blog-image" class="img-fluid blur-up lazyload" />
+          </div>
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
     }@else {
-      <img [src]="blogDetails()?.image" alt="blog-image" class="img-fluid blur-up lazyload">
-      @if(video()){
-        <a href="javascript:void(0)" class="video" (click)="openVideoModal()">
-          <i class="fas fa-play"></i>
-        </a>
-      }
-    }
+    <img [src]="blogDetails()?.image" alt="blog-image" class="img-fluid blur-up lazyload" />
+    @if(video()){
+    <a href="javascript:void(0)" class="video" (click)="openVideoModal()">
+      <i class="fas fa-play"></i>
+    </a>
+    } }
   </div>
   <div class="title-part">
     <ul class="post-detail">
@@ -32,7 +31,7 @@
   </div>
   <div class="detail-part">
     @for(details of blogDetails()?.blogData; track details){
-      <p>{{ details.data}}</p>
+    <p>{{ details.data}}</p>
     }
   </div>
   <div class="comment-section">

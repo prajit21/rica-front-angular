@@ -1,24 +1,34 @@
 <section class="home_section hotel_layout slide-1 p-0">
   @if(homeSection){
-    <owl-carousel-o [options]="Options">
-      @for(data of homeSection; track data){
-        <ng-template carouselSlide>
-          <div>
-            <div class="home" [style.background-image]="'url('+ data.url +')'">
-              <img [src]="data.url" class="img-fluid blur-up lazyload bg-img" alt="hotel-image" style="display: none;">
-              <div class="home-content">
-                <div>
-                  <h1>{{ data.title }}</h1>
-                  <h5>{{ data.subTitle }}</h5>
-                  <h2>welcome</h2>
-                  <a href="javascript:void(0)" class="btn btn-solid" [routerLink]="['/hotel/booking/hotel-booking']">book now</a>
-                </div>
-              </div>
+  <owl-carousel-o [options]="Options">
+    @for(data of homeSection; track data){
+    <ng-template carouselSlide>
+      <div>
+        <div class="home" [style.background-image]="'url('+ data.url +')'">
+          <img
+            [src]="data.url"
+            class="img-fluid blur-up lazyload bg-img"
+            alt="hotel-image"
+            style="display: none"
+          />
+          <div class="home-content">
+            <div>
+              <h1>{{ data.title }}</h1>
+              <h5>{{ data.subTitle }}</h5>
+              <h2>welcome</h2>
+              <a
+                href="javascript:void(0)"
+                class="btn btn-solid"
+                [routerLink]="['/hotel/booking/hotel-booking']"
+                >book now</a
+              >
             </div>
           </div>
-        </ng-template>
-      }
-    </owl-carousel-o>
+        </div>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
   }
 </section>
 

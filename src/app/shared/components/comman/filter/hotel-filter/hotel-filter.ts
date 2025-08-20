@@ -1,26 +1,26 @@
+import { NgStyle } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { Store } from '@ngxs/store';
-import { priceFilter } from '../../../../../shared/interface/hotel';
-import { getHotels } from '../../../../../shared/store/action/hotel.action';
-import { HotelService } from '../../../../../shared/services/hotel.service';
-import { Hotels } from './hotels/hotels';
+
+import { HotelDistrict } from './hotel-district/hotel-district';
+import { HotelFacility } from './hotel-facility/hotel-facility';
 import { HotelLanguage } from './hotel-language/hotel-language';
 import { HotelPrice } from './hotel-price/hotel-price';
 import { HotelRating } from './hotel-rating/hotel-rating';
-import { HotelFacility } from './hotel-facility/hotel-facility';
-import { HotelDistrict } from './hotel-district/hotel-district';
-import { NgStyle } from '@angular/common';
+import { Hotels } from './hotels/hotels';
+import { priceFilter } from '../../../../../shared/interface/hotel';
+import { HotelService } from '../../../../../shared/services/hotel.service';
+import { GetHotels } from '../../../../../shared/store/action/hotel.action';
 
 @Component({
-    selector: 'app-hotel-filter',
-    templateUrl: './hotel-filter.html',
-    styleUrls: ['./hotel-filter.scss'],
-    imports: [NgStyle, HotelDistrict, HotelFacility, HotelRating, HotelPrice, HotelLanguage, Hotels]
+  selector: 'app-hotel-filter',
+  templateUrl: './hotel-filter.html',
+  styleUrls: ['./hotel-filter.scss'],
+  imports: [NgStyle, HotelDistrict, HotelFacility, HotelRating, HotelPrice, HotelLanguage, Hotels],
 })
-
 export class HotelFilter {
-
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   public hotelService = inject(HotelService);
@@ -43,31 +43,35 @@ export class HotelFilter {
   public priceData: priceFilter;
   public paramsTag: string[];
 
-  constructor(){
-      this.route.queryParams.subscribe((params) => {
-        this.getDistrictParams = params['district'] ? params['district'].split(',') : [];
-        this.getFacilityParams = params['facility'] ? params['facility'].split(',') : [];
-        this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
-        this.getLanguageParams = params['language'] ? params['language'].split(',') : [];
-        this.minPrice = params['minPrice'] ? params['minPrice'] : [];
-        this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
-        this.priceData = {
-          minPrice: this.minPrice,
-          maxPrice: this.maxPrice
-        }
+  constructor() {
+    this.route.queryParams.subscribe(params => {
+      this.getDistrictParams = params['district'] ? params['district'].split(',') : [];
+      this.getFacilityParams = params['facility'] ? params['facility'].split(',') : [];
+      this.getRatingParams = params['rating'] ? params['rating'].split(',') : [];
+      this.getLanguageParams = params['language'] ? params['language'].split(',') : [];
+      this.minPrice = params['minPrice'] ? params['minPrice'] : [];
+      this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
+      this.priceData = {
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+      };
 
-        this.paramsTag = [...this.getDistrictParams, ...this.getFacilityParams, ...this.getRatingParams, ...this.getLanguageParams];
+      this.paramsTag = [
+        ...this.getDistrictParams,
+        ...this.getFacilityParams,
+        ...this.getRatingParams,
+        ...this.getLanguageParams,
+      ];
 
-        this.store.dispatch(new getHotels(this.paramsTag, this.priceData));
-
-      })
-    }
-
-  openFilter(){
-    this.isOpenFilter =! this.isOpenFilter;
+      this.store.dispatch(new GetHotels(this.paramsTag, this.priceData));
+    });
   }
 
-  closeResponsiveFilter(){
+  openFilter() {
+    this.isOpenFilter = !this.isOpenFilter;
+  }
+
+  closeResponsiveFilter() {
     this.hotelService.isOpenResponsiveFilter = false;
   }
 }

@@ -3,7 +3,7 @@
     <div class="video-content">
       <div>
         <h5>It's limited seating! <span>Hurry up!!</span></h5>
-        <h2>honeymoon <span>{{ 500 | currencyPipe: hotelService.currency }}</span> </h2>
+        <h2>honeymoon <span>{{ 500 | currencyPipe: hotelService.currency }}</span></h2>
         <p>Special honeymoon in May, Discover Thailand for 50 Customers with Discount 30%</p>
         <div class="timer">
           <ul>
@@ -14,7 +14,12 @@
           </ul>
         </div>
         <div class="bottom-section">
-          <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/tour/booking/booking']">buy now !!</a>
+          <a
+            href="javascript:void(0)"
+            class="btn btn-rounded btn-sm color1"
+            [routerLink]="['/tour/booking/booking']"
+            >buy now !!</a
+          >
           <div class="info-btn">
             <h6>7 days &nbsp; | &nbsp; 8 nights</h6>
           </div>
@@ -28,7 +33,11 @@
   <div class="col-xl-6 offset-xl-1 col-lg-6 order-cls">
     <div class="video-image">
       <div class="side-effect"></div>
-      <img src="assets/images/mix/video-image.jpg" class="img-fluid blur-up lazyload" alt="bg-image">
+      <img
+        src="assets/images/mix/video-image.jpg"
+        class="img-fluid blur-up lazyload"
+        alt="bg-image"
+      />
       <div class="video-icon" (click)="openModel()">
         <span></span>
       </div>

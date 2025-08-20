@@ -1,13 +1,22 @@
 <app-header [headerClass]="'light_header'" />
 
-<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" />
+<app-breadcrumbs
+  [type]="'pages'"
+  [bg_image]="bg_image"
+  [title]="title"
+  [parent]="parent"
+  [child]="child"
+/>
 
 <section class="section-b-space bg-white sticky-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         @if(blogDetails){
-          <app-blog-details-page [blogDetails]="blogDetails.blogDetail" [blogComments]="blogDetails.blogComments" />
+        <app-blog-details-page
+          [blogDetails]="blogDetails.blogDetail"
+          [blogComments]="blogDetails.blogComments"
+        />
         }
       </div>
     </div>

@@ -1,7 +1,5 @@
-@if(type() == 'basic'){
-  <app-testimonial-one [testimonial]="testimonial()!" />
-}
-
-@if(type() == 'simple'){
-  <app-testimonial-two [testimonial]="testimonial()!" />
+@if(type() === 'basic'){
+<app-testimonial-one [testimonial]="testimonial()!" />
+} @if(type() === 'simple'){
+<app-testimonial-two [testimonial]="testimonial()!" />
 }

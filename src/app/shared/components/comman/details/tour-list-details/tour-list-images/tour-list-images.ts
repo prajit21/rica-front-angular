@@ -1,16 +1,17 @@
 import { Component, Input, input } from '@angular/core';
-import { tours } from '../../../../../../shared/interface/tour';
 import { RouterLink } from '@angular/router';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { tours } from '../../../../../../shared/interface/tour';
+
 @Component({
-    selector: 'app-tour-list-images',
-    templateUrl: './tour-list-images.html',
-    styleUrls: ['./tour-list-images.scss'],
-    imports: [CarouselModule, RouterLink]
+  selector: 'app-tour-list-images',
+  templateUrl: './tour-list-images.html',
+  styleUrls: ['./tour-list-images.scss'],
+  imports: [CarouselModule, RouterLink],
 })
 export class TourListImages {
-
   readonly images = input<tours>();
   readonly imageSlider = input<boolean>();
   readonly thumbnailImages = input<boolean>();
@@ -23,8 +24,8 @@ export class TourListImages {
     nav: true,
     dots: false,
     items: 1,
-    navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>",],
-  }
+    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+  };
 
   public thumbnailCarouselOptions = {
     items: 4,

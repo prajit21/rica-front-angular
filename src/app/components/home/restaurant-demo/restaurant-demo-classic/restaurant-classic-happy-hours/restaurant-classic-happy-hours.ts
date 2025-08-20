@@ -2,20 +2,19 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-restaurant-classic-happy-hours',
-    templateUrl: './restaurant-classic-happy-hours.html',
-    styleUrls: ['./restaurant-classic-happy-hours.scss'],
-    imports: [RouterLink]
+  selector: 'app-restaurant-classic-happy-hours',
+  templateUrl: './restaurant-classic-happy-hours.html',
+  styleUrls: ['./restaurant-classic-happy-hours.scss'],
+  imports: [RouterLink],
 })
 export class RestaurantClassicHappyHours {
-
   public seconds: number;
-  public interval;
+  public interval: ReturnType<typeof setInterval>;
 
   constructor() {
-    this.interval = setInterval(function (this: any) {
+    this.interval = setInterval(() => {
       let currentDate = new Date();
-      currentDate.setHours(0);  // Set the desired hours
+      currentDate.setHours(0); // Set the desired hours
       currentDate.setMinutes(0); // Set the desired minutes
       currentDate.setSeconds(0);
 
@@ -25,20 +24,23 @@ export class RestaurantClassicHappyHours {
       currentDate.setDate(currentDate.getDate() + daysToAdd);
       let distance = currentDate.getTime() - nowDate.getTime();
 
-      this.document.querySelectorAll('#days').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-        });
+      document.querySelectorAll<HTMLElement>('#days').forEach(element => {
+        element.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)).toString();
+      });
 
-      this.document.querySelectorAll('#hours').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        });
+      document.querySelectorAll<HTMLElement>('#hours').forEach(element => {
+        element.innerHTML = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ).toString();
+      });
 
-      this.document.querySelectorAll('#minutes').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        });
+      document.querySelectorAll<HTMLElement>('#minutes').forEach(element => {
+        element.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString();
+      });
 
-      this.document.querySelectorAll('#seconds').forEach((element: { innerHTML: number }) => {
-          element.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);});
+      document.querySelectorAll<HTMLElement>('#seconds').forEach(element => {
+        element.innerHTML = Math.floor((distance % (1000 * 60)) / 1000).toString();
+      });
     }, this.seconds);
   }
 
