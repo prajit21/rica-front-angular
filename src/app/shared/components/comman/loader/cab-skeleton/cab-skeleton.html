@@ -1,12 +1,12 @@
 <div
   class="pb-0"
-  [ngClass]="{ 'small-section': skeletonType ==='cab-list' && !map(), 'bg-inner' : skeletonType ==='cab-list' || map() === true,  'xs-section': skeletonType ==='cab' || map() === true}"
+  [class]="{ 'small-section': skeletonType ==='cab-list' && !map(), 'bg-inner' : skeletonType ==='cab-list' || map() === true,  'xs-section': skeletonType ==='cab' || map() === true}"
 >
   <app-cab-search-skeleton [skeletonType]="skeletonType" [map]="map()" />
 </div>
 
 <section
-  [ngClass]="{ 'small-section': skeletonType ==='cab-list' && !map(),'pt-0 bg-inner' : skeletonType ==='cab-list' || map(), 'xs-section': skeletonType ==='cab' || map()}"
+  [class]="{ 'small-section': skeletonType ==='cab-list' && !map(),'pt-0 bg-inner' : skeletonType ==='cab-list' || map(), 'xs-section': skeletonType ==='cab' || map()}"
 >
   <div [ngClass]="map() ? 'container-fluid' : 'container'">
     <div class="row">

@@ -20,12 +20,7 @@
           "options": {
             "stylePreprocessorOptions": {
               "sass": {
-                "silenceDeprecations": [
-                  "color-functions",
-                  "global-builtin",
-                  "import",
-                  "mixed-decls"
-                ]
+                "silenceDeprecations": ["color-functions", "global-builtin", "import"]
               }
             },
             "outputPath": "dist/front",

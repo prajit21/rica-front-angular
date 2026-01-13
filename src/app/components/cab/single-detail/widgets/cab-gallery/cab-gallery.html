@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-8">
     <div class="slide-1 arrow-dark zoom-gallery ratio2_3">
-      @if(cabGallery){
+      @if(cabGallery()!){
       <owl-carousel-o [options]="options">
-        @for(images of cabGallery; track images){ @if(images.type === 'main'){
+        @for(images of cabGallery()!; track images){ @if(images.type === 'main'){
         <ng-template carouselSlide>
           <div>
             <a
@@ -32,9 +32,9 @@
     <div class="row">
       <div class="col-12 ratio_59">
         <div class="slide-1 zoom-gallery arrow-dark">
-          @if(cabGallery){
+          @if(cabGallery()!){
           <owl-carousel-o [options]="options">
-            @for(images of cabGallery; track images){ @if(images.type === 'interior'){
+            @for(images of cabGallery()!; track images){ @if(images.type === 'interior'){
             <ng-template carouselSlide>
               <div>
                 <a
@@ -58,9 +58,9 @@
           }
         </div>
         <div class="slide-1 zoom-gallery arrow-dark m-cls">
-          @if(cabGallery){
+          @if(cabGallery()!){
           <owl-carousel-o [options]="options">
-            @for(images of cabGallery; track images){ @if(images.type === 'exterior'){
+            @for(images of cabGallery()!; track images){ @if(images.type === 'exterior'){
             <ng-template carouselSlide>
               <div>
                 <a

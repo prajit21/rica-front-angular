@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -8,7 +7,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angul
   selector: 'app-cab-classic-home-section',
   templateUrl: './cab-classic-home-section.html',
   styleUrls: ['./cab-classic-home-section.scss'],
-  imports: [OwlDateTimeModule, OwlNativeDateTimeModule, NgClass, RouterLink],
+  imports: [OwlDateTimeModule, OwlNativeDateTimeModule, RouterLink],
 })
 export class CabClassicHomeSection {
   public selectedValue: string;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -11,7 +11,7 @@ import { topOffers } from '../../../../../shared/interface/hotel-vector';
   imports: [CarouselModule],
 })
 export class HotelVectorTopOffers {
-  @Input() topOffers: topOffers[];
+  readonly topOffers = input<topOffers[]>([]);
 
   public options = {
     loop: true,

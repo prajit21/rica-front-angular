@@ -1,4 +1,4 @@
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { DateCalender } from './widgets/date-calender/date-calender';
@@ -22,7 +22,7 @@ export class FlightListDetails {
 
   readonly calender = input<boolean>();
   readonly flightClass = input<boolean>();
-  @Input() roundTrip: boolean;
+  readonly roundTrip = input<boolean>();
 
   public getStopParams: string[] = [];
   public getAirlineParams: string[] = [];

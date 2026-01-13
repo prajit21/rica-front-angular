@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col">
     <div class="team-slider no-arrow">
-      @if(team){
+      @if(team()){
       <owl-carousel-o [options]="options">
-        @for(details of team; track details){
+        @for(details of team(); track details){
         <ng-template carouselSlide>
           <div>
             <div class="team-box">

@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -15,8 +15,7 @@ import { HotelService } from '../../../../../shared/services/hotel.service';
 export class FlightLeftSidebarAirlineDeals {
   public hotelService = inject(HotelService);
 
-  @Input() deals: airlinesDeal[];
-
+  readonly deals = input<airlinesDeal[]>([]);
   public options = {
     loop: true,
     nav: true,

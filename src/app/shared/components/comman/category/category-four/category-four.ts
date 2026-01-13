@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -17,7 +17,7 @@ export class CategoryFour {
   private config = inject(NgbRatingConfig);
   public hotelService = inject(HotelService);
 
-  @Input() category: category[];
+  readonly category = input<category[]>();
 
   public options = {
     loop: false,

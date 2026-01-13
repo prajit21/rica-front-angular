@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -17,13 +17,13 @@ import { VideoModal } from '../modal/video-modal/video-modal';
   imports: [CarouselModule, RouterLink, CurrencySymbolPipe],
 })
 export class TicketSection {
-  private modal = inject(NgbModal);
-  public hotelService = inject(HotelService);
+  private readonly modal = inject(NgbModal);
+  readonly hotelService = inject(HotelService);
 
-  @Input() ticketSection: specialRoom[];
-  @Input() cabDetails: cabDetails[];
+  readonly ticketSection = input<specialRoom[] | undefined>();
+  readonly cabDetails = input<cabDetails[] | undefined>();
 
-  public Options = {
+  readonly options = {
     loop: true,
     nav: true,
     dots: false,
@@ -35,7 +35,10 @@ export class TicketSection {
     },
   };
 
-  openModal() {
-    this.modal.open(VideoModal, { size: 'lg', centered: true });
+  openModal(): void {
+    this.modal.open(VideoModal, {
+      size: 'lg',
+      centered: true,
+    });
   }
 }

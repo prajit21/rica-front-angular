@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -11,7 +11,7 @@ import { hotelGallery } from '../../../../../shared/interface/hotel';
   imports: [CarouselModule],
 })
 export class HotelImageSlider {
-  @Input() hotelGallery: hotelGallery[];
+  readonly hotelGallery = input<hotelGallery[]>();
 
   public options = {
     loop: true,

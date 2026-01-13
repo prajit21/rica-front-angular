@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, HostListener, input } from '@angular/core';
 
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
@@ -7,7 +6,7 @@ import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-holiday-search-box',
   templateUrl: './holiday-search-box.html',
   styleUrls: ['./holiday-search-box.scss'],
-  imports: [NgClass, NgbInputDatepicker],
+  imports: [NgbInputDatepicker],
 })
 export class HolidaySearchBox {
   readonly text = input<boolean>();

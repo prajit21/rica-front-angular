@@ -1,4 +1,4 @@
-import { Component, inject, Input, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { Store } from '@ngxs/store';
@@ -26,7 +26,8 @@ export class FlightDetails {
   private route = inject(ActivatedRoute);
 
   readonly flightClass = input<boolean>();
-  @Input() roundTrip: boolean;
+  readonly roundTrip = input<boolean>();
+
   readonly from = input<boolean>(false);
   readonly to = input<boolean>(false);
 

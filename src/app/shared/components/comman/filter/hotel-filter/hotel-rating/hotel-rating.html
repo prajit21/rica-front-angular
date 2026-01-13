@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openRating()">star category</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenRating === true ? 'block' : 'none'}"
+    [style.display]="isOpenRating === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(rating of hotelRating; track rating){

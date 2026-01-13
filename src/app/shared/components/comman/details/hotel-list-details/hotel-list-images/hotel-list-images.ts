@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -15,7 +15,7 @@ export class HotelListImages {
   readonly images = input<hotels>();
   readonly imageSlider = input<boolean>();
   readonly thumbnailImages = input<boolean>();
-  @Input() thumbnailVideo: boolean;
+  readonly thumbnailVideo = input<boolean>();
 
   public selectedImage: string;
 

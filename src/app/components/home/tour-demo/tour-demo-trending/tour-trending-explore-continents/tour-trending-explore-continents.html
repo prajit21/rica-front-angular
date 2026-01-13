@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="cab-slider center-slider-cab arrow-classic topTour mt-0">
-          @if(continents){
+          @if(continents()){
           <owl-carousel-o [options]="options">
-            @for(details of continents; track details){
+            @for(details of continents(); track details){
             <ng-template carouselSlide>
               <div>
                 <div class="topTour_box mt-0">

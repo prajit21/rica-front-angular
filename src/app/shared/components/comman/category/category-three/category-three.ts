@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
@@ -18,7 +18,7 @@ export class CategoryThree {
   private config = inject(NgbRatingConfig);
   public hotelService = inject(HotelService);
 
-  @Input() category: category[];
+  readonly category = input<category[]>();
 
   public options: OwlOptions = {
     loop: false,

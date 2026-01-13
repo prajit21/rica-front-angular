@@ -1,6 +1,6 @@
-@if(gallery){
+@if(gallery()){
 <owl-carousel-o [options]="Options">
-  @for(details of gallery; track details){
+  @for(details of gallery(); track details){
   <ng-template carouselSlide>
     <div>
       <div class="gallery-box">

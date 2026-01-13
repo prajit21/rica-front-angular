@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -13,7 +13,7 @@ import { homeSection } from '../../../../../shared/interface/hotel-classic';
   imports: [CarouselModule, RouterLink, SearchBox],
 })
 export class HotelClassicHomeSection {
-  @Input() homeSection: homeSection[];
+  readonly homeSection = input<homeSection[]>();
 
   public Options = {
     loop: true,

@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { RestaurantService } from '../../../../../../shared/services/restaurant.
   selector: 'app-restaurant-price',
   templateUrl: './restaurant-price.html',
   styleUrl: './restaurant-price.scss',
-  imports: [NgStyle, NgxSliderModule],
+  imports: [NgxSliderModule],
 })
 export class RestaurantPrice {
   private route = inject(ActivatedRoute);
@@ -49,7 +48,10 @@ export class RestaurantPrice {
 
       void this.router.navigate([], {
         relativeTo: this.route,
-        queryParams: { minPrice: this.priceMinValue, maxPrice: this.priceMaxValue },
+        queryParams: {
+          minPrice: this.priceMinValue,
+          maxPrice: this.priceMaxValue,
+        },
         queryParamsHandling: 'merge', // preserve the existing query params in the route
       });
     });

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { SearchBox } from '../../../../../shared/components/comman/search-box/search-box';
 
@@ -9,5 +9,5 @@ import { SearchBox } from '../../../../../shared/components/comman/search-box/se
   imports: [SearchBox],
 })
 export class MixMinimalHomeSection {
-  @Input() searchBoxType: string;
+  readonly searchBoxType = input<string>('');
 }

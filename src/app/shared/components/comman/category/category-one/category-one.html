@@ -1,6 +1,6 @@
-@if(category){
+@if(category()){
 <owl-carousel-o [options]="options">
-  @for(category of category; track category){
+  @for(category of category(); track category){
   <ng-template carouselSlide>
     <a href="javascript:void(0)" [routerLink]="['/home/tour/treading']">
       <div class="category-box">

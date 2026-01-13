@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -13,7 +13,8 @@ import { socialGallery } from '../../../../../shared/interface/hotel-classic';
 })
 export class HotelClassicSocialGallery {
   readonly id = input<number[]>();
-  @Input() socialGallery: socialGallery[];
+  readonly socialGallery = input<socialGallery[]>();
+
   readonly title = input<boolean>(false);
   readonly sectionClass = input<boolean>(true);
 

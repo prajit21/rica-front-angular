@@ -4,9 +4,9 @@
       <h2>never miss popular deals</h2>
     </div>
     <div class="flight-5 flight-arrow">
-      @if(deals){
+      @if(deals()){
       <owl-carousel-o [options]="options">
-        @for(deal of deals; track deal){
+        @for(deal of deals(); track deal){
         <ng-template carouselSlide>
           <div>
             <div class="classic-box">

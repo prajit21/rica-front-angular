@@ -32,7 +32,7 @@
 <div
   class="flight-detail-sec"
   [class.full_width-detail]="flightClass()"
-  [class.round_trip]="roundTrip"
+  [class.round_trip]="roundTrip()"
 >
   @if(calender()){
   <div class="title-bar">
@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  } @if(roundTrip){
+  } @if(roundTrip()){
   <div class="row">
     <div class="col-lg-6">
       <div class="selection-bar">
@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="detail-bar">
-        <app-flight-details [roundTrip]="roundTrip" [from]="true" (tagData)="tagData($event)" />
+        <app-flight-details [roundTrip]="roundTrip()" [from]="true" (tagData)="tagData($event)" />
       </div>
     </div>
     <div class="col-lg-6">
@@ -103,11 +103,11 @@
         </div>
       </div>
       <div class="detail-bar">
-        <app-flight-details [roundTrip]="roundTrip" [to]="true" />
+        <app-flight-details [roundTrip]="roundTrip()" [to]="true" />
       </div>
     </div>
   </div>
-  } @if(!roundTrip){
+  } @if(!roundTrip()){
   <div class="detail-bar">
     <app-flight-details [flightClass]="flightClass()" (tagData)="tagData($event)" />
   </div>

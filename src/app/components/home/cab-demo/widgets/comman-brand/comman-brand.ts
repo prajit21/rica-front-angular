@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -11,7 +11,7 @@ import { brand } from '../../../../../shared/interface/cab-modern';
   imports: [CarouselModule],
 })
 export class CommanBrand {
-  @Input() brand: brand[];
+  readonly brand = input<brand[]>();
 
   public options = {
     loop: true,

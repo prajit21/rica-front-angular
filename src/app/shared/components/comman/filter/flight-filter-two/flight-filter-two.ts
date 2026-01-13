@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -20,7 +19,6 @@ import { FlightStops } from '../flight-filter/widgets/flight-stops/flight-stops'
   templateUrl: './flight-filter-two.html',
   styleUrl: './flight-filter-two.scss',
   imports: [
-    NgStyle,
     ClickOutsideDirective,
     FlightStops,
     FlightFare,

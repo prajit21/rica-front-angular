@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +16,7 @@ import { HotelRating } from '../hotel-filter/hotel-rating/hotel-rating';
   selector: 'app-hotel-filter-horizontal',
   templateUrl: './hotel-filter-horizontal.html',
   styleUrls: ['./hotel-filter-horizontal.scss'],
-  imports: [NgClass, HotelFacility, HotelLanguage, HotelRating, HotelPrice, HotelDistrict],
+  imports: [HotelFacility, HotelLanguage, HotelRating, HotelPrice, HotelDistrict],
 })
 export class HotelFilterHorizontal {
   private route = inject(ActivatedRoute);

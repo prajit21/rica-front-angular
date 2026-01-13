@@ -7,9 +7,9 @@
             <h2 class="pt-0">top offers</h2>
           </div>
           <div class="flight-5 no-arrow">
-            @if(topOffers){
+            @if(topOffers()){
             <owl-carousel-o [options]="options">
-              @for(offers of topOffers; track offers){
+              @for(offers of topOffers(); track offers){
               <ng-template carouselSlide>
                 <div>
                   <div class="tourBox wow zoomIn">

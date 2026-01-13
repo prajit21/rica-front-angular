@@ -3,7 +3,7 @@
   [class.shadow-cls]="shadowClass()"
   [class.filter-bottom-content]="cabHorizontal()"
   [class.d-block]="cabService.isOpenHorizontalFilter === true && cabHorizontal()"
-  [ngStyle]="{ 'left' : cabService.isOpenResponsiveFilter === true || cabService.isOpenHorizontalFilter === true  ? '-1px' : '' }"
+  [style.left]="cabService.isOpenResponsiveFilter === true || cabService.isOpenHorizontalFilter === true  ? '-1px' : ''"
 >
   @if(!cabHorizontal()){
   <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
@@ -26,7 +26,7 @@
     <div
       class="collection-collapse-block-content"
       [class.row]="cabHorizontal()"
-      [ngClass]="{ 'd-block' : isOpenCab === true && !cabHorizontal(), 'd-none' : isOpenCab === false && !cabHorizontal()}"
+      [class]="{ 'd-block' : isOpenCab === true && !cabHorizontal(), 'd-none' : isOpenCab === false && !cabHorizontal()}"
     >
       <div class="filter-block" [class.col]="cabHorizontal()">
         <app-cab-car-type />

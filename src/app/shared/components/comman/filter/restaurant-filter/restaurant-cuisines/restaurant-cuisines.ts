@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { restaurantCuisines } from '../../../../../../shared/components/data/dat
   selector: 'app-restaurant-cuisines',
   templateUrl: './restaurant-cuisines.html',
   styleUrl: './restaurant-cuisines.scss',
-  imports: [NgStyle],
 })
 export class RestaurantCuisines {
   private route = inject(ActivatedRoute);

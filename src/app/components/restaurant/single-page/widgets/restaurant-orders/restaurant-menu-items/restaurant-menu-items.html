@@ -14,7 +14,7 @@
       @for(menu of subItem.items; track menu){
       <div
         class="items"
-        [ngClass]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
+        [class]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
       >
         <h6>{{ menu.title }}</h6>
         <p>{{ menu.description }}</p>
@@ -55,7 +55,7 @@
     @for(menu of items.items; track menu){
     <div
       class="items"
-      [ngClass]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
+      [class]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
     >
       <h6>{{ menu.title }}</h6>
       <p>{{ menu.description }}</p>

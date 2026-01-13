@@ -4,7 +4,7 @@
 <div
   class="menu-part review"
   id="reviews"
-  [ngClass]="{ 'tab-pane' : type() === 'tab', 'page-section': type() === 'slider'}"
+  [class]="{ 'tab-pane' : type() === 'tab', 'page-section': type() === 'slider'}"
 >
   @for(review of hotelReview(); track review){
   <div class="review-box">

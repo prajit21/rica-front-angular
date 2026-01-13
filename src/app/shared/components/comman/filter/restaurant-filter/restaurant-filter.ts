@@ -1,4 +1,3 @@
-import { NgStyle, NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,8 +18,6 @@ import { GetRestaurant } from '../../../../../shared/store/action/restaurant.act
   templateUrl: './restaurant-filter.html',
   styleUrl: './restaurant-filter.scss',
   imports: [
-    NgStyle,
-    NgClass,
     RestaurantPopularTags,
     RestaurantCuisines,
     RestaurantRating,

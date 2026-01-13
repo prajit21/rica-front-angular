@@ -1,4 +1,3 @@
-import { NgClass, NgStyle } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 import { About } from './widgets/about/about';
@@ -14,18 +13,7 @@ import { UsefulLinks } from './widgets/useful-links/useful-links';
   selector: 'app-footer',
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
-  imports: [
-    NgClass,
-    NgStyle,
-    Contact,
-    About,
-    Location,
-    TopPlaces,
-    UsefulLinks,
-    NewTopic,
-    SocialMedia,
-    CopyRight,
-  ],
+  imports: [Contact, About, Location, TopPlaces, UsefulLinks, NewTopic, SocialMedia, CopyRight],
 })
 export class Footer {
   readonly type = input<string>();

@@ -13,11 +13,11 @@ import { GridSkeleton } from '../skeleton-loader/grid-skeleton/grid-skeleton';
   styleUrls: ['./hotel-skeleton.scss'],
   imports: [
     HotelSkeletonSearchBox,
-    NgClass,
     GridSkeleton,
     HotelSkeletonFilter,
     HotelListSkeleton,
     HotelSkeletonDetails,
+    NgClass,
   ],
 })
 export class HotelSkeleton {

@@ -42,8 +42,8 @@
         }
         <span
           class="badge"
-          [ngClass]="{ 'bg-info' : bookingData.travelDetail === 'upcoming', 'bg-success': bookingData.travelDetail === 'past', 'bg-secondary' : bookingData.travelDetail === 'cancelled' }"
-          [ngStyle]="{ 'border-radius' : '0.25rem'}"
+          [class]="{ 'bg-info' : bookingData.travelDetail === 'upcoming', 'bg-success': bookingData.travelDetail === 'past', 'bg-secondary' : bookingData.travelDetail === 'cancelled' }"
+          [style.border-radius]="'0.25rem'"
           >{{ bookingData.travelDetail }}</span
         >
       </div>

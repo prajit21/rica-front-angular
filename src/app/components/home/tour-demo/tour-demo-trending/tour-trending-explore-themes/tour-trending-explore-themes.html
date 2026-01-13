@@ -19,9 +19,9 @@
             [background_text]="'best'"
           />
           <div class="slider-4 no-arrow">
-            @if(themes){
+            @if(themes()!){
             <owl-carousel-o [options]="options">
-              @for(details of themes; track details){
+              @for(details of themes(); track details){
               <ng-template carouselSlide>
                 <div>
                   <div class="tourBox">

@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,7 +17,7 @@ import { GetHotels } from '../../../../../shared/store/action/hotel.action';
   selector: 'app-hotel-filter',
   templateUrl: './hotel-filter.html',
   styleUrls: ['./hotel-filter.scss'],
-  imports: [NgStyle, HotelDistrict, HotelFacility, HotelRating, HotelPrice, HotelLanguage, Hotels],
+  imports: [HotelDistrict, HotelFacility, HotelRating, HotelPrice, HotelLanguage, Hotels],
 })
 export class HotelFilter {
   private route = inject(ActivatedRoute);

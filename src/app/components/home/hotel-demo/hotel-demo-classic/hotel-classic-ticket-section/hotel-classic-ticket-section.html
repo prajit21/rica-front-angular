@@ -1,5 +1,6 @@
 <section class="ticket-section section-b-space white-section animated-section">
   <app-animations [type]="'dots'" />
+
   <div class="container">
     <app-title
       [type]="'basic'"
@@ -7,8 +8,9 @@
       [subTitle]="'rooms & suits'"
       [background_text]="'hotel'"
     />
+
     <div class="slide-1">
-      <app-ticket-section [ticketSection]="ticketSection" />
+      <app-ticket-section [ticketSection]="filteredTicketSection()" />
     </div>
   </div>
 </section>

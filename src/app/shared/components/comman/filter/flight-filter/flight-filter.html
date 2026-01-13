@@ -1,6 +1,6 @@
 <div
   class="left-sidebar"
-  [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+  [style.left]="flightService.isOpenResponsiveFilter === true ? '-1px' : ''"
 >
   <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
   <div class="search-bar">
@@ -18,14 +18,14 @@
     </a>
     <div
       class="collection-collapse-block-content"
-      [ngStyle]="{ 'display' : isOpenFilter === true ? 'block' : 'none'}"
+      [style.display]="isOpenFilter === true ? 'block' : 'none'"
     >
       <div class="filter-block">
         <div class="collection-collapse-block" [class.open]="isOpenStops">
           <h6 class="collapse-block-title" (click)="openStops()">stops</h6>
           <div
             class="collection-collapse-block-content"
-            [ngStyle]="{ 'display' : isOpenStops === true ? 'block' : 'none'}"
+            [style.display]="isOpenStops === true ? 'block' : 'none'"
           >
             <div class="collection-brand-filter">
               <app-flight-stops />
@@ -38,7 +38,7 @@
           <h6 class="collapse-block-title" (click)="openPrice()">price</h6>
           <div
             class="collection-collapse-block-content"
-            [ngStyle]="{ 'display' : isOpenPrice === true ? 'block' : 'none'}"
+            [style.display]="isOpenPrice === true ? 'block' : 'none'"
           >
             <app-flight-price />
           </div>
@@ -49,7 +49,7 @@
           <h6 class="collapse-block-title" (click)="openAirLines()">airlines</h6>
           <div
             class="collection-collapse-block-content"
-            [ngStyle]="{ 'display' : isOpenAirLines === true ? 'block' : 'none'}"
+            [style.display]="isOpenAirLines === true ? 'block' : 'none'"
           >
             <div class="collection-brand-filter">
               <app-flight-airlines />
@@ -62,7 +62,7 @@
           <h6 class="collapse-block-title" (click)="openDepartureTime()">departure time</h6>
           <div
             class="collection-collapse-block-content"
-            [ngStyle]="{ 'display' : isOpenDepartureTime === true ? 'block' : 'none'}"
+            [style.display]="isOpenDepartureTime === true ? 'block' : 'none'"
           >
             <div class="collection-brand-filter">
               <app-flight-departure-time />
@@ -75,7 +75,7 @@
           <h6 class="collapse-block-title" (click)="openArrivalTime()">arrival time</h6>
           <div
             class="collection-collapse-block-content"
-            [ngStyle]="{ 'display' : isOpenArrivalTime === true ? 'block' : 'none'}"
+            [style.display]="isOpenArrivalTime === true ? 'block' : 'none'"
           >
             <div class="collection-brand-filter">
               <app-flight-arrival-time />

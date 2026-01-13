@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +10,7 @@ import { CurrencySymbolPipe } from '../../../../../pipe/currency.pipe';
   selector: 'app-hotels',
   templateUrl: './hotels.html',
   styleUrls: ['./hotels.scss'],
-  imports: [NgStyle, NgbRating, CurrencySymbolPipe],
+  imports: [NgbRating, CurrencySymbolPipe],
 })
 export class Hotels {
   public hotelService = inject(HotelService);

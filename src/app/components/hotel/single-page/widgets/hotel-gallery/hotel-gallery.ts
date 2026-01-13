@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { Gallery, GalleryItem, ImageItem, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { Lightbox, GallerizeDirective } from 'ng-gallery/lightbox';
@@ -15,8 +15,7 @@ import { hotelGallery } from '../../../../../shared/interface/hotel';
 export class HotelGallery {
   public gallery = inject(Gallery);
   public lightbox = inject(Lightbox);
-
-  @Input() hotelGallery: hotelGallery[];
+  readonly hotelGallery = input<hotelGallery[]>();
 
   public images: hotelGallery[];
   public items: GalleryItem[];
@@ -46,7 +45,7 @@ export class HotelGallery {
 
   openLightBox() {
     this.images = [];
-    this.hotelGallery.forEach(image => {
+    this.hotelGallery()?.forEach(image => {
       this.images.push(image);
     });
 

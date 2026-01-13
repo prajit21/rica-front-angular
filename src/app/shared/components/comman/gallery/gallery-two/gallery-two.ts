@@ -40,7 +40,10 @@ export class GalleryTwo {
   }
 
   openModal(img: images) {
-    const modalRef = this.modal.open(ImageModal, { size: 'lg', centered: true });
+    const modalRef = this.modal.open(ImageModal, {
+      size: 'lg',
+      centered: true,
+    });
     modalRef.componentInstance.data = img.url;
     modalRef.componentInstance.images = this.images();
   }

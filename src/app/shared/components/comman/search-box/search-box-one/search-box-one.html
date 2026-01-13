@@ -3,12 +3,12 @@
 }
 <div
   class="search-section"
-  [ngClass]="{ 'shadow' : shadow(),'search-fixed' : searchFixed && searchFix() }"
+  [class]="{ 'shadow' : shadow(),'search-fixed' : searchFixed && searchFix() }"
 >
   <div
     class="search-box"
     [class.rounded10]="borderClass()"
-    [ngClass]="{ 'container custom-container' : searchFixed }"
+    [class]="{ 'container custom-container' : searchFixed }"
   >
     <div class="left-part">
       <div class="search-body title-hotel">

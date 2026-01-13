@@ -12,12 +12,12 @@ import { CabSearchSkeleton } from './cab-search-skeleton/cab-search-skeleton';
   templateUrl: './cab-skeleton.html',
   styleUrl: './cab-skeleton.scss',
   imports: [
-    NgClass,
     CabSearchSkeleton,
     CabGridSkeleton,
     CabFilterSkeleton,
     CabDetailsSkeleton,
     CabListDetailsSkeleton,
+    NgClass,
   ],
 })
 export class CabSkeleton {

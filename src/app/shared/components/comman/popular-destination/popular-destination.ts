@@ -1,4 +1,4 @@
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -17,7 +17,7 @@ export class PopularDestination {
   public hotelService = inject(HotelService);
 
   readonly popularDestination = input<popularDestination[]>();
-  @Input() themes: exploreTheme[];
+  readonly themes = input<exploreTheme[]>();
 
   public options = {
     loop: true,

@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -8,7 +7,6 @@ import { hotelLocation } from '../../../../../shared/interface/hotel';
   selector: 'app-hotel-location',
   templateUrl: './hotel-location.html',
   styleUrls: ['./hotel-location.scss'],
-  imports: [NgClass],
 })
 export class HotelLocation {
   public sanitizer = inject(DomSanitizer);

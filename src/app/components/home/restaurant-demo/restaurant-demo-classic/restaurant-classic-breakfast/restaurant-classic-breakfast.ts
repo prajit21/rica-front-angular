@@ -1,4 +1,4 @@
-import { ViewportScroller, NgStyle } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
@@ -9,7 +9,7 @@ import { breakfast } from '../../../../../shared/interface/restaurant-classic';
   selector: 'app-restaurant-classic-breakfast',
   templateUrl: './restaurant-classic-breakfast.html',
   styleUrls: ['./restaurant-classic-breakfast.scss'],
-  imports: [NgStyle, NgbRating],
+  imports: [NgbRating],
 })
 export class RestaurantClassicBreakfast {
   private config = inject(NgbRatingConfig);

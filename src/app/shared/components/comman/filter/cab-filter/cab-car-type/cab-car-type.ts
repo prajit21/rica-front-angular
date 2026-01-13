@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { carTypes } from '../../../../../../shared/components/data/data/filter/c
   selector: 'app-cab-car-type',
   templateUrl: './cab-car-type.html',
   styleUrl: './cab-car-type.scss',
-  imports: [NgStyle],
 })
 export class CabCarType {
   private route = inject(ActivatedRoute);

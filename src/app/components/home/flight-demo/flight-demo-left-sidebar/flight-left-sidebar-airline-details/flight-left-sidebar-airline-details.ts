@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -12,7 +12,7 @@ import { airlines } from '../../../../../shared/interface/flight-modern';
   imports: [CarouselModule, RouterLink],
 })
 export class FlightLeftSidebarAirlineDetails {
-  @Input() airlines: airlines[];
+  readonly airlines = input<airlines[]>();
 
   public options = {
     loop: false,

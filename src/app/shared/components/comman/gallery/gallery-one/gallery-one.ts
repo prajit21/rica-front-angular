@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -12,7 +12,7 @@ import { gallery } from '../../../../../shared/interface/hotel-classic';
   imports: [CarouselModule, RouterLink],
 })
 export class GalleryOne {
-  @Input() gallery: gallery[];
+  readonly gallery = input<gallery[]>();
 
   public Options = {
     loop: true,

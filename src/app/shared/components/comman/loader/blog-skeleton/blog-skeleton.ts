@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BlogDetailSkeleton } from './blog-detail-skeleton/blog-detail-skeleton';
 import { BlogFilterSkeleton } from './blog-filter-skeleton/blog-filter-skeleton';
@@ -15,7 +15,7 @@ export class BlogSkeleton {
   readonly skeletonType = input<string>();
   readonly filterType = input<string>();
   readonly gridType = input<string>();
-  @Input() creativeList: boolean;
+  readonly creativeList = input<boolean>();
   readonly list = input<boolean>();
   readonly mix = input<boolean>();
 

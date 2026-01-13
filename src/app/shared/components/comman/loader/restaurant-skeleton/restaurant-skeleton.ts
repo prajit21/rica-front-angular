@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 import { RestaurantDetailSkeleton } from './restaurant-detail-skeleton/restaurant-detail-skeleton';
@@ -9,7 +8,7 @@ import { GridSkeleton } from '../skeleton-loader/grid-skeleton/grid-skeleton';
   selector: 'app-restaurant-skeleton',
   templateUrl: './restaurant-skeleton.html',
   styleUrl: './restaurant-skeleton.scss',
-  imports: [NgClass, GridSkeleton, RestaurantFilterSkeleton, RestaurantDetailSkeleton],
+  imports: [GridSkeleton, RestaurantFilterSkeleton, RestaurantDetailSkeleton],
 })
 export class RestaurantSkeleton {
   readonly filterType = input<string>();

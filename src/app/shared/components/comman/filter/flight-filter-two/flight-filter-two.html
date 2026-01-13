@@ -1,7 +1,7 @@
 <div
   class="top-filter-section"
   (clickOutside)="clickOutside()"
-  [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+  [style.left]="flightService.isOpenResponsiveFilter === true ? '-1px' : ''"
 >
   <ul>
     <li class="back-btn">

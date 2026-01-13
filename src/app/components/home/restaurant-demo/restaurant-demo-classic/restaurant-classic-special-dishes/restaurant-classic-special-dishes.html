@@ -7,9 +7,9 @@
     <div class="row">
       <div class="col">
         <div class="slide-3 no-arrow">
-          @if(dishes){
+          @if(dishes()){
           <owl-carousel-o [options]="options">
-            @for(dishes of dishes; track dishes){
+            @for(dishes of dishes(); track dishes){
             <ng-template carouselSlide>
               <a href="javascript:void(0)" [routerLink]="['/restaurant/listing/grid-view/2-grid']">
                 <div class="category-box">

@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { restaurantDetail } from '../../../../../shared/interface/restaurant-minimal';
@@ -13,7 +13,7 @@ import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
   imports: [RouterLink, NgClass, CurrencySymbolPipe],
 })
 export class RestaurantDetails {
-  @Input() restaurantDetails: restaurantDetail;
+  readonly restaurantDetails = input<restaurantDetail | null>(null);
 
   public hotelService = inject(HotelService);
 }

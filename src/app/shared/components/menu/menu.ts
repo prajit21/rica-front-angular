@@ -10,7 +10,7 @@ import { IMenu, NavService } from '../../services/nav.service';
   selector: 'app-menu',
   templateUrl: './menu.html',
   styleUrls: ['./menu.scss'],
-  imports: [NgClass, NgTemplateOutlet, RouterLink, TitleCasePipe, TranslateModule],
+  imports: [NgTemplateOutlet, RouterLink, TitleCasePipe, TranslateModule, NgClass],
 })
 export class Menu {
   public navServices = inject(NavService);

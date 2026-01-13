@@ -14,7 +14,7 @@
             <div class="filter-btn" [class.active]="isOpen" (click)="openFilter()">
               <h6>filter <i class="fas fa-sort-down"></i></h6>
             </div>
-            <ul class="filter-content" [ngStyle]="{ 'display' : isOpen ? 'block' : 'none'}">
+            <ul class="filter-content" [style.display]="isOpen ? 'block' : 'none'">
               <li class="active" (click)="filterItems('')">All</li>
               <li (click)="filterItems('maxican')">maxican</li>
               <li (click)="filterItems('indian')">indian</li>

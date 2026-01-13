@@ -32,7 +32,9 @@ export class FlightStops {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { stop: this.selectedStops.length ? this.selectedStops.join(',') : null },
+      queryParams: {
+        stop: this.selectedStops.length ? this.selectedStops.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

@@ -1,5 +1,4 @@
-import { NgStyle } from '@angular/common';
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { Gallery, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { Lightbox, GallerizeDirective } from 'ng-gallery/lightbox';
@@ -12,7 +11,7 @@ import { PagesService } from '../../../../../shared/services/pages.service';
   selector: 'app-portfolio-images-section',
   templateUrl: './portfolio-images-section.html',
   styleUrl: './portfolio-images-section.scss',
-  imports: [GallerizeDirective, NgxMasonryModule, NgStyle],
+  imports: [GallerizeDirective, NgxMasonryModule],
 })
 export class PortfolioImagesSection {
   private pageService = inject(PagesService);
@@ -21,7 +20,7 @@ export class PortfolioImagesSection {
 
   readonly gridType = input<string>();
   readonly details = input<boolean>(false);
-  @Input() masonry: boolean = false;
+  readonly masonry = input<boolean>(false);
 
   public portfolio: portfolio[];
   public images: portfolioGallery[] = [];
@@ -37,7 +36,7 @@ export class PortfolioImagesSection {
 
       this.images = [];
       this.portfolio.forEach(data => {
-        if (this.masonry == true) {
+        if (this.masonry() == true) {
           data.masonryGallery.forEach(items => {
             if (this.activeTab == 'all') {
               this.images.push(items);
@@ -76,7 +75,7 @@ export class PortfolioImagesSection {
 
     this.images = [];
     this.portfolio.forEach(data => {
-      if (this.masonry == true) {
+      if (this.masonry() == true) {
         data.masonryGallery.forEach(items => {
           if (this.activeTab == 'all') {
             this.images.push(items);

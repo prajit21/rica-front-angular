@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openOption()">car option</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenOption === true ? 'block' : 'none'}"
+    [style.display]="isOpenOption === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(option of cabOptions; track option){

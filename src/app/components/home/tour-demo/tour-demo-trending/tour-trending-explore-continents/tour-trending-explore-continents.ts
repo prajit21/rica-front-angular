@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -16,7 +16,7 @@ import { HotelService } from '../../../../../shared/services/hotel.service';
 export class TourTrendingExploreContinents {
   public hotelService = inject(HotelService);
 
-  @Input() continents: continents[];
+  readonly continents = input<continents[]>();
 
   public options = {
     loop: true,

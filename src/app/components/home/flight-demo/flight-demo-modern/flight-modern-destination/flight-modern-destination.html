@@ -7,9 +7,9 @@
       [description]="description"
     />
     <div class="slide-3 no-arrow">
-      @if(destination){
+      @if(destination()){
       <owl-carousel-o [options]="options">
-        @for(details of destination; track details){
+        @for(details of destination(); track details){
         <ng-template carouselSlide>
           <div>
             <div class="blog-wrap">

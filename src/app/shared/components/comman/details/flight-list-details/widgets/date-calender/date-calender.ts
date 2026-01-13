@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { CalendarView, CalendarCommonModule, CalendarMonthModule } from 'angular-calendar';
@@ -8,7 +7,7 @@ import { CalendarView, CalendarCommonModule, CalendarMonthModule } from 'angular
   templateUrl: './date-calender.html',
   styleUrl: './date-calender.scss',
   encapsulation: ViewEncapsulation.None,
-  imports: [NgStyle, CalendarCommonModule, CalendarMonthModule],
+  imports: [CalendarCommonModule, CalendarMonthModule],
 })
 export class DateCalender {
   public isOpenCalender: boolean = false;

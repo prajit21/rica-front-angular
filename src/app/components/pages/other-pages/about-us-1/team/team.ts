@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -11,7 +11,8 @@ import { team } from '../../../../../shared/interface/pages';
   imports: [CarouselModule],
 })
 export class Team {
-  @Input() team: team[];
+  readonly team = input<team[]>();
+
   readonly classic = input<boolean>(false);
 
   public options = {

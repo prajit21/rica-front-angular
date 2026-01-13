@@ -1,6 +1,6 @@
-@if(testimonial){
+@if(testimonial()!){
 <owl-carousel-o [options]="options">
-  @for(details of testimonial; track details){
+  @for(details of testimonial(); track details){
   <ng-template carouselSlide>
     <div>
       <div class="testimonial">

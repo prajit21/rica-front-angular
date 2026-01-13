@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col">
           <div class="slide-6 no-arrow">
-            @if(topCity){
+            @if(topCity()){
             <owl-carousel-o [options]="Options">
-              @for(city of topCity; track city){
+              @for(city of topCity(); track city){
               <ng-template carouselSlide>
                 <div class="category-block">
                   <a

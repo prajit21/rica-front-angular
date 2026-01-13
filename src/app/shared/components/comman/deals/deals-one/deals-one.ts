@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
@@ -11,31 +11,26 @@ import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
 
 @Component({
   selector: 'app-deals-one',
+
   templateUrl: './deals-one.html',
   styleUrls: ['./deals-one.scss'],
   imports: [CarouselModule, RouterLink, NgbRating, NgClass, CurrencySymbolPipe],
 })
 export class DealsOne {
-  public hotelService = inject(HotelService);
+  readonly hotelService = inject(HotelService);
 
-  @Input() deals: deal[];
+  readonly deals = input<deal[] | null>(null);
   readonly text = input<boolean>(false);
 
-  public options = {
+  readonly options = {
     loop: true,
     nav: false,
     dots: false,
     margin: 50,
     responsive: {
-      0: {
-        items: 1,
-      },
-      668: {
-        items: 2,
-      },
-      999: {
-        items: 3,
-      },
+      0: { items: 1 },
+      668: { items: 2 },
+      999: { items: 3 },
     },
   };
 }

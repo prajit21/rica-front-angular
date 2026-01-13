@@ -1,6 +1,6 @@
 <div
   class="left-sidebar sticky-cls-top"
-  [ngStyle]="{ 'left' : tourService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+  [style.left]="tourService.isOpenResponsiveFilter === true ? '-1px' : ''"
 >
   <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
   <div class="search-bar">
@@ -18,7 +18,7 @@
     </a>
     <div
       class="collection-collapse-block-content"
-      [ngStyle]="{ 'display' : isOpenTour === true ? 'block' : 'none'}"
+      [style.display]="isOpenTour === true ? 'block' : 'none'"
     >
       <div class="filter-block">
         <app-tour-rating />

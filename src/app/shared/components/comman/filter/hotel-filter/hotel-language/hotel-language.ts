@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { hotelLanguage } from '../../../../../../shared/components/data/data/fil
   selector: 'app-hotel-language',
   templateUrl: './hotel-language.html',
   styleUrls: ['./hotel-language.scss'],
-  imports: [NgStyle],
 })
 export class HotelLanguage {
   private route = inject(ActivatedRoute);

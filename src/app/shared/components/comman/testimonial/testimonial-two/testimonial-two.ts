@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -11,7 +11,7 @@ import { testimonial } from '../../../../../shared/interface/hotel-classic';
   imports: [CarouselModule],
 })
 export class TestimonialTwo {
-  @Input() testimonial: testimonial[];
+  readonly testimonial = input<testimonial[]>();
 
   public options = {
     loop: true,

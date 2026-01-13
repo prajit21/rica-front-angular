@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { Gallery, GalleryItem, ImageItem, ImageSize, ThumbnailsPosition } from 'ng-gallery';
 import { GallerizeDirective, Lightbox } from 'ng-gallery/lightbox';
@@ -13,15 +13,14 @@ import { cabGallery } from '../../../../../shared/interface/cab';
   imports: [CarouselModule, GallerizeDirective],
 })
 export class CabGallery {
-  public gallery = inject(Gallery);
-  public lightbox = inject(Lightbox);
+  readonly gallery = inject(Gallery);
+  readonly lightbox = inject(Lightbox);
 
-  @Input() cabGallery: cabGallery[];
+  readonly cabGallery = input<cabGallery[] | null>(null);
 
-  public images: cabGallery[];
-  public items: GalleryItem[];
+  items: GalleryItem[] = [];
 
-  public options = {
+  readonly options = {
     loop: true,
     nav: true,
     dots: false,
@@ -33,13 +32,11 @@ export class CabGallery {
     },
   };
 
-  openLightBox() {
-    this.images = [];
-    this.cabGallery.forEach(image => {
-      this.images.push(image);
-    });
+  openLightBox(): void {
+    const images = this.cabGallery();
+    if (!images?.length) return;
 
-    this.items = this.images.map(item => new ImageItem({ src: item.image, thumb: item.image }));
+    this.items = images.map(item => new ImageItem({ src: item.image, thumb: item.image }));
 
     const lightboxRef = this.gallery.ref('lightbox');
 
@@ -48,7 +45,7 @@ export class CabGallery {
       thumbPosition: ThumbnailsPosition.Top,
     });
 
-    this.lightbox.open();
     lightboxRef.load(this.items);
+    this.lightbox.open();
   }
 }

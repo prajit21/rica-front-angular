@@ -2,7 +2,7 @@
   class="left-sidebar"
   [class.sidebar-popup]="mapFilter()"
   [class.open]="hotelService.isOpenMapFilter"
-  [ngStyle]="{ 'left' : hotelService.isOpenResponsiveFilter === true ? '-1px' : '' }"
+  [style.left]="hotelService.isOpenResponsiveFilter === true ? '-1px' : ''"
 >
   @if(!mapFilter()){
   <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
@@ -24,7 +24,7 @@
     }
     <div
       class="collection-collapse-block-content"
-      [ngStyle]="{ 'display' : isOpenFilter === true ? 'block' : 'none'}"
+      [style.display]="isOpenFilter === true ? 'block' : 'none'"
     >
       @if(district() === true){
       <div class="filter-block">

@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +16,7 @@ import { GetTours } from '../../../../../shared/store/action/tour.action';
   selector: 'app-tour-filter',
   templateUrl: './tour-filter.html',
   styleUrls: ['./tour-filter.scss'],
-  imports: [NgStyle, TourRating, TourFlights, TourTravelType, TourBudget, TourTripDuration],
+  imports: [TourRating, TourFlights, TourTravelType, TourBudget, TourTripDuration],
 })
 export class TourFilter {
   private route = inject(ActivatedRoute);

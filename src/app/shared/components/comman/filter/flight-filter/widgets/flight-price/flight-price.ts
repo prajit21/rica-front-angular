@@ -47,7 +47,10 @@ export class FlightPrice {
 
       void this.router.navigate([], {
         relativeTo: this.route,
-        queryParams: { minPrice: this.priceMinValue, maxPrice: this.priceMaxValue },
+        queryParams: {
+          minPrice: this.priceMinValue,
+          maxPrice: this.priceMaxValue,
+        },
         queryParamsHandling: 'merge', // preserve the existing query params in the route
       });
     });

@@ -1,6 +1,6 @@
 <div
   class="single-sidebar order-cart-right"
-  [ngStyle]=" { 'right' : restaurantService.isOpenCart ? '-1px' : ''}"
+  [style.right]="restaurantService.isOpenCart ? '-1px' : ''"
 >
   @if(backButton()){
   <div class="back-btn" (click)="closeCart()">back</div>
@@ -23,7 +23,7 @@
       @if(menu.cartItem){
       <div
         class="items"
-        [ngClass]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
+        [class]="{ 'veg' : menu.mealType === 'veg', 'non-veg' : menu.mealType === 'non-veg'}"
       >
         <h6>{{ menu.title }}</h6>
         <h5>{{ menu.price | currencyPipe: hotelService.currency }}</h5>

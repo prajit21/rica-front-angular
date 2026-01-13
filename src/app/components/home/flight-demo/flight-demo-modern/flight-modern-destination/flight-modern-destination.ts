@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -17,7 +17,7 @@ import { HotelService } from '../../../../../shared/services/hotel.service';
 export class FlightModernDestination {
   public hotelService = inject(HotelService);
 
-  @Input() destination: destination[];
+  readonly destination = input<destination[]>();
 
   public description =
     'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......';

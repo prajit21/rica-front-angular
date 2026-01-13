@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { RouterLink } from '@angular/router';
@@ -20,7 +19,6 @@ import { TourService } from '../../../../shared/services/tour.service';
     GoogleMapsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
-    NgClass,
     RouterLink,
     Layout,
   ],

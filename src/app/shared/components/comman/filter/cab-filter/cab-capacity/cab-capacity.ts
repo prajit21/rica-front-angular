@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { cabCapacity } from '../../../../../../shared/components/data/data/filte
   selector: 'app-cab-capacity',
   templateUrl: './cab-capacity.html',
   styleUrl: './cab-capacity.scss',
-  imports: [NgStyle],
 })
 export class CabCapacity {
   private route = inject(ActivatedRoute);

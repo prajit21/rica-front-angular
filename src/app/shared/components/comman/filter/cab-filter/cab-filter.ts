@@ -1,4 +1,3 @@
-import { NgStyle, NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +16,7 @@ import { GetCab } from '../../../../../shared/store/action/cab.action';
   selector: 'app-cab-filter',
   templateUrl: './cab-filter.html',
   styleUrl: './cab-filter.scss',
-  imports: [NgStyle, NgClass, CabCarType, CabRating, CabPrice, CabCapacity, CabOption],
+  imports: [CabCarType, CabRating, CabPrice, CabCapacity, CabOption],
 })
 export class CabFilter {
   public cabService = inject(CabService);

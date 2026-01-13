@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openPrice()">cost for two</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenPrice === true ? 'block' : 'none'}"
+    [style.display]="isOpenPrice === true ? 'block' : 'none'"
   >
     <div class="wrapper">
       <div class="range-slider">

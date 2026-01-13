@@ -1,4 +1,3 @@
-import { NgStyle, NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { OrderItems, restaurantOrders } from '../../../../../shared/interface/restaurant';
@@ -10,7 +9,7 @@ import { RestaurantService } from '../../../../../shared/services/restaurant.ser
   selector: 'app-restaurant-cart-items',
   templateUrl: './restaurant-cart-items.html',
   styleUrl: './restaurant-cart-items.scss',
-  imports: [NgStyle, NgClass, CurrencySymbolPipe],
+  imports: [CurrencySymbolPipe],
 })
 export class RestaurantCartItems {
   public restaurantService = inject(RestaurantService);

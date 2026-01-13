@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, HostListener, input } from '@angular/core';
 
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
@@ -10,21 +9,22 @@ import { seatType } from '../../../data/data/flight';
   selector: 'app-flight-search-box-two',
   templateUrl: './flight-search-box-two.html',
   styleUrls: ['./flight-search-box-two.scss'],
-  imports: [ClickOutsideDirective, NgClass, NgbInputDatepicker],
+  imports: [ClickOutsideDirective, NgbInputDatepicker],
 })
 export class FlightSearchBoxTwo {
   readonly text = input<boolean>();
   readonly borderClass = input<boolean>();
   readonly searchFix = input<boolean>();
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    let number = window.pageYOffset || 0;
-    if (number > 400) {
-      this.searchFixed = true;
-    } else {
-      this.searchFixed = false;
-    }
+  private lastScroll = 0;
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    const now = Date.now();
+    if (now - this.lastScroll < 100) return; // 100ms throttle
+
+    this.lastScroll = now;
+    this.searchFixed = window.scrollY > 400;
   }
 
   public seatType = seatType;

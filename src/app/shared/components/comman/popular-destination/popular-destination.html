@@ -1,6 +1,6 @@
-@if(themes){
+@if(themes()!){
 <owl-carousel-o [options]="options">
-  @for(destination of themes; track destination){
+  @for(destination of themes(); track destination){
   <ng-template carouselSlide>
     <div>
       <div class="tourBox wow zoomIn">

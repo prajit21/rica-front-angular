@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openFlights()">flights</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isFlight === true ? 'block' : 'none'}"
+    [style.display]="isFlight === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(details of tourFlights; track details){

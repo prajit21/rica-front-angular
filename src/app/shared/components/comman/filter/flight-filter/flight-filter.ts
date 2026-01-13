@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,14 +16,7 @@ import { GetFlights } from '../../../../../shared/store/action/flight.action';
   selector: 'app-flight-filter',
   templateUrl: './flight-filter.html',
   styleUrl: './flight-filter.scss',
-  imports: [
-    NgStyle,
-    FlightStops,
-    FlightPrice,
-    FlightAirlines,
-    FlightDepartureTime,
-    FlightArrivalTime,
-  ],
+  imports: [FlightStops, FlightPrice, FlightAirlines, FlightDepartureTime, FlightArrivalTime],
 })
 export class FlightFilter {
   private route = inject(ActivatedRoute);

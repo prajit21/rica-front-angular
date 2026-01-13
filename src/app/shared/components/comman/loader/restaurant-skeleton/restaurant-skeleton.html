@@ -1,5 +1,5 @@
-<section class="bg-inner" [ngClass]="{ 'xs-section' : mapFilter(), 'small-section': !mapFilter()}">
-  <div [ngClass]="{'container-fluid' : mapFilter(),' container' : !mapFilter() }">
+<section class="bg-inner" [class]="{ 'xs-section' : mapFilter(), 'small-section': !mapFilter()}">
+  <div [class]="{'container-fluid' : mapFilter(),' container' : !mapFilter() }">
     <div class="row">
       <div class="col-12">
         <app-grid-skeleton [gridType]="gridType()" [horizontalFilter]="horizontalFilter()" />

@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openTime()">delivery time</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenTime === true ? 'block' : 'none'}"
+    [style.display]="isOpenTime === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(time of restaurantDeliveryTime; track time){

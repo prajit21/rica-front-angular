@@ -1,6 +1,6 @@
-@if(package){
+@if(package()){
 <owl-carousel-o [options]="options">
-  @for(package of package; track package){
+  @for(package of package(); track package){
   <ng-template carouselSlide>
     <div>
       <div class="category-wrap">

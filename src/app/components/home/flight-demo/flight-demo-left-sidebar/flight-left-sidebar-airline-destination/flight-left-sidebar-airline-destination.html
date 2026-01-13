@@ -5,9 +5,9 @@
     </div>
     <div class="flight-arrow product-wrapper-grid special-section grid-box ratio3_2">
       <div class="slider-4 content grid">
-        @if(destination){
+        @if(destination()){
         <owl-carousel-o [options]="options">
-          @for(details of destination; track details){
+          @for(details of destination(); track details){
           <ng-template carouselSlide>
             <div class="grid-item">
               <div class="special-box p-0">

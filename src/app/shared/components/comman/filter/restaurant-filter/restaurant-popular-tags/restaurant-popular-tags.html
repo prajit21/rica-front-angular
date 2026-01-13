@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openTag()">popular</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenTag === true ? 'block' : 'none'}"
+    [style.display]="isOpenTag === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(tag of restaurantPopularTags; track tag){

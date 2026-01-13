@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openFacility()">facility</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenFacility === true ? 'block' : 'none'}"
+    [style.display]="isOpenFacility === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(data of hotelFacility; track data){

@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
@@ -16,7 +16,7 @@ import { CurrencySymbolPipe } from '../../../../pipe/currency.pipe';
 export class CategoryTwo {
   public hotelService = inject(HotelService);
 
-  @Input() package: category[];
+  readonly package = input<category[]>();
 
   public options: OwlOptions = {
     loop: true,

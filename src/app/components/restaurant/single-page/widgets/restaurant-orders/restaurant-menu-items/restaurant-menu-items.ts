@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +11,7 @@ import { HotelService } from '../../../../../../shared/services/hotel.service';
   selector: 'app-restaurant-menu-items',
   templateUrl: './restaurant-menu-items.html',
   styleUrl: './restaurant-menu-items.scss',
-  imports: [NgClass, CurrencySymbolPipe],
+  imports: [CurrencySymbolPipe],
 })
 export class RestaurantMenuItems {
   private modal = inject(NgbModal);

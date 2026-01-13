@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { restaurantPopularTags } from '../../../../../../shared/components/data/
   selector: 'app-restaurant-popular-tags',
   templateUrl: './restaurant-popular-tags.html',
   styleUrl: './restaurant-popular-tags.scss',
-  imports: [NgStyle],
 })
 export class RestaurantPopularTags {
   private route = inject(ActivatedRoute);
@@ -39,7 +37,9 @@ export class RestaurantPopularTags {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { tag: this.selectedTags.length ? this.selectedTags.join(',') : null },
+      queryParams: {
+        tag: this.selectedTags.length ? this.selectedTags.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

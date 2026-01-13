@@ -2,7 +2,7 @@
   <h6 class="collapse-block-title" (click)="openTravelType()">travel type</h6>
   <div
     class="collection-collapse-block-content"
-    [ngStyle]="{ 'display' : isOpenTravelType === true ? 'block' : 'none'}"
+    [style.display]="isOpenTravelType === true ? 'block' : 'none'"
   >
     <div class="collection-brand-filter">
       @for(details of tourTravelType; track details){

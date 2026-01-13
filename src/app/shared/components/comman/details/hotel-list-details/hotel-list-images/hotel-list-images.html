@@ -46,7 +46,7 @@
 }
 
 <!-- thumbnail video -->
-@if(thumbnailVideo){
+@if(thumbnailVideo()){
 <div class="slider-for">
   <owl-carousel-o [options]="options" #owlCar2>
     @for(image of images()?.images; track image){
@@ -108,7 +108,7 @@
     @for(image of images()?.images; track image; let i = $index){
     <ng-template carouselSlide>
       <a (click)="owlCar2.to(image.url); changeImage(image.url+i)">
-        @if(image.fileType === 'video' && thumbnailVideo === true){
+        @if(image.fileType === 'video' && thumbnailVideo() === true){
         <div>
           <img [src]="'assets/video/hotel.jpg'" class="img-fluid" alt="property-image" />
         </div>

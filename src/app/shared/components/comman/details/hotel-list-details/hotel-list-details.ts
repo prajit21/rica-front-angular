@@ -30,9 +30,9 @@ export class HotelListDetails {
 
   readonly responsiveLatestFilter = input<boolean>();
   readonly selectedTabValue = input<string>();
+  readonly description = input<boolean>();
   @Input() imageSlider: boolean;
   @Input() thumbnailImages: boolean;
-  readonly description = input<boolean>();
   @Input() thumbnailVideo: boolean;
 
   public hotelDetails: hotels[];

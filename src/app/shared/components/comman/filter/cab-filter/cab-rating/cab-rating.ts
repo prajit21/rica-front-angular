@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { cabRating } from '../../../../../../shared/components/data/data/filter/
   selector: 'app-cab-rating',
   templateUrl: './cab-rating.html',
   styleUrl: './cab-rating.scss',
-  imports: [NgStyle, NgbRating],
+  imports: [NgbRating],
 })
 export class CabRating {
   private route = inject(ActivatedRoute);
@@ -40,7 +39,9 @@ export class CabRating {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { rating: this.selectedRating.length ? this.selectedRating.join(',') : null },
+      queryParams: {
+        rating: this.selectedRating.length ? this.selectedRating.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

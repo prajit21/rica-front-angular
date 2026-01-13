@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -13,7 +13,7 @@ import { blogs } from '../../../../../shared/interface/hotel-minimal';
   imports: [CarouselModule, RouterLink, NgClass],
 })
 export class BlogTwo {
-  @Input() blogs: blogs[];
+  readonly blogs = input<blogs[]>();
   readonly postedBy = input<boolean>(false);
   readonly postedDate = input<boolean>(false);
   readonly buttonClass = input<string>();

@@ -5,8 +5,8 @@
   [class.sticky-cls-top]="horizontalFilter() === false || mapFilter() === false"
   [class.filter-bottom-content]="horizontalFilter()"
   [class.d-block]="restaurantService.isOpenHorizontalFilter === true && horizontalFilter()"
-  [ngStyle]="{ 'left' : restaurantService.isOpenResponsiveFilter === true || restaurantService.isOpenHorizontalFilter === true  ? '-1px' : '' }"
-  [ngStyle]="{ 'left' : restaurantService.isOpenResponsiveFilter === true || restaurantService.isOpenHorizontalFilter === true  ? '-1px' : '' }"
+  [style.left]="restaurantService.isOpenResponsiveFilter === true || restaurantService.isOpenHorizontalFilter === true  ? '-1px' : ''"
+  [style.left]="restaurantService.isOpenResponsiveFilter === true || restaurantService.isOpenHorizontalFilter === true  ? '-1px' : ''"
 >
   @if( !mapFilter()){
   <div class="back-btn" (click)="closeResponsiveFilter()">back</div>
@@ -29,7 +29,7 @@
     <div
       class="collection-collapse-block-content"
       [class.row]="horizontalFilter()"
-      [ngClass]="{ 'd-block' : isOpenFilter === true && !horizontalFilter(), 'd-none' : isOpenFilter === false && !horizontalFilter()}"
+      [class]="{ 'd-block' : isOpenFilter === true && !horizontalFilter(), 'd-none' : isOpenFilter === false && !horizontalFilter()}"
     >
       @if(tags()){
       <div class="filter-block" [class.col]="horizontalFilter()">

@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { tourTravelType } from '../../../../../../shared/components/data/data/fi
   selector: 'app-tour-travel-type',
   templateUrl: './tour-travel-type.html',
   styleUrls: ['./tour-travel-type.scss'],
-  imports: [NgStyle],
 })
 export class TourTravelType {
   private route = inject(ActivatedRoute);

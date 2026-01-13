@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, HostListener, input } from '@angular/core';
 
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
@@ -7,7 +6,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angul
   selector: 'app-cab-search-box',
   templateUrl: './cab-search-box.html',
   styleUrls: ['./cab-search-box.scss'],
-  imports: [NgClass, OwlDateTimeModule, OwlNativeDateTimeModule],
+  imports: [OwlDateTimeModule, OwlNativeDateTimeModule],
 })
 export class CabSearchBox {
   readonly text = input<boolean>();

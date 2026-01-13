@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +9,7 @@ import { hotelReview } from '../../../../../shared/interface/hotel';
   selector: 'app-hotel-review',
   templateUrl: './hotel-review.html',
   styleUrls: ['./hotel-review.scss'],
-  imports: [NgClass, BarRatingModule],
+  imports: [BarRatingModule],
 })
 export class HotelReview {
   private config = inject(NgbRatingConfig);

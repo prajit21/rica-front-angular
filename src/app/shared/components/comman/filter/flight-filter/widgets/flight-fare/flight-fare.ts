@@ -32,7 +32,9 @@ export class FlightFare {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { fare: this.selectedFare.length ? this.selectedFare.join(',') : null },
+      queryParams: {
+        fare: this.selectedFare.length ? this.selectedFare.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

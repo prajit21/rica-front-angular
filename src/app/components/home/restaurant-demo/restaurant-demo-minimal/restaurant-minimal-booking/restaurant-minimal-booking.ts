@@ -19,15 +19,13 @@ export class RestaurantMinimalBooking {
   public rotate3: number = 0;
   public previousScrollY: number = 0;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll(_event: Event): void {
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > this.previousScrollY) {
-      // Scrolling down
       this.onScrollDown();
     } else if (currentScrollY < this.previousScrollY) {
-      // Scrolling up
       this.onScrollUp();
     }
 

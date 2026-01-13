@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { restaurantDeliveryTime } from '../../../../../../shared/components/data
   selector: 'app-restaurant-delivery-time',
   templateUrl: './restaurant-delivery-time.html',
   styleUrl: './restaurant-delivery-time.scss',
-  imports: [NgStyle],
 })
 export class RestaurantDeliveryTime {
   private route = inject(ActivatedRoute);
@@ -39,7 +37,9 @@ export class RestaurantDeliveryTime {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { delivery_time: this.selectedTime.length ? this.selectedTime.join(',') : null },
+      queryParams: {
+        delivery_time: this.selectedTime.length ? this.selectedTime.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

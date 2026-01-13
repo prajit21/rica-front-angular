@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input, computed } from '@angular/core';
 
 import { Animation } from '../../../../../shared/components/comman/animation/animation';
 import { TicketSection } from '../../../../../shared/components/comman/ticket-section/ticket-section';
@@ -12,14 +12,15 @@ import { specialRoom } from '../../../../../shared/interface/hotel-classic';
   imports: [Animation, Title, TicketSection],
 })
 export class HotelClassicTicketSection {
-  readonly id = input<number[]>();
-  @Input() ticketSection: specialRoom[];
+  readonly id = input<number[]>([]);
+  readonly ticketSection = input<specialRoom[]>([]);
 
-  ngOnChanges() {
-    if (Array.isArray(this.id())) {
-      this.ticketSection = this.ticketSection?.filter(item => {
-        return this.id()?.includes(item.id);
-      });
-    }
-  }
+  readonly filteredTicketSection = computed(() => {
+    const ids = this.id();
+    const tickets = this.ticketSection();
+
+    if (!ids.length) return tickets;
+
+    return tickets.filter(item => ids.includes(item.id));
+  });
 }

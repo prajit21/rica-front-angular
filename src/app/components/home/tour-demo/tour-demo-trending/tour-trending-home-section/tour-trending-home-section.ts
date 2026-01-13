@@ -14,15 +14,13 @@ export class TourTrendingHomeSection {
   public bg_size = 100;
   public font_size = 580;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll(_event: Event): void {
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > this.previousScrollY) {
-      // Scrolling down
       this.onScrollDown();
     } else if (currentScrollY < this.previousScrollY) {
-      // Scrolling up
       this.onScrollUp();
     }
 

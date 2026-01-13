@@ -1,7 +1,7 @@
 <div class="category-4 no-arrow">
-  @if(category){
+  @if(category()){
   <owl-carousel-o [options]="options">
-    @for(category of category; track category){
+    @for(category of category(); track category){
     <ng-template carouselSlide>
       <div>
         <div class="top_box">

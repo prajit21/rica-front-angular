@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +7,6 @@ import { tourFlights } from '../../../../../../shared/components/data/data/filte
   selector: 'app-tour-flights',
   templateUrl: './tour-flights.html',
   styleUrls: ['./tour-flights.scss'],
-  imports: [NgStyle],
 })
 export class TourFlights {
   private route = inject(ActivatedRoute);
@@ -39,7 +37,9 @@ export class TourFlights {
 
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { flight: this.selectedFlight.length ? this.selectedFlight.join(',') : null },
+      queryParams: {
+        flight: this.selectedFlight.length ? this.selectedFlight.join(',') : null,
+      },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });

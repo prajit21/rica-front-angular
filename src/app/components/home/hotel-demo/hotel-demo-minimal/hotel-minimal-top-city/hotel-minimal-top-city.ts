@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -12,7 +12,7 @@ import { topCities } from '../../../../../shared/interface/hotel-minimal';
   imports: [CarouselModule, RouterLink],
 })
 export class HotelMinimalTopCity {
-  @Input() topCity: topCities[];
+  readonly topCity = input<topCities[]>();
 
   public Options = {
     loop: true,

@@ -11,7 +11,7 @@
   }
 </div>
 <div class="row content grid zoom-gallery overflow-hidden" gallerize>
-  @if(portfolioDetail.gallery){ @if(masonry){
+  @if(portfolioDetail.gallery){ @if(masonry()){
   <ngx-masonry [options]="masonryOptions" style="width: 100%" [ordered]="true">
     @for(images of images; track images; let i = $index){
     <div
@@ -19,7 +19,7 @@
       [class.col-lg-4]="gridType() === '3-grid'"
       [class.col-lg-3]="gridType() === '4-grid'"
       ngxMasonryItem
-      [ngStyle]="{ 'max-width' : masonry && gridType() === '3-grid' ? '430px' : '325px' }"
+      [style.max-width]="masonry() && gridType() === '3-grid' ? '430px' : '325px'"
     >
       <div class="overlay">
         <div class="portfolio-image">
