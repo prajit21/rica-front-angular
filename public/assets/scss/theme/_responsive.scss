@@ -2484,6 +2484,13 @@
       }
     }
   }
+  .ticket-section {
+    .owl-prev {
+    }
+    .owl-next {
+      top: 61% !important;
+    }
+  }
 
   .flight-search {
     .flight-search-detail {
@@ -2502,6 +2509,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .ticket-section {
+    .owl-next {
+      top: 61% !important;
     }
   }
 }
@@ -4540,20 +4555,20 @@
     .owl-nav {
       right: 0;
       top: 24%;
-      .owl-prev {
-        position: absolute;
-        left: 14px;
-        right: unset;
-        top: 34%;
-        padding: 5px 8px 5px;
-      }
-      .owl-next {
-        position: absolute;
-        left: unset;
-        right: 0px;
-        top: 34%;
-        padding: 5px 8px 5px;
-      }
+    }
+    .owl-prev {
+      position: absolute !important;
+      left: 0px !important;
+      right: unset !important;
+      top: 34% !important;
+      padding: 5px 8px 5px !important;
+    }
+    .owl-next {
+      position: absolute !important;
+      left: unset !important;
+      right: 0px !important;
+      top: 34% !important;
+      padding: 5px 8px 5px !important;
     }
   }
   .testimonial-section {
